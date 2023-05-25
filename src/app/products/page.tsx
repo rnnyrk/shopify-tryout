@@ -1,13 +1,30 @@
+import { Heading } from 'common/typography/Heading';
+import { ProductItem } from 'modules/products/ProductItem';
+
+import { getProducts } from 'services/shopify';
+
 export const metadata = {
   title: {
     default: 'Products',
   },
 };
 
-const Products = () => {
+const Products = async () => {
+  const products = await getProducts();
+
+  console.log({ price: products[0].priceRange });
+
   return (
     <article>
-      <h1>Products</h1>
+      <Heading>Products</Heading>
+      <div className="mt-8">
+        {products.map((product) => (
+          <ProductItem
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </div>
     </article>
   );
 };

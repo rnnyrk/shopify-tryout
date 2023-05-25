@@ -2,6 +2,7 @@
 module.exports = {
   trailingComma: 'all',
   arrowParens: 'always',
+  singleAttributePerLine: true,
   singleQuote: true,
   printWidth: 100,
   importOrder: [

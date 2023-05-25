@@ -38,6 +38,9 @@ const config = (phase, config) => {
     experimental: {
       appDir: true,
     },
+    images: {
+      domains: ['cdn.shopify.com'],
+    },
     headers() {
       return [
         {
