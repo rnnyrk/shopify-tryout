@@ -34,7 +34,9 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
     checkoutUrl: '',
     lineItems: [],
     id: '',
-    totalPrice: '',
+    totalAmount: '',
+    totalTaxAmount: '',
+    subtotalAmount: '',
     createdAt: '',
     discountCodes: [],
   });
