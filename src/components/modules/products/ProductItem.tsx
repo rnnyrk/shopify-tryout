@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useStoreContext } from 'services/storeContext';
 import { Button } from 'common/interaction/Button';
 import { Heading } from 'common/typography/Heading';
+import Link from 'next/link';
 
 export const ProductItem = ({ product }: ProductItemProps) => {
   const { addVariantToCart } = useStoreContext();
@@ -21,19 +22,20 @@ export const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <div
       key={product.id}
-      // href={`/products/${product.handle}`}
       className="mt-8"
     >
-      <Image
-        width={200}
-        height={200}
-        src={product?.featuredImage?.url || ''}
-        alt={product?.featuredImage?.altText || ''}
-        unoptimized
-      />
+      <Link href={`/products/${product.handle}`}>
+        <Image
+          width={200}
+          height={200}
+          src={product?.featuredImage?.url || ''}
+          alt={product?.featuredImage?.altText || ''}
+          unoptimized
+        />
 
-      <Heading as="h2">{product.title}</Heading>
-      <p>&euro;{product.priceRange.minVariantPrice.amount}</p>
+        <Heading as="h2">{product.title}</Heading>
+        <p>&euro;{product.priceRange.minVariantPrice.amount}</p>
+      </Link>
 
       <Button
         type="button"

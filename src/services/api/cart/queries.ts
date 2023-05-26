@@ -31,7 +31,7 @@ export const CartDetails = gql`
       }
     }
   }
-  estimatedCost {
+  cost {
     subtotalAmount {
       amount
       currencyCode
@@ -51,59 +51,59 @@ export const CartDetails = gql`
 `;
 
 export const CreateCartMutation = gql`
-mutation createCart($cartInput: CartInput) {
-  cartCreate(input: $cartInput) {
-    cart {
-      ${CartDetails}
+  mutation createCart($cartInput: CartInput) {
+    cartCreate(input: $cartInput) {
+      cart {
+        ${CartDetails}
+      }
     }
   }
-}
 `;
 
 export const AddLinesMutation = gql`
-mutation cartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) {
-  cartLinesAdd(cartId: $cartId, lines: $lines) {
-    cart {
-      ${CartDetails}
+  mutation cartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) {
+    cartLinesAdd(cartId: $cartId, lines: $lines) {
+      cart {
+        ${CartDetails}
+      }
     }
   }
-}
 `;
 
 export const UpdateLinesMutation = gql`
-mutation cartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!) {
-  cartLinesUpdate(cartId: $cartId, lines: $lines) {
-    cart {
-      ${CartDetails}
+  mutation cartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!) {
+    cartLinesUpdate(cartId: $cartId, lines: $lines) {
+      cart {
+        ${CartDetails}
+      }
     }
   }
-}
 `;
 
 export const RemoveLinesMutation = gql`
-mutation cartLinesRemove($cartId: ID!, $lineIds: [ID!]!) {
-  cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
-    cart {
-      ${CartDetails}
+  mutation cartLinesRemove($cartId: ID!, $lineIds: [ID!]!) {
+    cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
+      cart {
+        ${CartDetails}
+      }
     }
   }
-}
 `;
 
 export const GetCartQuery = gql`
-query getCart($cartId: ID!) {
-  cart(id: $cartId) {
-    ${CartDetails}
-  }
-}
-`;
-
-export const AddDiscountCodesMutation = gql`
-mutation AddDiscountCodesMutation($cartId: ID!, $discountCodes: [String!]) {
-  cartDiscountCodesUpdate(cartId: $cartId, discountCodes: $discountCodes) {
-    cart {
+  query getCart($cartId: ID!) {
+    cart(id: $cartId) {
       ${CartDetails}
     }
   }
-}
+`;
+
+export const AddDiscountCodesMutation = gql`
+  mutation AddDiscountCodesMutation($cartId: ID!, $discountCodes: [String!]) {
+    cartDiscountCodesUpdate(cartId: $cartId, discountCodes: $discountCodes) {
+      cart {
+        ${CartDetails}
+      }
+    }
+  }
 `;

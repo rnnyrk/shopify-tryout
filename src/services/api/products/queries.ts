@@ -29,3 +29,31 @@ export const GetProductsQuery = gql`
     }
   }
 `;
+
+export const GetProductDetailQuery = gql`
+  query getProduct($handle: String!) {
+    product(handle: $handle) {
+      id
+      handle
+      title
+      description
+      priceRange {
+        minVariantPrice {
+          amount
+          currencyCode
+        }
+      }
+      featuredImage {
+        url
+        altText
+      }
+      variants(first: 10) {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+  }
+`;

@@ -11,8 +11,6 @@ export const metadata = {
 const Products = async () => {
   const products = await getProducts();
 
-  console.log({ products });
-
   return (
     <section>
       <Heading>Products</Heading>
