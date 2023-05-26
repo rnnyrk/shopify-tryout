@@ -1,5 +1,4 @@
 'use client';
-import { formatPrice } from 'services';
 import { useStoreContext } from 'services/storeContext';
 import { Button } from 'common/interaction/Button';
 
