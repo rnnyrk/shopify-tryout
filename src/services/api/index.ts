@@ -11,7 +11,7 @@ const graphQLClient = new GraphQLClient(ENDPOINT, {
 
 export const graphQLQuery = async (
   query: string,
-  variables: Record<string, unknown>,
+  variables?: Record<string, unknown>,
 ): Promise<any> => {
   const data = await graphQLClient.request(query, variables);
   return data;

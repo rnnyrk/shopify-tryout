@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useStoreContext } from 'services/storeContext';
 
 export const MainMenu = () => {
-  const { cart } = useStoreContext();
+  const { getTotalQuantityInCart } = useStoreContext();
 
   return (
     <ul className="w-full flex justify-center py-8 mb-10">
@@ -15,9 +15,7 @@ export const MainMenu = () => {
         <Link href="/products">Products</Link>
       </li>
       <li>
-        <Link href="/cart">
-          Cart {cart.lineItems.length > 0 ? `(${cart.lineItems.length})` : null}
-        </Link>
+        <Link href="/cart">Cart ({getTotalQuantityInCart()})</Link>
       </li>
     </ul>
   );

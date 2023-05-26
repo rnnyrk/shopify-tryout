@@ -38,14 +38,12 @@ const extractLineItems = (cart: Cart) => {
 };
 
 export const formatCart = (cart: Cart) => {
-  console.log({ formatCart: cart });
-
-  const { id, checkoutUrl, createdAt, estimatedCost, discountCodes } = cart;
+  const { id, checkoutUrl, createdAt, cost, discountCodes } = cart;
 
   const {
     totalAmount: { amount: totalAmount },
     subtotalAmount: { amount: subtotalAmount },
-  } = estimatedCost;
+  } = cost;
 
   const discountCodesArray = discountCodes.map((discountCode) => discountCode.code);
 
@@ -60,5 +58,5 @@ export const formatCart = (cart: Cart) => {
     priceBeforeDiscount,
     totalPrice: totalAmount,
     discountCodes: discountCodesArray,
-  } as unknown as i.Cart;
+  } as unknown as i.ClientCart;
 };

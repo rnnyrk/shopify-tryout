@@ -1,5 +1,5 @@
 'use client';
-import type { Product } from '@shopify/hydrogen-react/storefront-api-types';
+import * as i from 'types';
 import Image from 'next/image';
 
 import { useStoreContext } from 'services/storeContext';
@@ -47,5 +47,5 @@ export const ProductItem = ({ product }: ProductItemProps) => {
 };
 
 type ProductItemProps = {
-  product: Product;
+  product: i.ClientProduct;
 };

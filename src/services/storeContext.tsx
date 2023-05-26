@@ -61,6 +61,7 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
 
   React.useEffect(() => {
     setLoading(true);
+
     const initializeCart = async () => {
       const existingCartId = isBrowser ? localStorage.getItem(localStorageKey) : null;
 
@@ -69,8 +70,9 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
 
         if (voucher) {
           const newCart = await addDiscountCode(cartId, [voucher]);
-
-          onCartResponse(newCart);
+          if (newCart) {
+            onCartResponse(newCart);
+          }
         }
       };
 
@@ -102,12 +104,17 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const addVariantToCart: AddVariantToCart = async (lineItems, attributes) => {
+  const addVariantToCart: AddVariantToCart = async (lineItems, attributes): Promise<boolean> => {
     setLoading(true);
 
     return addToCart(cart.id, lineItems).then((cart) => {
       setLoading(false);
-      return onCartResponse(cart);
+
+      if (cart) {
+        return onCartResponse(cart);
+      }
+
+      return false;
     });
   };
 
@@ -116,7 +123,12 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
 
     return removeLines(cart.id, lineItemIds).then((cart) => {
       setLoading(false);
-      return onCartResponse(cart);
+
+      if (cart) {
+        return onCartResponse(cart);
+      }
+
+      return false;
     });
   };
 
@@ -132,14 +144,20 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
 
     return updateLines(cart.id, lineItemsToUpdate).then((cart) => {
       setLoading(false);
-      return onCartResponse(cart);
+
+      if (cart) {
+        return onCartResponse(cart);
+      }
+
+      return false;
     });
   };
 
-  const getTotalQuantityInCart: GetTotalQuantityInCart = () =>
-    cart.lineItems.reduce((total, item) => {
+  const getTotalQuantityInCart: GetTotalQuantityInCart = () => {
+    return cart.lineItems.reduce((total, item) => {
       return total + item.quantity;
     }, 0);
+  };
 
   return (
     <StoreContext.Provider
