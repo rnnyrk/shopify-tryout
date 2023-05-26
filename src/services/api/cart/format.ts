@@ -40,6 +40,7 @@ export const formatCart = (cart: Cart) => {
   const {
     totalAmount: { amount: totalAmount },
     subtotalAmount: { amount: subtotalAmount },
+    totalTaxAmount,
   } = cost;
 
   const discountCodesArray = discountCodes.map((discountCode) => discountCode.code);
@@ -52,8 +53,10 @@ export const formatCart = (cart: Cart) => {
     checkoutUrl,
     createdAt,
     lineItems,
+    totalAmount,
+    subtotalAmount,
+    totalTaxAmount,
     priceBeforeDiscount,
-    totalPrice: totalAmount,
     discountCodes: discountCodesArray,
   } as unknown as i.ClientCart;
 };

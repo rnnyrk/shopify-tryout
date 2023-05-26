@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { getProduct } from 'services/api/products/detail';
 import { ProductSelect } from 'modules/products/ProductSelect';
 import { Heading } from 'common/typography/Heading';
+import { Container } from 'common/layout/Container';
 
 const Product = async ({ params }: ProductParams) => {
   const { slug } = params;
@@ -11,7 +12,7 @@ const Product = async ({ params }: ProductParams) => {
   if (!product) return null;
 
   return (
-    <div>
+    <Container>
       <Image
         width={200}
         height={200}
@@ -22,7 +23,7 @@ const Product = async ({ params }: ProductParams) => {
       <Heading className="my-4">{product.title}</Heading>
       <p>{product.description}</p>
       <ProductSelect product={product} />
-    </div>
+    </Container>
   );
 };
 

@@ -6,8 +6,8 @@ import CartIcon from 'vectors/cart.svg';
 import { useStoreContext } from 'services/storeContext';
 
 export const MiniCart = () => {
-  const { getTotalQuantityInCart } = useStoreContext();
-  const cartQuantity = getTotalQuantityInCart();
+  const { getTotalQuantity } = useStoreContext();
+  const cartQuantity = getTotalQuantity();
 
   return (
     <Link
@@ -16,7 +16,7 @@ export const MiniCart = () => {
     >
       <CartIcon />
       {cartQuantity > 0 && (
-        <div className="absolute flex items-center justify-center top-[-16px] right-[-16px] rounded-full w-[24px] h-[24px] text-white text-sm bg-cyan-700">
+        <div className="absolute flex items-center justify-center top-[-16px] right-[-16px] rounded-full w-[24px] h-[24px] text-white text-sm bg-secondary-700">
           {cartQuantity}
         </div>
       )}

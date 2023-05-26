@@ -1,5 +1,6 @@
 import { CartOverview } from 'modules/cart/CartOverview';
 import { Heading } from 'common/typography/Heading';
+import { Container } from 'common/layout/Container';
 
 export const metadata = {
   title: {
@@ -9,10 +10,10 @@ export const metadata = {
 
 const Cart = () => {
   return (
-    <section>
+    <Container>
       <Heading>Cart</Heading>
       <CartOverview />
-    </section>
+    </Container>
   );
 };
 

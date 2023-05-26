@@ -6,7 +6,9 @@ export type ClientCart = {
   lineItems: ClientCartLineItem[];
   id: string;
   checkoutUrl: string;
-  totalPrice: string;
+  totalAmount: string;
+  totalTaxAmount: string;
+  subtotalAmount: string;
   priceBeforeDiscount?: string;
   createdAt: string;
   discountCodes: string[];

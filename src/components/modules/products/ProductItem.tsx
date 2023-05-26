@@ -23,16 +23,18 @@ export const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <div
       key={product.id}
-      className="mt-8"
+      className="w-full mb-16 lg:mb-0"
     >
       <Link href={`/products/${product.handle}`}>
-        <Image
-          width={200}
-          height={200}
-          src={product?.featuredImage?.url || ''}
-          alt={product?.featuredImage?.altText || ''}
-          unoptimized
-        />
+        <figure className="relative w-full h-60 mb-4">
+          <Image
+            src={product?.featuredImage?.url || ''}
+            alt={product?.featuredImage?.altText || ''}
+            fill
+            className="object-cover w-full h-full"
+            unoptimized
+          />
+        </figure>
 
         <Heading as="h2">{product.title}</Heading>
         <p>{formatPrice({ value: product.priceRange.minVariantPrice.amount })}</p>
@@ -41,7 +43,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
       <Button
         type="button"
         onClick={onAddToCart}
-        className="mt-2"
+        className="w-full mt-2"
       >
         Add to cart
       </Button>
