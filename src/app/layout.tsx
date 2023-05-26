@@ -1,5 +1,4 @@
 import './global.css';
-import type * as i from 'types';
 import clsx from 'clsx';
 import { Inter } from 'next/font/google';
 
