@@ -48,7 +48,7 @@ export const metadata = {
   },
 };
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <html
       lang="en"
@@ -60,8 +60,8 @@ const Layout = ({ children }: Props) => {
   );
 };
 
-type Props = i.NextPageProps<{
+type LayoutProps = {
   children: React.ReactNode;
-}>;
+};
 
 export default Layout;
