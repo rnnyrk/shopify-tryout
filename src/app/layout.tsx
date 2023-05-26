@@ -3,24 +3,24 @@ import type * as i from 'types';
 import clsx from 'clsx';
 import { Inter } from 'next/font/google';
 
-import { RootLayout } from 'modules/layouts';
+import { RootLayout } from 'modules/layouts/RootLayout';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: {
-    default: 'Talg van Dirk Koolen',
-    template: '%s | Dirk Koolen',
+    default: 'Custom Shopify Storefront',
+    template: '%s | Custom Storefront',
   },
-  description: 'Talg products',
+  description: 'Displaying Shopify products in a headless NextJS',
   openGraph: {
-    title: 'Dirk Koolen',
-    description: 'Talg products',
-    url: 'https://rnny.nl',
-    siteName: 'Dirk Koolen',
+    title: 'Custom Storefront',
+    description: 'Displaying Shopify products in a headless NextJS',
+    url: 'https://custom-storefront.nl',
+    siteName: 'Custom Storefront',
     images: [
       {
-        url: 'https://rnny.nl/og.jpg',
+        url: 'https://custom-storefront.nl/og.jpg',
         width: 1920,
         height: 1080,
       },
@@ -40,7 +40,7 @@ export const metadata = {
     },
   },
   twitter: {
-    title: 'Dirk Koolen',
+    title: 'Custom Storefront',
     card: 'summary_large_image',
   },
   icons: {
@@ -50,7 +50,10 @@ export const metadata = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <html lang="en" className={clsx('text-black bg-white', inter.className)}>
+    <html
+      lang="en"
+      className={clsx('text-black bg-white', inter.className)}
+    >
       <head />
       <RootLayout>{children}</RootLayout>
     </html>
