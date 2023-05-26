@@ -22,7 +22,8 @@
     "next": "13.4.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sharp": "0.32.1"
+    "sharp": "0.32.1",
+    "zustand": "^4.3.8"
   },
   "devDependencies": {
     "@babel/core": "7.21.8",
@@ -32,7 +33,7 @@
     "@next/eslint-plugin-next": "13.4.3",
     "@svgr/webpack": "8.0.1",
     "@types/node": "20.2.3",
-    "@types/react": "18.2.6",
+    "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
     "@types/webpack": "5.28.1",
     "@typescript-eslint/eslint-plugin": "5.59.7",
@@ -51,7 +52,7 @@
     "prettier": "2.8.8",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4",
-    "webpack": "5.83.1"
+    "webpack": "5.84.0"
   },
   "keywords": [],
   "repository": {

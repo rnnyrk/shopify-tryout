@@ -1,25 +1,39 @@
 'use client';
+import type { Product } from '@shopify/hydrogen-react/storefront-api-types';
 import Image from 'next/image';
 
+import { useStoreContext } from 'services/storeContext';
 import { Button } from 'common/interaction/Button';
 import { Heading } from 'common/typography/Heading';
 
 export const ProductItem = ({ product }: ProductItemProps) => {
-  const onAddToCart = () => {};
+  const { addVariantToCart } = useStoreContext();
+
+  const onAddToCart = async () => {
+    await addVariantToCart([
+      {
+        merchandiseId: product.variants[0].id,
+        quantity: 1,
+      },
+    ]);
+  };
 
   return (
     <div
       key={product.id}
+      // href={`/products/${product.handle}`}
       className="mt-8"
     >
-      <Heading as="h2">{product.title}</Heading>
       <Image
         width={200}
         height={200}
-        src={product.featuredImage.url}
-        alt={product.featuredImage.alt}
+        src={product?.featuredImage?.url || ''}
+        alt={product?.featuredImage?.altText || ''}
         unoptimized
       />
+
+      <Heading as="h2">{product.title}</Heading>
+      <p>&euro;{product.priceRange.minVariantPrice.amount}</p>
 
       <Button
         type="button"
@@ -33,5 +47,5 @@ export const ProductItem = ({ product }: ProductItemProps) => {
 };
 
 type ProductItemProps = {
-  product: any;
+  product: Product;
 };

@@ -12,20 +12,20 @@ export const metadata = {
 const Products = async () => {
   const products = await getProducts();
 
-  console.log({ price: products[0].priceRange });
-
   return (
-    <article>
+    <section>
       <Heading>Products</Heading>
       <div className="mt-8">
-        {products.map((product) => (
-          <ProductItem
-            key={product.id}
-            product={product}
-          />
-        ))}
+        {products &&
+          products.length > 0 &&
+          products.map((product) => (
+            <ProductItem
+              key={product.id}
+              product={product}
+            />
+          ))}
       </div>
-    </article>
+    </section>
   );
 };
 
