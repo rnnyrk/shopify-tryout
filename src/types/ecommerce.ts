@@ -19,9 +19,10 @@ export type ClientCartLineItem = {
   quantity: number;
   merchandiseId: string;
   title: string;
-  price: number;
+  price: string;
   productTitle: string;
   attributes: Attribute[];
+  featuredImage: Product['featuredImage'];
 };
 
 export type ClientProduct = Pick<

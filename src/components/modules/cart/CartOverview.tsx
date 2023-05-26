@@ -3,12 +3,21 @@ import * as i from 'types';
 
 import { useStoreContext } from 'services/storeContext';
 import { Button } from 'common/interaction/Button';
+import Image from 'next/image';
 
 const CartItem = ({ item }: { item: i.ClientCartLineItem }) => {
   return (
     <div className="flex flex-row justify-between items-center">
       <div className="flex flex-row items-center">
-        <div className="w-16 h-16 bg-gray-200 rounded-full mr-4"></div>
+        <figure className="w-16 h-16 bg-gray-200 rounded-full m-0 mr-4 overflow-hidden">
+          <Image
+            width={100}
+            height={100}
+            src={item?.featuredImage?.url || ''}
+            alt={item?.featuredImage?.altText || ''}
+            unoptimized
+          />
+        </figure>
         <div>
           <p className="text-sm font-medium">{item.productTitle}</p>
           <p className="text-sm text-gray-500">{item.title}</p>

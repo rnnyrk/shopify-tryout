@@ -1,37 +1,34 @@
 import * as i from 'types';
 import type { Cart } from '@shopify/hydrogen-react/storefront-api-types';
 
-const extractLineItems = (cart: Cart) => {
+const extractLineItems = (cart: Cart): i.ClientCartLineItem[] => {
   const lineItems = cart.lines.edges.map((edge) => {
-    if (edge?.node) {
-      const {
-        id,
-        attributes,
-        quantity,
-        merchandise,
-        estimatedCost: {
-          totalAmount: { amount: price },
-        },
-      } = edge.node;
+    const {
+      id,
+      attributes,
+      quantity,
+      merchandise,
+      estimatedCost: {
+        totalAmount: { amount: price },
+      },
+    } = edge.node;
 
-      const {
-        id: merchandiseId,
-        title,
-        product: { title: productTitle },
-      } = merchandise;
+    const {
+      id: merchandiseId,
+      title,
+      product: { title: productTitle, featuredImage },
+    } = merchandise;
 
-      return {
-        id,
-        attributes,
-        quantity,
-        merchandiseId,
-        title,
-        price,
-        productTitle,
-      };
-    }
-
-    return null;
+    return {
+      id,
+      attributes,
+      quantity,
+      merchandiseId,
+      title,
+      price,
+      productTitle,
+      featuredImage,
+    };
   });
 
   return lineItems;

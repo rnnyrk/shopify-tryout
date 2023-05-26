@@ -25,6 +25,10 @@ export const CartDetails = gql`
             title
             product {
               title
+              featuredImage {
+                altText
+                url
+              }
             }
           }
         }
