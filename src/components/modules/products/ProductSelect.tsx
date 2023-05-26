@@ -7,16 +7,21 @@ import { Button } from 'common/interaction/Button';
 import { useStoreContext } from 'services/storeContext';
 
 export const ProductSelect = ({ product }: ProductSelectProps) => {
+  const [isAdding, setAdding] = useState(false);
   const [selectedVariantId, setSelectedVariantId] = useState(product.variants[0].id);
   const { addVariantToCart } = useStoreContext();
 
   const onAddToCart = async () => {
+    setAdding(true);
+
     await addVariantToCart([
       {
         merchandiseId: selectedVariantId,
         quantity: 1,
       },
     ]);
+
+    setAdding(false);
   };
 
   return (
@@ -30,6 +35,7 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
         type="button"
         onClick={onAddToCart}
         className="mt-2"
+        disabled={isAdding}
       >
         Add to cart
       </Button>

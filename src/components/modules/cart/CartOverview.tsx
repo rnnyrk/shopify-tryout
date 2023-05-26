@@ -4,6 +4,7 @@ import * as i from 'types';
 import { useStoreContext } from 'services/storeContext';
 import { Button } from 'common/interaction/Button';
 import Image from 'next/image';
+import { formatPrice } from 'services';
 
 const CartItem = ({ item }: { item: i.ClientCartLineItem }) => {
   return (
@@ -25,7 +26,7 @@ const CartItem = ({ item }: { item: i.ClientCartLineItem }) => {
       </div>
       <div className="flex flex-row items-center">
         <p className="text-sm font-medium mr-4">{item.quantity}</p>
-        <p className="text-sm font-medium">&euro;{item.price}</p>
+        <p className="text-sm font-medium">{formatPrice({ value: item.price })}</p>
       </div>
     </div>
   );

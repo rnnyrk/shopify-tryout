@@ -1,11 +1,12 @@
 'use client';
 import * as i from 'types';
 import Image from 'next/image';
+import Link from 'next/link';
 
+import { formatPrice } from 'services';
 import { useStoreContext } from 'services/storeContext';
 import { Button } from 'common/interaction/Button';
 import { Heading } from 'common/typography/Heading';
-import Link from 'next/link';
 
 export const ProductItem = ({ product }: ProductItemProps) => {
   const { addVariantToCart } = useStoreContext();
@@ -34,7 +35,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
         />
 
         <Heading as="h2">{product.title}</Heading>
-        <p>&euro;{product.priceRange.minVariantPrice.amount}</p>
+        <p>{formatPrice({ value: product.priceRange.minVariantPrice.amount })}</p>
       </Link>
 
       <Button
