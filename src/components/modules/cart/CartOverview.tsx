@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const CartItem = ({ item }: { item: i.ClientCartLineItem }) => {
   return (
-    <div className="flex flex-row justify-between items-center">
+    <div className="flex flex-row justify-between items-center mb-4">
       <div className="flex flex-row items-center">
         <figure className="w-16 h-16 bg-gray-200 rounded-full m-0 mr-4 overflow-hidden">
           <Image

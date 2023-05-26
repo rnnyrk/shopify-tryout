@@ -51,6 +51,7 @@ export const GetProductDetailQuery = gql`
         edges {
           node {
             id
+            title
           }
         }
       }

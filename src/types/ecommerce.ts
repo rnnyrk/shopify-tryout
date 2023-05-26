@@ -1,8 +1,6 @@
-import type {
-  Attribute,
-  Product,
-  ProductVariant,
-} from '@shopify/hydrogen-react/storefront-api-types';
+import * as i from 'types';
+
+import type { Attribute, Product } from '@shopify/hydrogen-react/storefront-api-types';
 
 export type ClientCart = {
   lineItems: ClientCartLineItem[];
@@ -27,7 +25,12 @@ export type ClientCartLineItem = {
 
 export type ClientProduct = Pick<
   Product,
-  'id' | 'title' | 'handle' | 'priceRange' | 'featuredImage'
+  'id' | 'title' | 'description' | 'handle' | 'priceRange' | 'featuredImage'
 > & {
-  variants: ProductVariant[];
+  variants: i.ClientVariant[];
+};
+
+export type ClientVariant = {
+  id: string;
+  title: string;
 };
