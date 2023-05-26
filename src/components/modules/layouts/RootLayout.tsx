@@ -11,7 +11,7 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <Hero>
           <MainMenu />
         </Hero>
-        <main className="max-w-4xl mx-auto">{children}</main>
+        <main className="max-w-6xl mx-auto">{children}</main>
       </body>
     </StoreProvider>
   );

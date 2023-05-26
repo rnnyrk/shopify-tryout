@@ -18,9 +18,9 @@ const MenuItem = ({ href, children }) => {
   return (
     <li
       className={clsx(
-        'mx-4 font-semibold text-lg transition-colors hover:text-cyan-700 hover:border-b-2 hover:border-cyan-700',
+        'mx-4 font-semibold text-lg transition-colors hover:text-primary-600 hover:border-b-2 hover:border-primary-700',
         {
-          'text-cyan-700': isActive,
+          'text-primary-600': isActive,
           'text-white': !isActive,
         },
       )}

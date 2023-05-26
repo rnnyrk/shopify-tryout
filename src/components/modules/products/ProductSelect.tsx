@@ -25,7 +25,7 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
   };
 
   return (
-    <div className="w-full flex items-center mt-8">
+    <div className="w-full flex flex-wrap items-center mt-8">
       <VariantSelect
         onChange={(variantId) => setSelectedVariantId(variantId)}
         variants={product.variants}
@@ -34,7 +34,7 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
       <Button
         type="button"
         onClick={onAddToCart}
-        className="mt-2"
+        className="w-full mt-2"
         disabled={isAdding}
       >
         Add to cart
