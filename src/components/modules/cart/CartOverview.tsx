@@ -2,6 +2,7 @@
 import * as i from 'types';
 
 import { useStoreContext } from 'services/storeContext';
+import { Button } from 'common/interaction/Button';
 
 const CartItem = ({ item }: { item: i.ClientCartLineItem }) => {
   return (
@@ -25,16 +26,25 @@ export const CartOverview = () => {
   const { cart } = useStoreContext();
 
   return (
-    <div className="mt-8">
-      {cart.lineItems.length > 0 &&
-        cart.lineItems.map((item) => {
-          return (
-            <CartItem
-              key={item.id}
-              item={item}
-            />
-          );
-        })}
+    <div className="flex flex-wrap">
+      <div className="w-full my-8">
+        {cart.lineItems.length > 0 &&
+          cart.lineItems.map((item) => {
+            return (
+              <CartItem
+                key={item.id}
+                item={item}
+              />
+            );
+          })}
+      </div>
+
+      <Button
+        type="link"
+        href={cart.checkoutUrl}
+      >
+        Checkout
+      </Button>
     </div>
   );
 };
