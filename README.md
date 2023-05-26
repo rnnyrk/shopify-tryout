@@ -7,7 +7,7 @@ Boilerplate for setting up a headless Shopify with NextJS.
 - Framer Motion for animations
 - Tailwind CSS with `clsx` for dynamic classes
 - TypeScript (no-brainer)
-- Zustand with `immer` for immutable state management
+- Zustand with `immer` state management
 - PNPM package manager
 - ESLint and Prettier
 - Shopify Storefront API
