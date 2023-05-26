@@ -6,8 +6,8 @@ import CartIcon from 'vectors/cart.svg';
 import { useStoreContext } from 'services/storeContext';
 
 export const MiniCart = () => {
-  const { getTotalQuantityInCart } = useStoreContext();
-  const cartQuantity = getTotalQuantityInCart();
+  const { getTotalQuantity } = useStoreContext();
+  const cartQuantity = getTotalQuantity();
 
   return (
     <Link

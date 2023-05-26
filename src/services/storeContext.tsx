@@ -155,7 +155,7 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
     });
   };
 
-  const getTotalQuantityInCart: GetTotalQuantityInCart = () => {
+  const getTotalQuantity: getTotalQuantity = () => {
     return cart.lineItems.reduce((total, item) => {
       return total + item.quantity;
     }, 0);
@@ -167,7 +167,7 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
         addVariantToCart,
         removeLineItems,
         updateLineItem,
-        getTotalQuantityInCart,
+        getTotalQuantity,
         cart,
         isLoading,
       }}
@@ -180,7 +180,7 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
 type AddVariantToCart = (lineItems: CartLineInput[], attributes?: Attribute[]) => Promise<boolean>;
 type RemoveLineItems = (lineItemId: string[]) => Promise<boolean> | null;
 type UpdateLineItem = (lineItemId: string, quantity: number) => Promise<boolean> | null;
-type GetTotalQuantityInCart = () => number;
+type getTotalQuantity = () => number;
 
 type StoreContextProps = {
   isLoading: boolean;
@@ -188,7 +188,7 @@ type StoreContextProps = {
   addVariantToCart: AddVariantToCart;
   removeLineItems: RemoveLineItems;
   updateLineItem: UpdateLineItem;
-  getTotalQuantityInCart: GetTotalQuantityInCart;
+  getTotalQuantity: getTotalQuantity;
 };
 
 type StoreProviderProps = {
