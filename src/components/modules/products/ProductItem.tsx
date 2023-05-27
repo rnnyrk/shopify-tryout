@@ -1,6 +1,5 @@
 'use client';
 import * as i from 'types';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { formatPrice } from 'services';
@@ -10,7 +9,7 @@ import { Heading } from 'common/typography/Heading';
 import { ProductImage } from './ProductImage';
 
 export const ProductItem = ({ product }: ProductItemProps) => {
-  const { addVariantToCart } = useStoreContext();
+  const { addVariantToCart, isLoading } = useStoreContext();
 
   const onAddToCart = async () => {
     await addVariantToCart([
@@ -39,6 +38,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
         type="button"
         onClick={onAddToCart}
         className="w-full mt-2"
+        disabled={isLoading}
       >
         Add to cart
       </Button>
