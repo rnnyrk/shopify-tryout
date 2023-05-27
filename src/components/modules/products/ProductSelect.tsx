@@ -25,7 +25,7 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
   };
 
   return (
-    <div className="w-full flex flex-wrap items-center mt-8">
+    <div className="w-full flex flex-wrap items-center mt-2 mb-8">
       <VariantSelect
         onChange={(variantId) => setSelectedVariantId(variantId)}
         variants={product.variants}

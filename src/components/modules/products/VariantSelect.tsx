@@ -10,9 +10,9 @@ export const VariantSelect = ({ onChange, variants, selectedVariantId }: Variant
         return (
           <button
             className={clsx(
-              `w-full border-cyan-700 border-2 py-2 px-4 mb-2 lg:mr-2 lg:mb-0 font-semibold`,
+              `w-full py-2 px-4 mb-2 lg:w-auto lg:mr-2 lg:my-2 font-semibold rounded-md`,
               {
-                'text-white bg-cyan-600': isActive,
+                'text-white bg-primary-600': isActive,
                 'bg-slate-200': !isActive,
               },
             )}

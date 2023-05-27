@@ -7,6 +7,7 @@ import { formatPrice } from 'services';
 import { useStoreContext } from 'services/storeContext';
 import { Button } from 'common/interaction/Button';
 import { Heading } from 'common/typography/Heading';
+import { ProductImage } from './ProductImage';
 
 export const ProductItem = ({ product }: ProductItemProps) => {
   const { addVariantToCart } = useStoreContext();
@@ -26,16 +27,10 @@ export const ProductItem = ({ product }: ProductItemProps) => {
       className="w-full mb-16 lg:mb-0"
     >
       <Link href={`/products/${product.handle}`}>
-        <figure className="relative w-full h-60 mb-4">
-          <Image
-            src={product?.featuredImage?.url || ''}
-            alt={product?.featuredImage?.altText || ''}
-            fill
-            className="object-cover w-full h-full"
-            unoptimized
-          />
-        </figure>
-
+        <ProductImage
+          src={product?.featuredImage?.url}
+          alt={product?.featuredImage?.altText || ''}
+        />
         <Heading as="h2">{product.title}</Heading>
         <p>{formatPrice({ value: product.priceRange.minVariantPrice.amount })}</p>
       </Link>
