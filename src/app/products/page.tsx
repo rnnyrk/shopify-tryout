@@ -9,6 +9,7 @@ export const metadata = {
 };
 
 const Products = async () => {
+  // @TODO use Suspense
   const products = await getProducts();
 
   return (
