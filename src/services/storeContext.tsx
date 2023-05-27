@@ -134,12 +134,17 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
     });
   };
 
-  const updateLineItem: UpdateLineItem = async (lineItemId, quantity): Promise<boolean> => {
+  const updateLineItem: UpdateLineItem = async (
+    lineItemId,
+    merchandiseId,
+    quantity,
+  ): Promise<boolean> => {
     setLoading(true);
 
     const lineItemsToUpdate = [
       {
-        merchandiseId: lineItemId,
+        id: lineItemId,
+        merchandiseId,
         quantity,
       },
     ];
@@ -179,7 +184,11 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
 
 type AddVariantToCart = (lineItems: CartLineInput[], attributes?: Attribute[]) => Promise<boolean>;
 type RemoveLineItems = (lineItemId: string[]) => Promise<boolean> | null;
-type UpdateLineItem = (lineItemId: string, quantity: number) => Promise<boolean> | null;
+type UpdateLineItem = (
+  lineItemId: string,
+  merchandiseId: string,
+  quantity: number,
+) => Promise<boolean> | null;
 type getTotalQuantity = () => number;
 
 type StoreContextProps = {

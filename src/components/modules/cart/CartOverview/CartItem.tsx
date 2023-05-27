@@ -1,20 +1,21 @@
 'use client';
 import * as i from 'types';
 import Image from 'next/image';
-import { useState } from 'react';
 
 import { formatPrice } from 'services';
 import { useStoreContext } from 'services/storeContext';
 import { Button } from 'common/interaction/Button';
+import { InputCounter } from 'common/form/InputCounter';
 
 export const CartItem = ({ item }: { item: i.ClientCartLineItem }) => {
-  const [isRemoving, setRemoving] = useState(false);
-  const { removeLineItems } = useStoreContext();
+  const { removeLineItems, updateLineItem, isLoading } = useStoreContext();
 
-  const onRemoveItem = async (itemId: string) => {
-    setRemoving(true);
-    await removeLineItems([itemId]);
-    setRemoving(false);
+  const onRemoveItem = async () => {
+    await removeLineItems([item.id]);
+  };
+
+  const onUpdateItem = async (quantity: number) => {
+    await updateLineItem(item.id, item.merchandiseId, quantity);
   };
 
   return (
@@ -36,7 +37,12 @@ export const CartItem = ({ item }: { item: i.ClientCartLineItem }) => {
       </div>
 
       <div className="flex items-center w-full my-4 lg:w-auto lg:flex-[2] lg:px-4 lg:justify-end">
-        <p className="text-sm font-medium mr-4">{item.quantity}</p>
+        <InputCounter
+          onChange={(quantity) => onUpdateItem(quantity)}
+          disabled={isLoading}
+          defaultValue={item.quantity}
+          className="mr-4"
+        />
         <p className="text-sm font-medium">{formatPrice({ value: item.price })}</p>
       </div>
 
@@ -45,8 +51,8 @@ export const CartItem = ({ item }: { item: i.ClientCartLineItem }) => {
           type="button"
           variant="secondary"
           size="small"
-          onClick={() => onRemoveItem(item.id)}
-          disabled={isRemoving}
+          onClick={onRemoveItem}
+          disabled={isLoading}
         >
           Remove
         </Button>
