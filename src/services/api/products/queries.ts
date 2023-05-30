@@ -1,7 +1,7 @@
 import { gql } from 'graphql-request';
 
 export const GetProductsQuery = gql`
-  query getProducts {
+  query getProducts($language: LanguageCode!) @inContext(language: $language) {
     products(first: 10) {
       edges {
         node {

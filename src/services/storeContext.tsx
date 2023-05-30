@@ -30,6 +30,8 @@ export const useStoreContext = () => {
 const localStorageKey = 'shopify_cart_id';
 
 export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
+  const [isLoading, setLoading] = React.useState(true);
+
   const [cart, setCart] = React.useState<i.ClientCart>({
     checkoutUrl: '',
     lineItems: [],
@@ -40,8 +42,6 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
     createdAt: '',
     discountCodes: [],
   });
-
-  const [isLoading, setLoading] = React.useState(true);
 
   const setCartItem = (cart: i.ClientCart) => {
     if (isBrowser && cart.id) {
@@ -175,6 +175,8 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
         getTotalQuantity,
         cart,
         isLoading,
+        // currentLanguage,
+        // setCurrentLanguage,
       }}
     >
       {children}

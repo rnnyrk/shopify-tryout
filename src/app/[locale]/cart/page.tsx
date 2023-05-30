@@ -5,6 +5,7 @@ import { Container } from 'common/layout/Container';
 export const metadata = {
   title: {
     default: 'Cart',
+    template: '%s | Cart',
   },
 };
 

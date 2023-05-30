@@ -3,8 +3,6 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { MiniCart } from 'modules/cart/MiniCart';
-
 const MenuItem = ({ href, children }) => {
   const pathname = usePathname();
 
@@ -14,7 +12,6 @@ const MenuItem = ({ href, children }) => {
   } else if (href !== '/' && pathname?.includes(href)) {
     isActive = true;
   }
-
   return (
     <li
       className={clsx(
@@ -32,13 +29,9 @@ const MenuItem = ({ href, children }) => {
 
 export const MainMenu = () => {
   return (
-    <nav className="w-full flex justify-center p-8 mb-10">
-      <ul className="flex flex-[2] justify-center">
-        <MenuItem href="/">Home</MenuItem>
-        <MenuItem href="/products">Products</MenuItem>
-      </ul>
-
-      <MiniCart />
-    </nav>
+    <ul className="flex flex-[2] justify-center">
+      <MenuItem href="/">Home</MenuItem>
+      <MenuItem href="/products">Products</MenuItem>
+    </ul>
   );
 };

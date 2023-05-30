@@ -10,6 +10,7 @@ export const Hero = ({ children }: { children: React.ReactNode }) => {
           src={HeroImg}
           alt="Hero image"
           fill
+          priority
           className="object-cover object-center w-full opacity-80"
         />
       </figure>

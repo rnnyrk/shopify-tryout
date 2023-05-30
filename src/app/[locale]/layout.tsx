@@ -1,6 +1,9 @@
 import './global.css';
+import * as i from 'types';
 import clsx from 'clsx';
+import { AbstractIntlMessages, useLocale, NextIntlClientProvider } from 'next-intl';
 import { Inter } from 'next/font/google';
+import { notFound } from 'next/navigation';
 
 import { RootLayout } from 'modules/layouts/RootLayout';
 
@@ -47,20 +50,43 @@ export const metadata = {
   },
 };
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = async ({ children, params }: LayoutProps) => {
+  const locale = useLocale();
+
+  if (params.locale !== locale) {
+    notFound();
+  }
+
+  let messages: AbstractIntlMessages;
+  try {
+    messages = (await import(`../../../locales/${locale}.json`)).default;
+  } catch (error) {
+    console.error(error);
+    // Show a 404 error if the user requests an unknown locale
+    notFound();
+  }
+
   return (
     <html
       lang="en"
       className={clsx('text-black bg-white', inter.className)}
     >
       <head />
-      <RootLayout>{children}</RootLayout>
+      <NextIntlClientProvider
+        locale={locale}
+        messages={messages}
+      >
+        <RootLayout locale={locale}>{children}</RootLayout>
+      </NextIntlClientProvider>
     </html>
   );
 };
 
 type LayoutProps = {
   children: React.ReactNode;
+  params: {
+    locale: i.Language;
+  };
 };
 
 export default Layout;

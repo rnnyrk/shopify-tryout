@@ -4,8 +4,10 @@ import type { ProductConnection } from '@shopify/hydrogen-react/storefront-api-t
 import { GetProductsQuery } from './queries';
 import { graphQLQuery } from '../';
 
-export const getProducts = async (): Promise<i.ClientProduct[] | null> => {
-  return graphQLQuery(GetProductsQuery)
+export const getProducts = async (locale: i.Locale): Promise<i.ClientProduct[] | null> => {
+  const language = locale.toUpperCase();
+
+  return graphQLQuery(GetProductsQuery, { language })
     .then((data: { products: ProductConnection }) => {
       const products: i.ClientProduct[] = data.products.edges.map((item) => ({
         ...item.node,
