@@ -31,7 +31,7 @@ export const GetProductsQuery = gql`
 `;
 
 export const GetProductDetailQuery = gql`
-  query getProduct($handle: String!) {
+  query getProduct($handle: String!, $language: LanguageCode!) @inContext(language: $language) {
     product(handle: $handle) {
       id
       handle
