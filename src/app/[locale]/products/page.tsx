@@ -1,3 +1,6 @@
+import * as i from 'types';
+import { useLocale } from 'next-intl';
+
 import { getProducts } from 'services/api/products';
 import { ProductItem } from 'modules/products/ProductItem';
 import { Container } from 'common/layout/Container';
@@ -5,12 +8,15 @@ import { Container } from 'common/layout/Container';
 export const metadata = {
   title: {
     default: 'Products',
+    template: '%s | Products',
   },
 };
 
 const Products = async () => {
+  const locale = useLocale() as i.Locale;
+
   // @TODO use Suspense
-  const products = await getProducts();
+  const products = await getProducts(locale);
 
   return (
     <Container>

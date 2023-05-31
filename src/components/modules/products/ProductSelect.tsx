@@ -1,16 +1,20 @@
 'use client';
 import * as i from 'types';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
-import { VariantSelect } from './VariantSelect';
 import { Button } from 'common/interaction/Button';
 import { useStoreContext } from 'services/storeContext';
 import { InputCounter } from 'common/form/InputCounter';
 
+import { VariantSelect } from './VariantSelect';
+
 export const ProductSelect = ({ product }: ProductSelectProps) => {
+  const t = useTranslations('Cart');
+  const { addVariantToCart, isLoading } = useStoreContext();
+
   const [quantity, setQuantity] = useState(1);
   const [selectedVariantId, setSelectedVariantId] = useState(product.variants[0].id);
-  const { addVariantToCart, isLoading } = useStoreContext();
 
   const onAddToCart = async () => {
     await addVariantToCart([
@@ -43,7 +47,7 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
           className="w-full mt-2"
           disabled={isLoading}
         >
-          Add to cart
+          {t('add_to_cart')}
         </Button>
       </div>
     </div>

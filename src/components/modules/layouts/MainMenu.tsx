@@ -1,20 +1,19 @@
 'use client';
 import clsx from 'clsx';
-import Link from 'next/link';
+import { useLocale, useTranslations } from 'next-intl';
+import Link from 'next-intl/link';
 import { usePathname } from 'next/navigation';
-
-import { MiniCart } from 'modules/cart/MiniCart';
 
 const MenuItem = ({ href, children }) => {
   const pathname = usePathname();
+  const locale = useLocale();
 
   let isActive = false;
-  if (href === '/' && pathname === href) {
+  if ((href === '/' && pathname === href) || (pathname === `/${locale}` && href === '/')) {
     isActive = true;
   } else if (href !== '/' && pathname?.includes(href)) {
     isActive = true;
   }
-
   return (
     <li
       className={clsx(
@@ -31,14 +30,12 @@ const MenuItem = ({ href, children }) => {
 };
 
 export const MainMenu = () => {
-  return (
-    <nav className="w-full flex justify-center p-8 mb-10">
-      <ul className="flex flex-[2] justify-center">
-        <MenuItem href="/">Home</MenuItem>
-        <MenuItem href="/products">Products</MenuItem>
-      </ul>
+  const t = useTranslations('MainMenu');
 
-      <MiniCart />
-    </nav>
+  return (
+    <ul className="flex flex-[2] justify-center">
+      <MenuItem href="/">{t('home')}</MenuItem>
+      <MenuItem href="/products">{t('products')}</MenuItem>
+    </ul>
   );
 };

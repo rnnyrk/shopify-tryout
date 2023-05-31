@@ -1,14 +1,16 @@
 'use client';
 import * as i from 'types';
-import Link from 'next/link';
+import Link from 'next-intl/link';
+import { useTranslations } from 'next-intl';
 
-import { formatPrice } from 'services';
-import { useStoreContext } from 'services/storeContext';
+import { formatPrice, useStoreContext } from 'services';
 import { Button } from 'common/interaction/Button';
 import { Heading } from 'common/typography/Heading';
+
 import { ProductImage } from './ProductImage';
 
 export const ProductItem = ({ product }: ProductItemProps) => {
+  const t = useTranslations('Cart');
   const { addVariantToCart, isLoading } = useStoreContext();
 
   const onAddToCart = async () => {
@@ -40,7 +42,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
         className="w-full mt-2"
         disabled={isLoading}
       >
-        Add to cart
+        {t('add_to_cart')}
       </Button>
     </div>
   );
