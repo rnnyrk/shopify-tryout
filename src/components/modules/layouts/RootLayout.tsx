@@ -20,5 +20,5 @@ export const RootLayout = ({ children, locale }: RootLayoutProps) => {
 
 type RootLayoutProps = {
   children: React.ReactNode;
-  locale: i.Language;
+  locale: i.Locale;
 };

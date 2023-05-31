@@ -21,5 +21,5 @@ export const Navigation = ({ locale }: NavigationProps) => {
 };
 
 type NavigationProps = {
-  locale: i.Language;
+  locale: i.Locale;
 };

@@ -1,5 +1,20 @@
 {
-  "Index": {
-    "title": "Welcome!"
+  "MainMenu": {
+    "home": "Home",
+    "products": "Products"
+  },
+  "Home": {
+    "title": "Home",
+    "description": "Welcome to my Shopify home page"
+  },
+  "Cart": {
+    "title": "Cart",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shipping_checkout": "Shipping & taxes calculated at checkout",
+    "checkout": "Checkout",
+    "add_to_cart": "Add to cart",
+    "delete_from_cart": "Remove"
   }
 }

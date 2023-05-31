@@ -57,9 +57,9 @@ const Layout = async ({ children, params }: LayoutProps) => {
     notFound();
   }
 
-  let messages: AbstractIntlMessages;
+  let translations: AbstractIntlMessages;
   try {
-    messages = (await import(`../../../locales/${locale}.json`)).default;
+    translations = (await import(`../../../locales/${locale}.json`)).default;
   } catch (error) {
     console.error(error);
     // Show a 404 error if the user requests an unknown locale
@@ -68,13 +68,13 @@ const Layout = async ({ children, params }: LayoutProps) => {
 
   return (
     <html
-      lang="en"
+      lang={locale}
       className={clsx('text-black bg-white', inter.className)}
     >
       <head />
       <NextIntlClientProvider
         locale={locale}
-        messages={messages}
+        messages={translations}
       >
         <RootLayout locale={locale}>{children}</RootLayout>
       </NextIntlClientProvider>
@@ -85,7 +85,7 @@ const Layout = async ({ children, params }: LayoutProps) => {
 type LayoutProps = {
   children: React.ReactNode;
   params: {
-    locale: i.Language;
+    locale: i.Locale;
   };
 };
 

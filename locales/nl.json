@@ -1,5 +1,20 @@
 {
-  "Index": {
-    "title": "Welkom!"
+  "MainMenu": {
+    "home": "Thuis",
+    "products": "Producten"
+  },
+  "Home": {
+    "title": "Thuis",
+    "description": "Welkom op mijn Shopify pagina"
+  },
+  "Cart": {
+    "title": "Winkelmand",
+    "total": "Totaal",
+    "subtotal": "Subtotaal",
+    "shipping": "Verzendkosten",
+    "shipping_checkout": "Verzendkosten en belastingen worden berekend bij het afrekenen",
+    "checkout": "Afrekenen",
+    "add_to_cart": "Toevoegen",
+    "delete_from_cart": "Verwijderen"
   }
 }

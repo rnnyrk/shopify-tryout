@@ -3,7 +3,6 @@ import * as i from 'types';
 import type { Attribute, Product } from '@shopify/hydrogen-react/storefront-api-types';
 
 export type Locale = 'nl' | 'en';
-export type Language = 'NL' | 'EN';
 
 export type ClientCart = {
   lineItems: ClientCartLineItem[];

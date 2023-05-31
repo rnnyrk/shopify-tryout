@@ -1,4 +1,6 @@
+'use client';
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 
 import { formatPrice } from 'services';
 import { useStoreContext } from 'services/storeContext';
@@ -20,21 +22,22 @@ const CartPriceItem = ({ title, price, variant }: CartPriceItemProps) => {
 };
 
 export const CartPrices = () => {
+  const t = useTranslations('Cart');
   const { cart } = useStoreContext();
 
   return (
     <div className="w-full flex flex-wrap mt-8">
       <CartPriceItem
-        title="Subtotal"
+        title={t('subtotal')}
         price={formatPrice({ value: cart.subtotalAmount })}
       />
       <CartPriceItem
-        title="Shipping"
-        price="Shipping & taxes calculated at checkout"
+        title={t('shipping')}
+        price={t('shipping_checkout')}
         variant="secondary"
       />
       <div className="w-full flex justify-between items-center py-4 border-t-2 border-slate-100">
-        <p className="text-lg font-medium">Total</p>
+        <p className="text-lg font-medium">{t('total')}</p>
         <p className="text-lg font-medium">{formatPrice({ value: cart.totalAmount })}</p>
       </div>
     </div>

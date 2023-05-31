@@ -42,5 +42,5 @@ export const LanguageSelect = async ({ className, locale }: LanguageSelectProps)
 
 type LanguageSelectProps = {
   className?: string;
-  locale: i.Language;
+  locale: i.Locale;
 };

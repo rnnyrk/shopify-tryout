@@ -1,13 +1,14 @@
 'use client';
 import * as i from 'types';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
-import { formatPrice } from 'services';
-import { useStoreContext } from 'services/storeContext';
+import { formatPrice, useStoreContext } from 'services';
 import { Button } from 'common/interaction/Button';
 import { InputCounter } from 'common/form/InputCounter';
 
-export const CartItem = ({ item }: { item: i.ClientCartLineItem }) => {
+export const CartItem = ({ item }: CartItemProps) => {
+  const t = useTranslations('Cart');
   const { removeLineItems, updateLineItem, isLoading } = useStoreContext();
 
   const onRemoveItem = async () => {
@@ -54,9 +55,13 @@ export const CartItem = ({ item }: { item: i.ClientCartLineItem }) => {
           onClick={onRemoveItem}
           disabled={isLoading}
         >
-          Remove
+          {t('delete_from_cart')}
         </Button>
       </div>
     </div>
   );
+};
+
+type CartItemProps = {
+  item: i.ClientCartLineItem;
 };

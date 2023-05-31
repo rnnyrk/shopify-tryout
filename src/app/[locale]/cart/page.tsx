@@ -1,5 +1,4 @@
 import { CartOverview } from 'modules/cart/CartOverview';
-import { Heading } from 'common/typography/Heading';
 import { Container } from 'common/layout/Container';
 
 export const metadata = {
@@ -12,7 +11,6 @@ export const metadata = {
 const Cart = () => {
   return (
     <Container>
-      <Heading>Cart</Heading>
       <CartOverview />
     </Container>
   );
