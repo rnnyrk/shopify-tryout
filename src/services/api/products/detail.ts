@@ -15,8 +15,6 @@ export const getProduct = async ({
     language,
   })
     .then((data: { product: Product }) => {
-      console.log({ product: data.product });
-
       return {
         id: data.product.id,
         title: data.product.title,
