@@ -1,33 +1,16 @@
 import * as i from 'types';
 import clsx from 'clsx';
-import Link from 'next-intl/link';
-import Image from 'next/image';
 
 import { getLocales } from 'services/api/locales';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from 'common/interaction/DropdownMenu';
+import { DropdownMenu, DropdownMenuTrigger } from 'common/interaction/DropdownMenu';
+
+import { FlagImage } from './FlagImage';
+import { LanguageDropdown } from './LanguageDropdown';
 
 const flags: Record<string, string> = {
   en: '/vectors/flags/en.svg',
   nl: '/vectors/flags/nl.svg',
   de: '/vectors/flags/de.svg',
-};
-
-const FlagImage = ({ src }: { src: string }) => {
-  return (
-    <Image
-      src={src}
-      width="20"
-      height="9"
-      className="mr-2"
-      alt="Flag of the Netherlands"
-      unoptimized
-    />
-  );
 };
 
 export const LanguageSelect = async ({ className, locale }: LanguageSelectProps) => {
@@ -54,25 +37,7 @@ export const LanguageSelect = async ({ className, locale }: LanguageSelectProps)
         <FlagImage src={flag} />
         {activeLocale?.endonymName}
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="bg-white">
-        {locales.map((locale) => {
-          const currentIsoCode = locale.isoCode.toLowerCase();
-          const currentFlag = flags[currentIsoCode];
-
-          return (
-            <DropdownMenuItem key={locale.isoCode}>
-              <Link
-                href="/"
-                locale={currentIsoCode}
-                className="flex items-center"
-              >
-                <FlagImage src={currentFlag} />
-                {locale.endonymName}
-              </Link>
-            </DropdownMenuItem>
-          );
-        })}
-      </DropdownMenuContent>
+      <LanguageDropdown {...{ flags, locales }} />
     </DropdownMenu>
   );
 };
