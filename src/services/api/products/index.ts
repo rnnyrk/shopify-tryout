@@ -1,7 +1,7 @@
 import * as i from 'types';
-import type { ProductConnection } from '@shopify/hydrogen-react/storefront-api-types';
+import type { ProductConnection, Collection } from '@shopify/hydrogen-react/storefront-api-types';
 
-import { GetProductsQuery } from './queries';
+import { GetBestsellersQuery, GetProductsQuery } from './queries';
 import { graphQLQuery } from '../';
 
 export const getProducts = async (locale: i.Locale): Promise<i.ClientProduct[] | null> => {
@@ -10,6 +10,24 @@ export const getProducts = async (locale: i.Locale): Promise<i.ClientProduct[] |
   return graphQLQuery(GetProductsQuery, { language })
     .then((data: { products: ProductConnection }) => {
       const products: i.ClientProduct[] = data.products.edges.map((item) => ({
+        ...item.node,
+        variants: item.node.variants.edges.map((variant) => variant.node),
+      }));
+
+      return products;
+    })
+    .catch((error) => {
+      console.error(error);
+      return null;
+    });
+};
+
+export const getBestsellers = async (locale: i.Locale): Promise<i.ClientProduct[] | null> => {
+  const language = locale.toUpperCase();
+
+  return graphQLQuery(GetBestsellersQuery, { language })
+    .then((data: { collection: Collection }) => {
+      const products: i.ClientProduct[] = data.collection.products.edges.map((item) => ({
         ...item.node,
         variants: item.node.variants.edges.map((variant) => variant.node),
       }));
