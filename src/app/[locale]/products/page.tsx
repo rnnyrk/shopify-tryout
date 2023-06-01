@@ -19,7 +19,7 @@ const Products = async () => {
   const products = await getProducts(locale);
 
   return (
-    <Container>
+    <Container isCentered>
       <div className="mt-8 lg:grid lg:gap-16 lg:grid-cols-3">
         {products &&
           products.length > 0 &&
