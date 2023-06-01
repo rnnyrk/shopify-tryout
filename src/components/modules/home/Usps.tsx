@@ -43,16 +43,16 @@ export const Usps = () => {
 
   return (
     <Container className="bg-white">
-      <div className="flex justify-center mt-12 max-w-6xl mx-auto lg:grid lg:gap-16 lg:grid-cols-3">
+      <div className="flex flex-col justify-center mt-12 max-w-6xl mx-auto lg:grid lg:gap-16 lg:grid-cols-3">
         {items.map((item) => {
           const Icon = item.icon;
 
           return (
             <div
-              className="flex flex-col items-center"
+              className="flex flex-col items-center mb-8 lg:mb-0"
               key={item.id}
             >
-              <Icon className="w-24 h-24 mb-4" />
+              <Icon className="w-24 h-24 lg:mb-4" />
               <Heading
                 as="h2"
                 size="2xl"

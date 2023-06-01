@@ -18,7 +18,7 @@ export const LanguageDropdown = ({ locales, flags }: LanguageDropdownProps) => {
       urlParts.splice(localeIndex, 1, newLocale);
       const newUrl = urlParts.join('/');
       if (newUrl.includes('/nl')) {
-        return newUrl.replace('/nl', '');
+        return newUrl.replace('nl', '');
       }
 
       return urlParts.join('/');

@@ -15,11 +15,11 @@ export const Hero = () => {
       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
         <Heading className="text-6xl mb-2 font-bold text-center text-white">{t('title')}</Heading>
         <p className="text-xl text-center text-white">{t('subtitle')}</p>
-        <div className="flex mt-8">
+        <div className="flex flex-col mt-8 lg:flex-row">
           <Button
             type="link"
             href="/products"
-            className="mr-2"
+            className="mb-2 lg:mb-0 lg:mr-4"
           >
             {t('button')}
           </Button>
@@ -27,7 +27,6 @@ export const Hero = () => {
             type="link"
             href="/why-tallow"
             variant="secondary"
-            className="ml-2"
           >
             {t('button_alt')}
           </Button>

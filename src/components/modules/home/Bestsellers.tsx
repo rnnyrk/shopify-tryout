@@ -22,7 +22,7 @@ export const Bestsellers = async () => {
           Bestsellers
         </Heading>
       </div>
-      <div className="flex justify-center mt-12 lg:grid lg:gap-16 lg:grid-cols-3">
+      <div className="flex flex-col mt-12 lg:grid lg:gap-16 lg:grid-cols-3">
         {bestsellers &&
           bestsellers.length > 0 &&
           bestsellers.map((product) => (

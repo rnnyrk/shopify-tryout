@@ -20,7 +20,7 @@ const Products = async () => {
 
   return (
     <Container isCentered>
-      <div className="mt-8 lg:grid lg:gap-16 lg:grid-cols-3">
+      <div className="flex flex-col mt-8 lg:grid lg:gap-16 lg:grid-cols-3">
         {products &&
           products.length > 0 &&
           products.map((product) => (
