@@ -25,7 +25,7 @@ export const Hero = () => {
           </Button>
           <Button
             type="link"
-            href="/about"
+            href="/why-tallow"
             variant="secondary"
             className="ml-2"
           >

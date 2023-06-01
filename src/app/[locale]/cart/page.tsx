@@ -10,7 +10,7 @@ export const metadata = {
 
 const Cart = () => {
   return (
-    <Container>
+    <Container isCentered>
       <CartOverview.Heading />
       <CartOverview.Content />
     </Container>
