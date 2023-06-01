@@ -8,13 +8,11 @@ import { Button } from 'common/interaction/Button';
 import { CartItem } from './CartItem';
 import { CartPrices } from './CartPrices';
 
-export const CartOverview = () => {
-  const t = useTranslations('Cart');
+const CartOverviewContent = ({ children }: { children?: React.ReactNode }) => {
   const { cart } = useStoreContext();
 
   return (
     <>
-      <Heading>{t('title')}</Heading>
       <div className="flex flex-wrap">
         <div className="w-full my-8">
           {cart.lineItems.length > 0 &&
@@ -27,18 +25,37 @@ export const CartOverview = () => {
               );
             })}
         </div>
-
-        <CartPrices />
-
-        <div className="w-full flex justify-end mt-8">
-          <Button
-            type="link"
-            href={cart.checkoutUrl}
-          >
-            {t('checkout')}
-          </Button>
-        </div>
+        {children ?? null}
       </div>
     </>
   );
+};
+
+const CartHeading = () => {
+  const t = useTranslations('Cart');
+
+  return <Heading>{t('title')}</Heading>;
+};
+
+const CartCheckout = () => {
+  const t = useTranslations('Cart');
+  const { cart } = useStoreContext();
+
+  return (
+    <div className="w-full flex justify-end mt-8">
+      <Button
+        type="link"
+        href={cart.checkoutUrl}
+      >
+        {t('checkout')}
+      </Button>
+    </div>
+  );
+};
+
+export const CartOverview = {
+  Content: CartOverviewContent,
+  Checkout: CartCheckout,
+  Heading: CartHeading,
+  Prices: CartPrices,
 };

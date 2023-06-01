@@ -12,10 +12,10 @@ export const Button = ({
   ...otherProps
 }: ButtonProps | ButtonLinkProps) => {
   const classes = clsx(
-    `flex items-center justify-center font-semibold transition-colors duration-700`,
+    `flex items-center justify-center font-bold transition-colors duration-700`,
     className,
     {
-      'bg-primary-600 hover:bg-primary-500 text-white': variant === 'primary',
+      'bg-primary-300 hover:bg-primary-500 text-white text-lg': variant === 'primary',
       'bg-secondary-400 hover:bg-secondary-300 text-white': variant === 'secondary',
       'bg-slate-400	cursor-not-allowed': 'disabled' in otherProps && otherProps?.disabled,
       'h-12 px-8 rounded text-base min-w-[200px]': size === 'default',
