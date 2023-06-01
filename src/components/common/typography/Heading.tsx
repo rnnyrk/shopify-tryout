@@ -3,11 +3,11 @@ import { IBM_Plex_Serif } from 'next/font/google';
 
 const plexSerif = IBM_Plex_Serif({ weight: ['400'], subsets: ['latin'] });
 
-export const Heading = ({ as, className, color, children, xl = '2xl' }: HeadingProps) => {
+export const Heading = ({ as, className, color, children, size = '2xl' }: HeadingProps) => {
   if (as === 'h2') {
     return (
       <h2
-        className={clsx(`text-${xl}`, plexSerif.className, className, {
+        className={clsx(`text-${size}`, plexSerif.className, className, {
           [`text-${color}`]: Boolean(color),
         })}
       >
@@ -18,7 +18,7 @@ export const Heading = ({ as, className, color, children, xl = '2xl' }: HeadingP
 
   return (
     <h1
-      className={clsx(`text-${xl}`, plexSerif.className, className, {
+      className={clsx(`text-${size}`, plexSerif.className, className, {
         [`text-${color}`]: Boolean(color),
       })}
     >
@@ -32,5 +32,5 @@ type HeadingProps = {
   className?: string;
   children: React.ReactNode;
   color?: 'black' | 'white';
-  xl?: 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
+  size?: 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
 };

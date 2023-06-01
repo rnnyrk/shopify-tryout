@@ -13,11 +13,11 @@ export const Bestsellers = async () => {
   const bestsellers = await getBestsellers(locale);
 
   return (
-    <Container>
+    <Container isCentered>
       <div className="flex justify-center">
         <Heading
           className=""
-          xl="6xl"
+          size="6xl"
         >
           Bestsellers
         </Heading>

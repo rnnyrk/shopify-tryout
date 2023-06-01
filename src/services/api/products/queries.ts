@@ -19,6 +19,7 @@ const PRODUCT_FRAGMENT = gql`
       edges {
         node {
           id
+          title
         }
       }
     }

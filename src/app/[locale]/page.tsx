@@ -1,12 +1,13 @@
 import { Bestsellers } from 'modules/home/Bestsellers';
-import { Container } from 'common/layout/Container';
+import { Usps } from 'modules/home/Usps';
 
 const Home = () => {
   return (
-    <Container>
+    <>
       {/* @ts-expect-error Server Component */}
       <Bestsellers />
-    </Container>
+      <Usps />
+    </>
   );
 };
 
