@@ -12,25 +12,24 @@ export const ProductItem = ({ product }: ProductItemProps) => {
   const t = useTranslations('Products');
 
   return (
-    <div
+    <Link
       key={product.id}
+      href={`/products/${product.handle}`}
       className="w-full mb-16 shadow-md rounded-md overflow-hidden transition-transform hover:-translate-y-2 lg:mb-0"
     >
-      <Link href={`/products/${product.handle}`}>
-        <ProductImage
-          src={product?.featuredImage?.url}
-          alt={product?.featuredImage?.altText || ''}
-        />
+      <ProductImage
+        src={product?.featuredImage?.url}
+        alt={product?.featuredImage?.altText || ''}
+      />
 
-        <div className="p-4 bg-white">
-          <Heading as="h2">{product.title}</Heading>
-          <p className="m-0">
-            <span>{t('from')}</span>{' '}
-            {formatPrice({ value: product.priceRange.minVariantPrice.amount })}
-          </p>
-        </div>
-      </Link>
-    </div>
+      <div className="p-4 bg-white">
+        <Heading as="h2">{product.title}</Heading>
+        <p className="m-0">
+          <span>{t('from')}</span>{' '}
+          {formatPrice({ value: product.priceRange.minVariantPrice.amount })}
+        </p>
+      </div>
+    </Link>
   );
 };
 
