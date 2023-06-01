@@ -4,7 +4,6 @@ import { Usps } from 'modules/home/Usps';
 const Home = () => {
   return (
     <>
-      {/* @ts-expect-error Server Component */}
       <Bestsellers />
       <Usps />
     </>
