@@ -2,12 +2,12 @@ import './global.css';
 import * as i from 'types';
 import clsx from 'clsx';
 import { AbstractIntlMessages, useLocale, NextIntlClientProvider } from 'next-intl';
-import { Inter } from 'next/font/google';
+import { Nunito_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 
 import { RootContent } from 'modules/layouts/RootContent';
 
-const inter = Inter({ subsets: ['latin'] });
+const nunito = Nunito_Sans({ subsets: ['latin'] });
 
 export const metadata = {
   title: {
@@ -69,7 +69,7 @@ const Layout = async ({ children, modal, params }: LayoutProps) => {
   return (
     <html
       lang={locale}
-      className={clsx('text-black bg-white', inter.className)}
+      className={clsx('text-black bg-background-main', nunito.className)}
     >
       <head />
       <NextIntlClientProvider

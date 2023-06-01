@@ -1,11 +1,16 @@
 {
   "MainMenu": {
     "home": "Thuis",
-    "products": "Producten"
+    "products": "Producten",
+    "about": "Over True Tallow",
+    "contact": "Contact"
   },
   "Home": {
     "title": "Thuis",
     "description": "Welkom op mijn Shopify pagina"
+  },
+  "Products": {
+    "from": "vanaf"
   },
   "Cart": {
     "title": "Winkelmand",

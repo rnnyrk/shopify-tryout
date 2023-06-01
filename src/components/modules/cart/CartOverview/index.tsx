@@ -9,12 +9,10 @@ import { CartItem } from './CartItem';
 import { CartPrices } from './CartPrices';
 
 const CartOverviewContent = ({ children }: { children?: React.ReactNode }) => {
-  const t = useTranslations('Cart');
   const { cart } = useStoreContext();
 
   return (
     <>
-      <Heading>{t('title')}</Heading>
       <div className="flex flex-wrap">
         <div className="w-full my-8">
           {cart.lineItems.length > 0 &&
@@ -31,6 +29,12 @@ const CartOverviewContent = ({ children }: { children?: React.ReactNode }) => {
       </div>
     </>
   );
+};
+
+const CartHeading = () => {
+  const t = useTranslations('Cart');
+
+  return <Heading>{t('title')}</Heading>;
 };
 
 const CartCheckout = () => {
@@ -51,6 +55,7 @@ const CartCheckout = () => {
 
 export const CartOverview = {
   Content: CartOverviewContent,
-  Prices: CartPrices,
   Checkout: CartCheckout,
+  Heading: CartHeading,
+  Prices: CartPrices,
 };

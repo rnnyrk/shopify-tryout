@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import Link from 'next-intl/link';
 
 import { getLocales } from 'services/api/locales';
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,26 +16,35 @@ export const LanguageSelect = async ({ className, locale }: LanguageSelectProps)
   // @TODO add Suspense
   if (!locales) return null;
 
+  const activeLocale = locales.find((l) => {
+    return l.isoCode === locale.toUpperCase();
+  });
+
   return (
-    <div className={clsx('min-w-[120px] w-[120px]', className)}>
-      <DropdownMenu>
-        <DropdownMenuTrigger>{locale}</DropdownMenuTrigger>
-        <DropdownMenuContent>
-          {locales.map((locale) => {
-            return (
-              <DropdownMenuItem key={locale.isoCode}>
-                <Link
-                  href="/"
-                  locale={locale.isoCode.toLowerCase()}
-                >
-                  {locale.endonymName}
-                </Link>
-              </DropdownMenuItem>
-            );
-          })}
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger
+        className={clsx(
+          'py-2 min-w-[120px] w-[120px] transition-colors bg-background-main hover:bg-background-hover rounded-lg',
+          className,
+        )}
+      >
+        {activeLocale?.endonymName}
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="bg-white">
+        {locales.map((locale) => {
+          return (
+            <DropdownMenuItem key={locale.isoCode}>
+              <Link
+                href="/"
+                locale={locale.isoCode.toLowerCase()}
+              >
+                {locale.endonymName}
+              </Link>
+            </DropdownMenuItem>
+          );
+        })}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 

@@ -4,21 +4,21 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['var(--font-inter)'],
+        serif: ['var(--font-nunito-sans)'],
       },
       colors: {
         primary: {
-          50: '#f6faf3',
-          100: '#e9f5e3',
-          200: '#d3eac8',
-          300: '#afd89d',
-          400: '#82bd69',
-          500: '#61a146',
-          600: '#4c8435',
-          700: '#3d692c',
-          800: '#345427',
-          900: '#2b4522',
-          950: '#13250e',
+          50: '#f0f9f2',
+          100: '#daf1de',
+          200: '#c5e7cd',
+          300: '#89cc9d',
+          400: '#58af75',
+          500: '#369358',
+          600: '#267545',
+          700: '#1e5e39',
+          800: '#1a4b2e',
+          900: '#163e27',
+          950: '#0c2216',
         },
         secondary: {
           50: '#eff8ff',
@@ -32,6 +32,10 @@ module.exports = {
           800: '#2157ac',
           900: '#204b88',
           950: '#182f53',
+        },
+        background: {
+          main: '#FFF0E0',
+          hover: '#D6D5C3',
         },
       },
     },
