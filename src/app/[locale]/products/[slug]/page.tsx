@@ -17,7 +17,7 @@ const Product = async ({ params }: ProductParams) => {
 
   return (
     <Container>
-      <article className="w-full flex flex-wrap lg:justify-between">
+      <article className="w-full flex flex-wrap rounded-lg overflow-hidden bg-white lg:justify-between">
         <div className="w-full lg:w-2/4">
           <ProductImage
             src={product?.featuredImage?.url}
@@ -26,7 +26,7 @@ const Product = async ({ params }: ProductParams) => {
           />
         </div>
 
-        <div className="flex flex-col lg:w-2/4 lg:pl-16">
+        <div className="flex flex-col p-4 lg:w-2/4 lg:p-12">
           <Heading className="my-2 lg:my-0">{product.title}</Heading>
           <p className="my-4">{product.description}</p>
           <ProductSelect product={product} />

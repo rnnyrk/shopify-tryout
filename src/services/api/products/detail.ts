@@ -26,6 +26,10 @@ export const getProduct = async ({
           id: edge.node.id,
           title: edge.node.title,
         })),
+        // metafields: data.product.metafields.edges.map((edge) => ({
+        //   key: edge.node.key,
+        //   value: edge.node.value,
+        // })),
       };
     })
     .catch((error) => {

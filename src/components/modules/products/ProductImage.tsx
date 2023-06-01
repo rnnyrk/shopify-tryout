@@ -5,7 +5,7 @@ export const ProductImage = ({ alt, src, size }: ProductImageProps) => {
   return (
     <figure
       className={clsx('relative w-full h-60', {
-        'lg:h-96': size === 'large',
+        'lg:h-full': size === 'large',
       })}
     >
       <Image

@@ -55,6 +55,10 @@ export const GetProductDetailQuery = gql`
           }
         }
       }
+      productIngredients: metafield(namespace: "custom", key: "product_ingredients") {
+        value
+        key
+      }
     }
   }
 `;
