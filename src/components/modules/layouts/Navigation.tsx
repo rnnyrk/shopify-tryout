@@ -16,7 +16,6 @@ export const Navigation = ({ locale }: NavigationProps) => {
       </a>
       <MainMenu />
       <div className="flex items-center">
-        {/* @ts-expect-error Server Component */}
         <LanguageSelect
           className="mr-6"
           locale={locale}
