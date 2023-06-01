@@ -6,7 +6,7 @@ import { MainMenu } from './MainMenu';
 
 export const Navigation = ({ locale }: NavigationProps) => {
   return (
-    <nav className="w-full h-20 px-8 flex items-center justify-between bg-white">
+    <nav className="absolute top-0 left-0 w-full h-20 px-8 flex items-center justify-between bg-white">
       <div className="flex items-center">
         <a
           href="/"

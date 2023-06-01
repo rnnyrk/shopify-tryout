@@ -9,9 +9,8 @@ import { Navigation } from './Navigation';
 export const RootContent = ({ children, locale }: RootContentProps) => {
   return (
     <RootLayout>
-      <Hero>
-        <Navigation locale={locale} />
-      </Hero>
+      <Navigation locale={locale} />
+      <Hero />
       <main className="max-w-6xl mx-auto">{children}</main>
     </RootLayout>
   );
