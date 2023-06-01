@@ -15,6 +15,8 @@ export const getProduct = async ({
     language,
   })
     .then((data: { product: Product }) => {
+      console.log({ product: data.product });
+
       return {
         id: data.product.id,
         title: data.product.title,
@@ -26,6 +28,10 @@ export const getProduct = async ({
           id: edge.node.id,
           title: edge.node.title,
         })),
+        // metafields: data.product.metafields.edges.map((edge) => ({
+        //   key: edge.node.key,
+        //   value: edge.node.value,
+        // })),
       };
     })
     .catch((error) => {
