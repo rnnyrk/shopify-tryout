@@ -1,4 +1,5 @@
-import Image from 'next/image';
+import * as i from 'types';
+import { useLocale } from 'next-intl';
 
 import { getProduct } from 'services/api/products/detail';
 import { ProductSelect } from 'modules/products/ProductSelect';
@@ -7,10 +8,11 @@ import { Container } from 'common/layout/Container';
 import { ProductImage } from 'modules/products/ProductImage';
 
 const Product = async ({ params }: ProductParams) => {
+  const locale = useLocale() as i.Locale;
   const { slug } = params;
 
   // @TODO use Suspense
-  const product = await getProduct(slug);
+  const product = await getProduct({ locale, slug });
   if (!product) return null;
 
   return (

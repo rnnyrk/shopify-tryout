@@ -2,12 +2,12 @@ import './global.css';
 import * as i from 'types';
 import clsx from 'clsx';
 import { AbstractIntlMessages, useLocale, NextIntlClientProvider } from 'next-intl';
-import { Inter } from 'next/font/google';
+import { Nunito_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 
-import { RootLayout } from 'modules/layouts/RootLayout';
+import { RootContent } from 'modules/layouts/RootContent';
 
-const inter = Inter({ subsets: ['latin'] });
+const nunito = Nunito_Sans({ subsets: ['latin'] });
 
 export const metadata = {
   title: {
@@ -50,7 +50,7 @@ export const metadata = {
   },
 };
 
-const Layout = async ({ children, params }: LayoutProps) => {
+const Layout = async ({ children, modal, params }: LayoutProps) => {
   const locale = useLocale();
 
   if (params.locale !== locale) {
@@ -69,14 +69,19 @@ const Layout = async ({ children, params }: LayoutProps) => {
   return (
     <html
       lang={locale}
-      className={clsx('text-black bg-white', inter.className)}
+      className={clsx('text-black bg-background-main', nunito.className)}
     >
       <head />
       <NextIntlClientProvider
         locale={locale}
         messages={translations}
       >
-        <RootLayout locale={locale}>{children}</RootLayout>
+        <RootContent locale={locale}>
+          <>
+            {children}
+            {modal}
+          </>
+        </RootContent>
       </NextIntlClientProvider>
     </html>
   );
@@ -84,6 +89,7 @@ const Layout = async ({ children, params }: LayoutProps) => {
 
 type LayoutProps = {
   children: React.ReactNode;
+  modal: React.ReactNode;
   params: {
     locale: i.Locale;
   };

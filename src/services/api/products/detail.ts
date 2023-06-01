@@ -4,8 +4,16 @@ import type { Product } from '@shopify/hydrogen-react/storefront-api-types';
 import { GetProductDetailQuery } from './queries';
 import { graphQLQuery } from '../';
 
-export const getProduct = async (slug: string): Promise<i.ClientProduct | null> => {
-  return graphQLQuery(GetProductDetailQuery, { handle: slug })
+export const getProduct = async ({
+  locale,
+  slug,
+}: GetProductProps): Promise<i.ClientProduct | null> => {
+  const language = locale.toUpperCase();
+
+  return graphQLQuery(GetProductDetailQuery, {
+    handle: slug,
+    language,
+  })
     .then((data: { product: Product }) => {
       return {
         id: data.product.id,
@@ -24,4 +32,9 @@ export const getProduct = async (slug: string): Promise<i.ClientProduct | null> 
       console.error(error);
       return null;
     });
+};
+
+type GetProductProps = {
+  locale: i.Locale;
+  slug: string;
 };

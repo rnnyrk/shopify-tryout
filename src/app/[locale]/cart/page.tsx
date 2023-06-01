@@ -11,7 +11,8 @@ export const metadata = {
 const Cart = () => {
   return (
     <Container>
-      <CartOverview />
+      <CartOverview.Heading />
+      <CartOverview.Content />
     </Container>
   );
 };

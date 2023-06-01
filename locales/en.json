@@ -1,11 +1,16 @@
 {
   "MainMenu": {
     "home": "Home",
-    "products": "Products"
+    "products": "Products",
+    "about": "About True Tallow",
+    "contact": "Contact"
   },
   "Home": {
     "title": "Home",
     "description": "Welcome to my Shopify home page"
+  },
+  "Products": {
+    "from": "from"
   },
   "Cart": {
     "title": "Cart",
