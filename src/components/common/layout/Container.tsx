@@ -1,10 +1,11 @@
 import clsx from 'clsx';
 
-export const Container = ({ className, children, isCentered }: ContainerProps) => {
+export const Container = ({ className, children, isCentered, noPadding }: ContainerProps) => {
   return (
     <section
-      className={clsx('py-16 px-6 lg:py-32 lg:px-0', className, {
-        'max-w-6xl mx-auto': Boolean(isCentered),
+      className={clsx(className, {
+        'max-w-6xl mx-auto': isCentered,
+        'py-16 px-6 lg:py-32 lg:px-0': !noPadding,
       })}
     >
       {children}
@@ -16,4 +17,5 @@ type ContainerProps = {
   children: React.ReactNode;
   className?: string;
   isCentered?: boolean;
+  noPadding?: boolean;
 };

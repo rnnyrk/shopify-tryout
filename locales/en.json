@@ -2,8 +2,7 @@
   "MainMenu": {
     "home": "Home",
     "products": "Products",
-    "about": "About",
-    "contact": "Contact"
+    "about": "About"
   },
   "Hero": {
     "title": "Welcome to the farm",

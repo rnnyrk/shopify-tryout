@@ -33,6 +33,7 @@ export const GetProductsQuery = gql`
       edges {
         node {
           ...productFields
+          productType
         }
       }
     }

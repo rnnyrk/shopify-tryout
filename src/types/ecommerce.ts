@@ -32,6 +32,7 @@ export type ClientProduct = Pick<
   'id' | 'title' | 'description' | 'handle' | 'priceRange' | 'featuredImage'
 > & {
   variants: i.ClientVariant[];
+  productType?: 'handpomp' | 'creme' | 'zonnebrand' | 'lippenbalsem';
 };
 
 export type ClientVariant = {

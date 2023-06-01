@@ -2,8 +2,7 @@
   "MainMenu": {
     "home": "Thuis",
     "products": "Producten",
-    "about": "Over ons",
-    "contact": "Contact"
+    "about": "Over ons"
   },
   "Hero": {
     "title": "Welkom op de boerderij",
