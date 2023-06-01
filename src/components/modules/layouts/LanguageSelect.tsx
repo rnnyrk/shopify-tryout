@@ -12,8 +12,8 @@ import {
 } from 'common/interaction/DropdownMenu';
 
 const flags: Record<string, string> = {
-  en: 'vectors/flags/en.svg',
-  nl: 'vectors/flags/nl.svg',
+  en: '/vectors/flags/en.svg',
+  nl: '/vectors/flags/nl.svg',
 };
 
 const FlagImage = ({ src }: { src: string }) => {
