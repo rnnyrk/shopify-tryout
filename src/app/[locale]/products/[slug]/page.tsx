@@ -16,7 +16,7 @@ const Product = async ({ params }: ProductParams) => {
   if (!product) return null;
 
   return (
-    <Container>
+    <Container isCentered>
       <article className="w-full flex flex-wrap rounded-lg overflow-hidden bg-white lg:justify-between">
         <div className="w-full lg:w-2/4">
           <ProductImage
