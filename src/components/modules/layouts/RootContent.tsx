@@ -11,7 +11,7 @@ export const RootContent = ({ children, locale }: RootContentProps) => {
     <RootLayout>
       <Navigation locale={locale} />
       <Hero />
-      <main className="max-w-6xl mx-auto">{children}</main>
+      <main>{children}</main>
     </RootLayout>
   );
 };

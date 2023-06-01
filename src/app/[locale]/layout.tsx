@@ -50,7 +50,7 @@ export const metadata = {
   },
 };
 
-const Layout = async ({ children, modal, params }: LayoutProps) => {
+const Layout = async ({ children, params }: LayoutProps) => {
   const locale = useLocale();
 
   if (params.locale !== locale) {
@@ -77,10 +77,7 @@ const Layout = async ({ children, modal, params }: LayoutProps) => {
         messages={translations}
       >
         <RootContent locale={locale}>
-          <>
-            {children}
-            {modal}
-          </>
+          {children}
         </RootContent>
       </NextIntlClientProvider>
     </html>
