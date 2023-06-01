@@ -14,6 +14,7 @@ import {
 const flags: Record<string, string> = {
   en: '/vectors/flags/en.svg',
   nl: '/vectors/flags/nl.svg',
+  de: '/vectors/flags/de.svg',
 };
 
 const FlagImage = ({ src }: { src: string }) => {
