@@ -4,6 +4,7 @@ import * as i from 'types';
 import { RootLayout } from 'modules/layouts/RootLayout';
 
 import { Hero } from './Hero';
+import { Footer } from './Footer';
 import { Navigation } from './Navigation';
 
 export const RootContent = ({ children, locale }: RootContentProps) => {
@@ -12,6 +13,7 @@ export const RootContent = ({ children, locale }: RootContentProps) => {
       <Navigation locale={locale} />
       <Hero />
       <main>{children}</main>
+      <Footer />
     </RootLayout>
   );
 };

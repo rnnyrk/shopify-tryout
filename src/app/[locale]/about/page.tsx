@@ -10,7 +10,7 @@ export const metadata = {
 
 const About = () => {
   return (
-    <Container>
+    <Container isCentered>
       <Heading>About</Heading>
     </Container>
   );

@@ -16,7 +16,7 @@ const MenuItem = ({ href, children }) => {
   }
   return (
     <li
-      className={clsx('mx-4 font-medium text-lg transition-colors hover:text-primary-600', {
+      className={clsx('mx-4 font-bold text-md transition-colors hover:text-primary-600', {
         'text-primary-400': isActive,
         'text-black': !isActive,
       })}
@@ -30,11 +30,10 @@ export const MainMenu = () => {
   const t = useTranslations('MainMenu');
 
   return (
-    <ul className="flex flex-[2] justify-center">
+    <ul className="flex flex-[2] justify-center ml-8">
       <MenuItem href="/">{t('home')}</MenuItem>
       <MenuItem href="/products">{t('products')}</MenuItem>
       <MenuItem href="/about">{t('about')}</MenuItem>
-      <MenuItem href="/contact">{t('contact')}</MenuItem>
     </ul>
   );
 };

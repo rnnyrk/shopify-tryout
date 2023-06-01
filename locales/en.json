@@ -2,8 +2,13 @@
   "MainMenu": {
     "home": "Home",
     "products": "Products",
-    "about": "About",
-    "contact": "Contact"
+    "about": "About"
+  },
+  "Hero": {
+    "title": "Welcome to the farm",
+    "subtitle": "We have the best cows and yaks in the world",
+    "button": "Shop now",
+    "button_alt": "Why tallow"
   },
   "Home": {
     "bestsellers": "Bestsellers"

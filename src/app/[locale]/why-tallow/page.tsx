@@ -3,17 +3,17 @@ import { Heading } from 'common/typography/Heading';
 
 export const metadata = {
   title: {
-    default: 'Contact',
-    template: '%s | Contact',
+    default: 'WhyTallow',
+    template: '%s | WhyTallow',
   },
 };
 
-const Contact = () => {
+const WhyTallow = () => {
   return (
-    <Container>
-      <Heading>Contact</Heading>
+    <Container isCentered>
+      <Heading>WhyTallow</Heading>
     </Container>
   );
 };
 
-export default Contact;
+export default WhyTallow;

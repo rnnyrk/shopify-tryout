@@ -2,8 +2,13 @@
   "MainMenu": {
     "home": "Thuis",
     "products": "Producten",
-    "about": "Over ons",
-    "contact": "Contact"
+    "about": "Over ons"
+  },
+  "Hero": {
+    "title": "Welkom op de boerderij",
+    "subtitle": "Wij hebben de beste koeien en yaks in de wereld",
+    "button": "Onze producten",
+    "button_alt": "Waarom talg"
   },
   "Home": {
     "title": "Thuis",

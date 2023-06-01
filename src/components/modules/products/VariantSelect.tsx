@@ -9,6 +9,7 @@ export const VariantSelect = ({ onChange, variants, selectedVariantId }: Variant
 
         return (
           <button
+            key={variant.id}
             className={clsx(
               `w-full py-2 px-4 mb-2 lg:w-auto lg:mr-2 lg:my-2 font-semibold rounded-md`,
               {

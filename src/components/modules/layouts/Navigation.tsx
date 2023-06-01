@@ -8,15 +8,13 @@ export const Navigation = ({ locale }: NavigationProps) => {
   // @TODO lock
   return (
     <nav className="w-full h-20 px-8 flex items-center justify-between bg-white">
-      <div className="flex items-center">
-        <a
-          href="/"
-          className="mr-8 uppercase text-xl font-bold tracking-widest"
-        >
-          Mellow Tallow
-        </a>
-        <MainMenu />
-      </div>
+      <a
+        href="/"
+        className="mr-8 uppercase text-xl font-bold tracking-widest"
+      >
+        Mellow Tallow
+      </a>
+      <MainMenu />
       <div className="flex items-center">
         {/* @ts-expect-error Server Component */}
         <LanguageSelect
