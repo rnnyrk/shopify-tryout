@@ -7,7 +7,7 @@ import { MainMenu } from './MainMenu';
 export const Navigation = ({ locale }: NavigationProps) => {
   // @TODO lock
   return (
-    <nav className="w-full h-20 px-8 flex items-center justify-between bg-white">
+    <nav className="w-full h-20 px-8 flex flex-col items-center justify-between bg-white lg:flex-row">
       <a
         href="/"
         className="mr-8 uppercase text-xl font-bold tracking-widest"
