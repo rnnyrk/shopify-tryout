@@ -6,7 +6,7 @@ specifiers:
   '@babel/plugin-transform-react-jsx': 7.22.3
   '@ianvs/prettier-plugin-sort-imports': 4.0.1
   '@next/eslint-plugin-next': 13.4.4
-  '@radix-ui/react-dropdown-menu': ^2.0.5
+  '@radix-ui/react-dropdown-menu': 2.0.5
   '@radix-ui/react-select': 1.2.2
   '@shopify/hydrogen-react': 2023.4.3
   '@svgr/webpack': 8.0.1
@@ -18,7 +18,7 @@ specifiers:
   '@typescript-eslint/parser': 5.59.8
   autoprefixer: 10.4.14
   clsx: 1.2.1
-  currency.js: ^2.0.4
+  currency.js: 2.0.4
   eslint: 8.41.0
   eslint-config-next: 13.4.4
   eslint-config-prettier: 8.8.0
@@ -3283,7 +3283,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001492
-      electron-to-chromium: 1.4.414
+      electron-to-chromium: 1.4.416
       node-releases: 2.0.12
       update-browserslist-db: 1.0.11_browserslist@4.21.7
 
@@ -3712,8 +3712,8 @@ packages:
       tslib: 2.5.2
     dev: true
 
-  /electron-to-chromium/1.4.414:
-    resolution: {integrity: sha512-RRuCvP6ekngVh2SAJaOKT/hxqc9JAsK+Pe0hP5tGQIfonU2Zy9gMGdJ+mBdyl/vNucMG6gkXYtuM4H/1giws5w==}
+  /electron-to-chromium/1.4.416:
+    resolution: {integrity: sha512-AUYh0XDTb2vrj0rj82jb3P9hHSyzQNdTPYWZIhPdCOui7/vpme7+HTE07BE5jwuqg/34TZ8ktlRz6GImJ4IXjA==}
 
   /emoji-regex/9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
@@ -5252,8 +5252,8 @@ packages:
       tslib: 2.5.2
     dev: true
 
-  /node-abi/3.40.0:
-    resolution: {integrity: sha512-zNy02qivjjRosswoYmPi8hIKJRr8MpQyeKT6qlcq/OnOgA3Rhoae+IYOqsM9V5+JnHWmxKnWOT2GxvtqdtOCXA==}
+  /node-abi/3.43.0:
+    resolution: {integrity: sha512-QB0MMv+tn9Ur2DtJrc8y09n0n6sw88CyDniWSX2cHW10goQXYPK9ZpFJOktDS4ron501edPX6h9i7Pg+RnH5nQ==}
     engines: {node: '>=10'}
     dependencies:
       semver: 7.5.1
@@ -5588,7 +5588,7 @@ packages:
       minimist: 1.2.8
       mkdirp-classic: 0.5.3
       napi-build-utils: 1.0.2
-      node-abi: 3.40.0
+      node-abi: 3.43.0
       pump: 3.0.0
       rc: 1.2.8
       simple-get: 4.0.1
