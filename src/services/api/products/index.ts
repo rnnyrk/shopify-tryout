@@ -14,8 +14,6 @@ export const getProducts = async (locale: i.Locale): Promise<i.ClientProduct[] |
         productType: item.node.productType as i.ClientProduct['productType'],
         variants: item.node.variants.edges.map((variant) => variant.node),
       }));
-      // @TODO productType
-      // console.log({ products });
 
       return products;
     })

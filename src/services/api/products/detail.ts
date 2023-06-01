@@ -14,7 +14,7 @@ export const getProduct = async ({
     handle: slug,
     language,
   })
-    .then((data: { product: Product }) => {
+    .then((data: { product: Product & i.ProductMetaFields }) => {
       return {
         id: data.product.id,
         title: data.product.title,
@@ -26,10 +26,7 @@ export const getProduct = async ({
           id: edge.node.id,
           title: edge.node.title,
         })),
-        // metafields: data.product.metafields.edges.map((edge) => ({
-        //   key: edge.node.key,
-        //   value: edge.node.value,
-        // })),
+        productIngredients: data.product.productIngredients,
       };
     })
     .catch((error) => {
