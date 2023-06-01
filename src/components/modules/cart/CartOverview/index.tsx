@@ -8,7 +8,7 @@ import { Button } from 'common/interaction/Button';
 import { CartItem } from './CartItem';
 import { CartPrices } from './CartPrices';
 
-export const CartOverview = () => {
+const CartOverviewContent = ({ children }: { children?: React.ReactNode }) => {
   const t = useTranslations('Cart');
   const { cart } = useStoreContext();
 
@@ -27,18 +27,30 @@ export const CartOverview = () => {
               );
             })}
         </div>
-
-        <CartPrices />
-
-        <div className="w-full flex justify-end mt-8">
-          <Button
-            type="link"
-            href={cart.checkoutUrl}
-          >
-            {t('checkout')}
-          </Button>
-        </div>
+        {children ?? null}
       </div>
     </>
   );
+};
+
+const CartCheckout = () => {
+  const t = useTranslations('Cart');
+  const { cart } = useStoreContext();
+
+  return (
+    <div className="w-full flex justify-end mt-8">
+      <Button
+        type="link"
+        href={cart.checkoutUrl}
+      >
+        {t('checkout')}
+      </Button>
+    </div>
+  );
+};
+
+export const CartOverview = {
+  Content: CartOverviewContent,
+  Prices: CartPrices,
+  Checkout: CartCheckout,
 };

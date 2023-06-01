@@ -5,7 +5,7 @@ import { AbstractIntlMessages, useLocale, NextIntlClientProvider } from 'next-in
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 
-import { RootLayout } from 'modules/layouts/RootLayout';
+import { RootContent } from 'modules/layouts/RootContent';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -50,7 +50,7 @@ export const metadata = {
   },
 };
 
-const Layout = async ({ children, params }: LayoutProps) => {
+const Layout = async ({ children, modal, params }: LayoutProps) => {
   const locale = useLocale();
 
   if (params.locale !== locale) {
@@ -76,7 +76,12 @@ const Layout = async ({ children, params }: LayoutProps) => {
         locale={locale}
         messages={translations}
       >
-        <RootLayout locale={locale}>{children}</RootLayout>
+        <RootContent locale={locale}>
+          <>
+            {children}
+            {modal}
+          </>
+        </RootContent>
       </NextIntlClientProvider>
     </html>
   );
@@ -84,6 +89,7 @@ const Layout = async ({ children, params }: LayoutProps) => {
 
 type LayoutProps = {
   children: React.ReactNode;
+  modal: React.ReactNode;
   params: {
     locale: i.Locale;
   };
