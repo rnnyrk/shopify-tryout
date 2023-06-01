@@ -7,7 +7,7 @@ import { Heading } from 'common/typography/Heading';
 
 export const Hero = () => {
   return (
-    <div className="w-full h-[50vh] mt-20 relative">
+    <div className="w-full h-[50vh] relative">
       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
         <Heading className="text-6xl mb-2 font-bold text-center text-white">
           Welcome to the farm

@@ -5,14 +5,15 @@ import { LanguageSelect } from './LanguageSelect';
 import { MainMenu } from './MainMenu';
 
 export const Navigation = ({ locale }: NavigationProps) => {
+  // @TODO lock
   return (
-    <nav className="absolute top-0 left-0 w-full h-20 px-8 flex items-center justify-between bg-white">
+    <nav className="w-full h-20 px-8 flex items-center justify-between bg-white">
       <div className="flex items-center">
         <a
           href="/"
           className="mr-8 uppercase text-xl font-bold tracking-widest"
         >
-          True Tallow
+          Mellow Tallow
         </a>
         <MainMenu />
       </div>

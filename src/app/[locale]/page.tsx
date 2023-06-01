@@ -1,18 +1,11 @@
-'use client';
-import { useTranslations } from 'next-intl';
-
+import { Bestsellers } from 'modules/home/Bestsellers';
 import { Container } from 'common/layout/Container';
-import { Heading } from 'common/typography/Heading';
 
 const Home = () => {
-  const t = useTranslations('Home');
-
   return (
     <Container>
-      <article>
-        <Heading>{t('title')}</Heading>
-        <p className="my-4">{t('description')}</p>
-      </article>
+      {/* @ts-expect-error Server Component */}
+      <Bestsellers />
     </Container>
   );
 };
