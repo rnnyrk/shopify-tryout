@@ -11,7 +11,7 @@ export const getProducts = async (locale: i.Locale): Promise<i.ClientProduct[] |
     .then((data: { products: ProductConnection }) => {
       const products: i.ClientProduct[] = data.products.edges.map((item) => ({
         ...item.node,
-        // productType: item.node.productType as i.ClientProduct['productType'],
+        productType: item.node.productType as i.ClientProduct['productType'],
         variants: item.node.variants.edges.map((variant) => variant.node),
       }));
       // @TODO productType
@@ -30,10 +30,12 @@ export const getBestsellers = async (locale: i.Locale): Promise<i.ClientProduct[
 
   return graphQLQuery(GetBestsellersQuery, { language })
     .then((data: { collection: Collection }) => {
-      const products: i.ClientProduct[] = data.collection.products.edges.map((item) => ({
-        ...item.node,
-        variants: item.node.variants.edges.map((variant) => variant.node),
-      }));
+      const products: Omit<i.ClientProduct, 'productType'>[] = data.collection.products.edges.map(
+        (item) => ({
+          ...item.node,
+          variants: item.node.variants.edges.map((variant) => variant.node),
+        }),
+      );
 
       return products;
     })
