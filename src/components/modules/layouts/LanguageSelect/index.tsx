@@ -30,7 +30,7 @@ export const LanguageSelect = async ({ className, locale }: LanguageSelectProps)
     <DropdownMenu>
       <DropdownMenuTrigger
         className={clsx(
-          'flex items-center py-2 px-4 min-w-[140px] w-[140px] transition-colors bg-background-main hover:bg-background-hover rounded-lg',
+          'flex items-center py-2 px-4 w-full min-w-full lg:min-w-[140px] lg:w-[140px] rounded-lg transition-colors bg-background-main hover:bg-background-hover',
           className,
         )}
       >
