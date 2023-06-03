@@ -17,7 +17,6 @@ export const LanguageSelect = async ({ className }: LanguageSelectProps) => {
   const locale = useLocale();
   const locales = await getLocales();
 
-  // @TODO add Suspense
   if (!locales) return null;
 
   const activeLocale = locales.find((l) => {
@@ -38,7 +37,10 @@ export const LanguageSelect = async ({ className }: LanguageSelectProps) => {
         <FlagImage src={flag} />
         {activeLocale?.endonymName}
       </DropdownMenuTrigger>
-      <LanguageDropdown {...{ flags, locales }} />
+      <LanguageDropdown
+        flags={flags}
+        locales={locales}
+      />
     </DropdownMenu>
   );
 };

@@ -17,13 +17,10 @@ export const ProductFilter = ({ productTypes }: ProductFilterProps) => {
         return (
           <button
             key={`productType_${productType}`}
-            className={clsx(
-              'w-full py-2 px-4 mb-2 lg:w-auto lg:mr-2 lg:my-2 font-semibold rounded-md',
-              {
-                'text-white bg-primary-400': isActive,
-                'bg-slate-200': !isActive,
-              },
-            )}
+            className={clsx('w-full py-2 px-4 lg:w-auto lg:mr-2 font-semibold rounded-md', {
+              'text-white bg-primary-400': isActive,
+              'bg-slate-200': !isActive,
+            })}
             onClick={() => setQueryParams({ productType })}
           >
             {t(`filter.${productType}`)}
