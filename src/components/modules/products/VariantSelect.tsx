@@ -11,9 +11,9 @@ export const VariantSelect = ({ onChange, variants, selectedVariantId }: Variant
           <button
             key={variant.id}
             className={clsx(
-              `w-full py-2 px-4 mb-2 lg:w-auto lg:mr-2 lg:my-2 font-semibold rounded-md`,
+              'w-full py-2 px-4 mb-2 lg:w-auto lg:mr-2 lg:my-2 font-semibold rounded-md',
               {
-                'text-white bg-primary-600': isActive,
+                'text-white bg-primary-400': isActive,
                 'bg-slate-200': !isActive,
               },
             )}
@@ -29,6 +29,6 @@ export const VariantSelect = ({ onChange, variants, selectedVariantId }: Variant
 
 type VariantSelectProps = {
   onChange: (variantId: string) => void;
-  variants: i.ClientVariant[];
+  variants: i.Variant[];
   selectedVariantId: string;
 };

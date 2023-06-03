@@ -14,7 +14,16 @@
     "bestsellers": "Bestsellers"
   },
   "Products": {
-    "from": "from"
+    "disclaimer": "Disclaimer",
+    "disclaimer_text": "The FDA says ONLY a drug can treat, prevent or cure a disease. We make NO MEDICAL CLAIMS or CURE CLAIMS for the product.",
+    "from": "from",
+    "filter": {
+      "creme": "Creme",
+      "handpomp": "Hand pump",
+      "lippenbalsem": "Lip balm",
+      "zonnebrand": "Sunscreen cream"
+    },
+    "ingredients": "Ingredients"
   },
   "Cart": {
     "title": "Cart",

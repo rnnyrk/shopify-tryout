@@ -28,11 +28,23 @@ const PRODUCT_FRAGMENT = gql`
 
 export const GetProductsQuery = gql`
   ${PRODUCT_FRAGMENT}
-  query getProducts($language: LanguageCode!) @inContext(language: $language) {
-    products(first: 10) {
+  query getProducts($language: LanguageCode!, $query: String) @inContext(language: $language) {
+    products(first: 10, query: $query) {
       edges {
         node {
           ...productFields
+          productType
+        }
+      }
+    }
+  }
+`;
+
+export const GetProductTypesQuery = gql`
+  query getProducts($language: LanguageCode!) @inContext(language: $language) {
+    products(first: 100) {
+      edges {
+        node {
           productType
         }
       }

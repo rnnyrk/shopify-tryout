@@ -1,15 +1,15 @@
+import * as i from 'types';
+import { Suspense } from 'react';
 import { useLocale } from 'next-intl';
 
 import { getBestsellers } from 'services/api/products';
 import { Container } from 'common/layout/Container';
 import { Heading } from 'common/typography/Heading';
 import { ProductItem } from 'modules/products/ProductItem';
-import * as i from 'types';
+import { ProductOverviewLoader } from 'modules/products/ProductOverviewLoader';
 
 export const Bestsellers = async () => {
   const locale = useLocale() as i.Locale;
-
-  // @TODO use Suspense
   const bestsellers = await getBestsellers(locale);
 
   return (
@@ -23,14 +23,15 @@ export const Bestsellers = async () => {
         </Heading>
       </div>
       <div className="flex flex-col mt-12 lg:grid lg:gap-16 lg:grid-cols-3">
-        {bestsellers &&
-          bestsellers.length > 0 &&
-          bestsellers.map((product) => (
-            <ProductItem
-              key={product.id}
-              product={product}
-            />
-          ))}
+        <Suspense fallback={<ProductOverviewLoader />}>
+          {bestsellers &&
+            bestsellers.map((product) => (
+              <ProductItem
+                key={product.id}
+                product={product}
+              />
+            ))}
+        </Suspense>
       </div>
     </Container>
   );

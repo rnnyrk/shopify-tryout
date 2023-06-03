@@ -21,10 +21,10 @@ export const CartSheet = () => {
 
   return (
     <Sheet>
-      <SheetTrigger className="relative">
+      <SheetTrigger className="relative flex items-center py-2 px-4 w-full mt-2 lg:mt-0 rounded-lg bg-background-main lg:bg-transparent">
         <CartIcon />
         {cartQuantity > 0 && (
-          <div className="absolute flex items-center justify-center top-[-16px] right-[-16px] rounded-full w-[24px] h-[24px] text-white text-sm bg-primary-400">
+          <div className="absolute flex items-center justify-center top-[-4px] right-[-4px] rounded-full w-[24px] h-[24px] text-white text-sm bg-primary-400">
             {cartQuantity}
           </div>
         )}

@@ -30,17 +30,17 @@ export const LanguageDropdown = ({ locales, flags }: LanguageDropdownProps) => {
   return (
     <DropdownMenuContent className="bg-white">
       {locales.map((locale) => {
-        const currentIsoCode = locale.isoCode.toLowerCase();
-        const currentFlag = flags[currentIsoCode];
+        const isoCode = locale.isoCode.toLowerCase();
+        const flag = flags[isoCode];
 
         return (
           <DropdownMenuItem key={locale.isoCode}>
             <Link
               href={replaceLocaleInUrl(locale.isoCode.toLowerCase())}
-              locale={currentIsoCode}
+              locale={isoCode}
               className="flex items-center"
             >
-              <FlagImage src={currentFlag} />
+              <FlagImage src={flag} />
               {locale.endonymName}
             </Link>
           </DropdownMenuItem>
