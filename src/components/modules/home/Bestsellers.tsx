@@ -6,7 +6,7 @@ import { getBestsellers } from 'services/api/products';
 import { Container } from 'common/layout/Container';
 import { Heading } from 'common/typography/Heading';
 import { ProductItem } from 'modules/products/ProductItem';
-import { Skeleton } from 'common/layout/Skeleton';
+import { ProductOverviewLoader } from 'modules/products/ProductOverviewLoader';
 
 export const Bestsellers = async () => {
   const locale = useLocale() as i.Locale;
@@ -23,7 +23,7 @@ export const Bestsellers = async () => {
         </Heading>
       </div>
       <div className="flex flex-col mt-12 lg:grid lg:gap-16 lg:grid-cols-3">
-        <Suspense fallback={<Skeleton className="w-[341px] h-[364px] rounded-md bg-slate-200" />}>
+        <Suspense fallback={<ProductOverviewLoader />}>
           {bestsellers &&
             bestsellers.map((product) => (
               <ProductItem
