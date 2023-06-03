@@ -76,9 +76,7 @@ const Layout = async ({ children, params }: LayoutProps) => {
         locale={locale}
         messages={translations}
       >
-        <RootContent locale={locale}>
-          {children}
-        </RootContent>
+        <RootContent>{children}</RootContent>
       </NextIntlClientProvider>
     </html>
   );

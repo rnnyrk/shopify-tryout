@@ -1,23 +1,18 @@
 'use client';
-import * as i from 'types';
 import clsx from 'clsx';
 import { useState } from 'react';
 
 import MenuIcon from 'vectors/menu.svg';
 import { CartSheet } from 'modules/cart/CartSheet';
 
-import { LanguageSelect } from './LanguageSelect';
 import { MainMenu } from './MainMenu';
 
-export const Navigation = ({ locale }: NavigationProps) => {
+export const Navigation = ({ children }: NavigationProps) => {
   const [isOpen, setOpen] = useState(false);
-
-  console.info({ isOpen });
-
   // @TODO lock position on scroll
 
   return (
-    <nav className="w-full h-20 px-4 flex flex-col justify-center bg-white lg:flex-row lg:px-8 lg:items-center lg:justify-between">
+    <nav className="relative w-full h-20 px-4 flex flex-col justify-center bg-white lg:flex-row lg:px-8 lg:items-center lg:justify-between">
       <div className="relative z-30 flex justify-between w-full lg:w-auto">
         <a
           href="/"
@@ -28,7 +23,7 @@ export const Navigation = ({ locale }: NavigationProps) => {
 
         <button
           className="appearance-none lg:hidden"
-          onClick={() => setOpen(true)}
+          onClick={() => setOpen(!isOpen)}
         >
           <MenuIcon className="w-8 h-8" />
         </button>
@@ -36,7 +31,7 @@ export const Navigation = ({ locale }: NavigationProps) => {
 
       <div
         className={clsx(
-          'inset-0 z-20 flex-col pt-20 px-4 bg-white lg:flex lg:flex-row lg:items-center lg:pt-0 lg:px-0 lg:flex-[2]',
+          'fixed top-20 left-0 right-0 h-[calc(100vh-80px)] z-20 flex-col px-4 pb-8 bg-white lg:static lg:h-auto lg:pb-0 lg:flex lg:flex-row lg:items-center lg:pt-0 lg:px-0 lg:flex-[2]',
           {
             flex: isOpen,
             hidden: !isOpen,
@@ -46,10 +41,7 @@ export const Navigation = ({ locale }: NavigationProps) => {
         <MainMenu />
 
         <div className="flex flex-col items-center lg:flex-row">
-          <LanguageSelect
-            className="lg:mr-6"
-            locale={locale}
-          />
+          {children}
           <CartSheet />
         </div>
       </div>
@@ -58,5 +50,5 @@ export const Navigation = ({ locale }: NavigationProps) => {
 };
 
 type NavigationProps = {
-  locale: i.Locale;
+  children: React.ReactNode;
 };

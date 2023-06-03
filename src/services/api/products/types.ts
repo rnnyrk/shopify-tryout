@@ -2,9 +2,15 @@ import * as i from 'types';
 
 import type { Product } from '@shopify/hydrogen-react/storefront-api-types';
 
+export type ProductTypes = 'handpomp' | 'creme' | 'zonnebrand' | 'lippenbalsem';
+
 export type ProductMetaFields = {
   productIngredients: string;
-  productType: 'handpomp' | 'creme' | 'zonnebrand' | 'lippenbalsem';
+  productType: i.ProductTypes;
+};
+
+export type ProductOverviewQueryParams = {
+  productType: i.ProductTypes;
 };
 
 export type ClientProduct = Pick<

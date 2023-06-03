@@ -1,5 +1,5 @@
-import * as i from 'types';
 import clsx from 'clsx';
+import { useLocale } from 'next-intl';
 
 import { getLocales } from 'services/api/locales';
 import { DropdownMenu, DropdownMenuTrigger } from 'common/interaction/DropdownMenu';
@@ -13,7 +13,8 @@ const flags: Record<string, string> = {
   de: '/vectors/flags/de.svg',
 };
 
-export const LanguageSelect = async ({ className, locale }: LanguageSelectProps) => {
+export const LanguageSelect = async ({ className }: LanguageSelectProps) => {
+  const locale = useLocale();
   const locales = await getLocales();
 
   // @TODO add Suspense
@@ -44,5 +45,4 @@ export const LanguageSelect = async ({ className, locale }: LanguageSelectProps)
 
 type LanguageSelectProps = {
   className?: string;
-  locale: i.Locale;
 };

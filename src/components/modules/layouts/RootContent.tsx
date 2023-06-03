@@ -1,24 +1,24 @@
-'use client';
-import * as i from 'types';
-
-import { RootLayout } from 'modules/layouts/RootLayout';
-
 import { Hero } from './Hero';
 import { Footer } from './Footer';
 import { Navigation } from './Navigation';
+import { RootLayout } from './RootLayout';
+import { LanguageSelect } from './LanguageSelect';
 
-export const RootContent = ({ children, locale }: RootContentProps) => {
+export const RootContent = ({ children }: RootContentProps) => {
   return (
     <RootLayout>
-      <Navigation locale={locale} />
-      <Hero />
-      <main>{children}</main>
-      <Footer />
+      <body className="min-h-full min-w-full">
+        <Navigation>
+          <LanguageSelect className="lg:mr-6" />
+        </Navigation>
+        <Hero />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </RootLayout>
   );
 };
 
 type RootContentProps = {
   children: React.ReactNode;
-  locale: i.Locale;
 };

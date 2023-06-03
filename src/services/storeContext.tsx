@@ -81,6 +81,7 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
       if (existingCartId && existingCartId !== 'null') {
         try {
           const existingCart = await getCart(existingCartId);
+
           if (existingCart) {
             setCartItem(existingCart);
             applyVoucher(existingCart.id);
@@ -175,8 +176,6 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
         getTotalQuantity,
         cart,
         isLoading,
-        // currentLanguage,
-        // setCurrentLanguage,
       }}
     >
       {children}

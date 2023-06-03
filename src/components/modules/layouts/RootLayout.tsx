@@ -1,12 +1,8 @@
 'use client';
-import { StoreProvider } from 'services/storeContext';
+import { StoreProvider } from 'services';
 
 export const RootLayout = ({ children }: RootLayoutProps) => {
-  return (
-    <StoreProvider>
-      <body className="min-h-full min-w-full">{children}</body>
-    </StoreProvider>
-  );
+  return <StoreProvider>{children}</StoreProvider>;
 };
 
 type RootLayoutProps = {
