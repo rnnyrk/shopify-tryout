@@ -5,7 +5,7 @@ import { AbstractIntlMessages, useLocale, NextIntlClientProvider } from 'next-in
 import { Nunito_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 
-import { RootContent } from 'modules/layouts/RootContent';
+import { RootContent } from 'modules/layouts/general/RootContent';
 
 const nunito = Nunito_Sans({ subsets: ['latin'] });
 
@@ -50,7 +50,7 @@ export const metadata = {
   },
 };
 
-const Layout = async ({ children, params }: LayoutProps) => {
+const RootLayout = async ({ children, params }: RootLayoutProps) => {
   const locale = useLocale();
 
   if (params.locale !== locale) {
@@ -82,7 +82,7 @@ const Layout = async ({ children, params }: LayoutProps) => {
   );
 };
 
-type LayoutProps = {
+type RootLayoutProps = {
   children: React.ReactNode;
   modal: React.ReactNode;
   params: {
@@ -90,4 +90,4 @@ type LayoutProps = {
   };
 };
 
-export default Layout;
+export default RootLayout;

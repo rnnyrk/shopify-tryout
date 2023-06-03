@@ -1,10 +1,10 @@
 'use client';
 import { StoreProvider } from 'services';
 
-export const RootLayout = ({ children }: RootLayoutProps) => {
+export const StoreWrapper = ({ children }: StoreWrapperProps) => {
   return <StoreProvider>{children}</StoreProvider>;
 };
 
-type RootLayoutProps = {
+type StoreWrapperProps = {
   children: React.ReactNode;
 };

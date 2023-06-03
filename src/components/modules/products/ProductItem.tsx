@@ -19,7 +19,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
       key={product.id}
       href={`/products/${product.handle}`}
       className={clsx(
-        'w-full flex flex-col mb-16 shadow-md rounded-md overflow-hidden transition-transform hover:-translate-y-2 lg:mb-0',
+        'w-full flex flex-col mb-16 transition-transform hover:-translate-y-2 lg:mb-0',
         {
           hidden:
             queryParams.productType && 'productType' in product
@@ -31,16 +31,17 @@ export const ProductItem = ({ product }: ProductItemProps) => {
       <ProductImage
         src={product?.featuredImage?.url}
         alt={product?.featuredImage?.altText || ''}
+        className="shadow-lg rounded-md overflow-hidden"
       />
 
-      <div className="flex flex-col flex-[2] p-6 bg-white">
+      <div className="flex flex-col flex-[2] py-6">
         <Heading
           as="h2"
-          className="flex-[2]"
+          className="flex-[2] font-bold"
         >
           {product.title}
         </Heading>
-        <p className="mt-4 mb-0 text-lg">
+        <p className="mt-2 mb-0 text-lg">
           <span>{t('from')}</span>{' '}
           <strong>{formatPrice({ value: product.priceRange.minVariantPrice.amount })}</strong>
         </p>

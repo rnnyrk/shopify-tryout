@@ -13,7 +13,10 @@ export const ProductMetaFields = ({ productIngredients }: ProductMetaFieldsProps
   const t = useTranslations('Products');
 
   return (
-    <Accordion type="multiple">
+    <Accordion
+      type="multiple"
+      className="mt-12"
+    >
       {productIngredients && (
         <AccordionItem value={productIngredients.key}>
           <AccordionTrigger>{t('ingredients')}</AccordionTrigger>
