@@ -37,6 +37,7 @@ export const MainMenu = () => {
       <MenuItem href="/">{t('home')}</MenuItem>
       <MenuItem href="/products">{t('products')}</MenuItem>
       <MenuItem href="/about">{t('about')}</MenuItem>
+      <MenuItem href="/faq">FAQ</MenuItem>
     </ul>
   );
 };
