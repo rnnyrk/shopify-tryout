@@ -17,7 +17,7 @@ const Product = async ({ params }: ProductParams) => {
     <>
       <div className="flex flex-col p-4 lg:w-2/4 lg:p-24">
         <Heading className="font-bold text-4xl my-2 lg:my-0">{product!.title}</Heading>
-        <p className="my-4">{product!.description}</p>
+        <p className="my-8 max-w-[30em] leading-6">{product!.description}</p>
 
         <ProductSelect product={product!} />
         <ProductMetaFields productIngredients={product!.productIngredients} />

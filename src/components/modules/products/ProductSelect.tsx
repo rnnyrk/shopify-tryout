@@ -27,13 +27,14 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
 
   return (
     <div className="w-full flex flex-wrap items-center mt-2 mb-8">
+      <strong>We stellen onze geuren en varianten met veel aandacht samen.</strong>
       <VariantSelect
         onChange={(variantId) => setSelectedVariantId(variantId)}
         variants={product.variants}
         selectedVariantId={selectedVariantId}
       />
 
-      <div className="mt-6 lg:flex flex-col items-center">
+      <div className="mt-8 lg:flex flex-col items-center">
         <InputCounter
           onChange={(quantity) => setQuantity(quantity)}
           disabled={isLoading}
