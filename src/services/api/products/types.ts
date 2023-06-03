@@ -1,6 +1,6 @@
 import * as i from 'types';
 
-import type { Product } from '@shopify/hydrogen-react/storefront-api-types';
+import type { Product, Metafield } from '@shopify/hydrogen-react/storefront-api-types';
 
 export type ProductTypes = 'handpomp' | 'creme' | 'zonnebrand' | 'lippenbalsem';
 
@@ -23,7 +23,7 @@ export type ProductOverviewItem = i.ProductBase &
 export type Bestseller = Omit<i.ProductOverviewItem, 'productType'>;
 
 export type ProductMetaFields = {
-  productIngredients: string;
+  productIngredients?: Metafield;
 };
 
 export type ProductVariants = {

@@ -16,13 +16,16 @@
     "bestsellers": "Bestsellers"
   },
   "Products": {
+    "disclaimer": "Disclaimer",
+    "disclaimer_text": "De FDA zegt dat ALLEEN een medicijn een ziekte kan behandelen, voorkomen of genezen. We maken GEEN MEDISCHE CLAIMS of CURE CLAIMS voor het product.",
     "from": "vanaf",
     "filter": {
       "creme": "Creme",
       "handpomp": "Handpomp",
       "lippenbalsem": "Lippenbalsem",
       "zonnebrand": "Zonnebrand"
-    }
+    },
+    "ingredients": "Ingrediënten"
   },
   "Cart": {
     "title": "Winkelmand",
