@@ -24,7 +24,6 @@ export const Bestsellers = async () => {
       </div>
       <div className="flex flex-col mt-12 lg:grid lg:gap-16 lg:grid-cols-3">
         {bestsellers &&
-          bestsellers.length > 0 &&
           bestsellers.map((product) => (
             <ProductItem
               key={product.id}

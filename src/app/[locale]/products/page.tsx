@@ -26,7 +26,7 @@ const Products = async () => {
     <Container isCentered>
       <ProductFilter productTypes={productTypes} />
       <div className="flex flex-col mt-8 lg:grid lg:gap-16 lg:grid-cols-3">
-        {products?.length > 0 &&
+        {products &&
           products.map((product) => (
             <ProductItem
               key={product.id}

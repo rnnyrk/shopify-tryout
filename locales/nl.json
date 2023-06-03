@@ -16,7 +16,13 @@
     "bestsellers": "Bestsellers"
   },
   "Products": {
-    "from": "vanaf"
+    "from": "vanaf",
+    "filter": {
+      "creme": "Creme",
+      "handpomp": "Handpomp",
+      "lippenbalsem": "Lippenbalsem",
+      "zonnebrand": "Zonnebrand"
+    }
   },
   "Cart": {
     "title": "Winkelmand",

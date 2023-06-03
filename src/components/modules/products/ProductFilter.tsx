@@ -1,9 +1,12 @@
 'use client';
 import * as i from 'types';
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
+
 import useQueryParams from 'hooks/useQueryParams';
 
 export const ProductFilter = ({ productTypes }: ProductFilterProps) => {
+  const t = useTranslations('Products');
   const { queryParams, setQueryParams } = useQueryParams<i.ProductOverviewQueryParams>();
 
   return (
@@ -23,7 +26,7 @@ export const ProductFilter = ({ productTypes }: ProductFilterProps) => {
             )}
             onClick={() => setQueryParams({ productType })}
           >
-            {productType}
+            {t(`filter.${productType}`)}
           </button>
         );
       })}

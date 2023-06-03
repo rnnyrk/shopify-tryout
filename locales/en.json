@@ -14,7 +14,13 @@
     "bestsellers": "Bestsellers"
   },
   "Products": {
-    "from": "from"
+    "from": "from",
+    "filter": {
+      "creme": "Creme",
+      "handpomp": "Hand pump",
+      "lippenbalsem": "Lip balm",
+      "zonnebrand": "Sunscreen cream"
+    }
   },
   "Cart": {
     "title": "Cart",

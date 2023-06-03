@@ -23,5 +23,8 @@ export default function useQueryParams<T = Record<string, string>>() {
     router.push(`${pathname}${query}`);
   }
 
-  return { queryParams: getQueryParams(), setQueryParams };
+  return {
+    queryParams: getQueryParams(),
+    setQueryParams,
+  };
 }
