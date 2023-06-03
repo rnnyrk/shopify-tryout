@@ -39,7 +39,7 @@ export const InputCounter = ({
   };
 
   return (
-    <div className={clsx('h-10 w-32', className)}>
+    <div className={clsx('h-12 w-32', className)}>
       {label && (
         <label
           htmlFor="custom-input-number"
@@ -49,7 +49,7 @@ export const InputCounter = ({
         </label>
       )}
 
-      <div className="relative flex h-10 w-full rounded-lg border-2 border-slate-300">
+      <div className="relative flex h-12 w-full rounded-lg border-2 border-slate-300">
         <InputCounterButton
           onClick={() => onChangeValue('decrease')}
           disabled={disabled}
@@ -59,7 +59,7 @@ export const InputCounter = ({
 
         <input
           readOnly
-          className="w-full flex items-center outline-none text-center text-gray-700 font-semibold"
+          className="w-full flex items-center outline-none text-center text-gray-700 font-semibold bg-transparent"
           value={value}
         />
 

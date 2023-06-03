@@ -16,20 +16,20 @@ const Product = async ({ params }: ProductParams) => {
   if (!product) return null;
 
   return (
-    <Container isCentered>
-      <article className="w-full flex flex-wrap rounded-lg overflow-hidden bg-white lg:justify-between">
-        <div className="w-full lg:w-2/4">
+    <Container noPadding>
+      <article className="w-full h-[75vh] flex flex-wrap rounded-lg overflow-hidden bg-background-main lg:justify-between">
+        <div className="flex flex-col p-4 lg:w-2/4 lg:p-24">
+          <Heading className="font-bold text-4xl my-2 lg:my-0">{product.title}</Heading>
+          <p className="my-4">{product.description}</p>
+          <ProductSelect product={product} />
+        </div>
+
+        <div className="w-full h-[75vh] lg:w-2/4">
           <ProductImage
             src={product?.featuredImage?.url}
             alt={product?.featuredImage?.altText || ''}
             size="large"
           />
-        </div>
-
-        <div className="flex flex-col p-4 lg:w-2/4 lg:p-12">
-          <Heading className="my-2 lg:my-0">{product.title}</Heading>
-          <p className="my-4">{product.description}</p>
-          <ProductSelect product={product} />
         </div>
       </article>
     </Container>

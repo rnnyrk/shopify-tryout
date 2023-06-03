@@ -33,18 +33,18 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
         selectedVariantId={selectedVariantId}
       />
 
-      <div className="mt-6 lg:flex lg:items-center">
+      <div className="mt-6 lg:flex flex-col items-center">
         <InputCounter
           onChange={(quantity) => setQuantity(quantity)}
           disabled={isLoading}
           defaultValue={quantity}
-          className="w-full mb-4 lg:mb-0"
+          className="w-full mt-2"
         />
 
         <Button
           type="button"
           onClick={onAddToCart}
-          className="w-full mt-2 lg:mt-0 lg:ml-2"
+          className="w-full mt-2"
           disabled={isLoading}
         >
           {t('add_to_cart')}
