@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { IBM_Plex_Serif } from 'next/font/google';
 
-const plexSerif = IBM_Plex_Serif({ weight: ['400'], subsets: ['latin'] });
+const plexSerif = IBM_Plex_Serif({ weight: ['400', '500', '600'], subsets: ['latin'] });
 
 export const Heading = ({ as, className, color, children, size = '2xl' }: HeadingProps) => {
   if (as === 'h2') {

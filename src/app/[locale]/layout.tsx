@@ -5,7 +5,7 @@ import { AbstractIntlMessages, useLocale, NextIntlClientProvider } from 'next-in
 import { Nunito_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 
-import { RootContent } from 'modules/layouts/RootContent';
+import { RootContent } from 'modules/layouts/general/RootContent';
 
 const nunito = Nunito_Sans({ subsets: ['latin'] });
 

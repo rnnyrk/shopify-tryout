@@ -6,6 +6,7 @@ import FatIcon from 'vectors/fat.svg';
 import TruckIcon from 'vectors/truck.svg';
 import { Container } from 'common/layout/Container';
 import { Heading } from 'common/typography/Heading';
+import { SectionHeader } from 'modules/layouts/general/PageHeader';
 
 const items = [
   {
@@ -42,28 +43,35 @@ export const Usps = () => {
   const t = useTranslations();
 
   return (
-    <Container className="bg-white">
-      <div className="flex flex-col justify-center mt-12 max-w-6xl mx-auto lg:grid lg:gap-16 lg:grid-cols-3">
-        {items.map((item) => {
-          const Icon = item.icon;
+    <Container>
+      <div className="flex flex-wrap justify-center max-w-6xl mx-auto">
+        <SectionHeader
+          align="items-center"
+          title="Why Mellow Tallow"
+          description="Our best products according to sold quantities and your reviews."
+        />
+        <div className="flex flex-col mt-20 lg:grid lg:gap-16 lg:grid-cols-3">
+          {items.map((item) => {
+            const Icon = item.icon;
 
-          return (
-            <div
-              className="flex flex-col items-center mb-8 lg:mb-0"
-              key={item.id}
-            >
-              <Icon className="w-24 h-24 lg:mb-4" />
-              <Heading
-                as="h2"
-                size="2xl"
-                className="my-4"
+            return (
+              <div
+                className="flex flex-col items-center mb-8 lg:mb-0"
+                key={item.id}
               >
-                {item.name}
-              </Heading>
-              <p className="text-center">{item.description}</p>
-            </div>
-          );
-        })}
+                <Icon className="w-24 h-24 lg:mb-4" />
+                <Heading
+                  as="h2"
+                  size="2xl"
+                  className="my-4"
+                >
+                  {item.name}
+                </Heading>
+                <p className="text-center">{item.description}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </Container>
   );

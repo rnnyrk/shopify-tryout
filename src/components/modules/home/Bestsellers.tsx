@@ -4,9 +4,9 @@ import { useLocale } from 'next-intl';
 
 import { getBestsellers } from 'services/api/products';
 import { Container } from 'common/layout/Container';
-import { Heading } from 'common/typography/Heading';
 import { ProductItem } from 'modules/products/ProductItem';
 import { ProductOverviewLoader } from 'modules/products/ProductOverviewLoader';
+import { SectionHeader } from 'modules/layouts/general/PageHeader';
 
 export const Bestsellers = async () => {
   const locale = useLocale() as i.Locale;
@@ -14,15 +14,11 @@ export const Bestsellers = async () => {
 
   return (
     <Container isCentered>
-      <div className="flex justify-center">
-        <Heading
-          className=""
-          size="6xl"
-        >
-          Bestsellers
-        </Heading>
-      </div>
-      <div className="flex flex-col mt-12 lg:grid lg:gap-16 lg:grid-cols-3">
+      <SectionHeader
+        title="Bestsellers"
+        description="Our best products according to sold quantities and your reviews."
+      />
+      <div className="flex flex-col mt-16 lg:grid lg:gap-16 lg:grid-cols-3">
         <Suspense fallback={<ProductOverviewLoader />}>
           {bestsellers &&
             bestsellers.map((product) => (
