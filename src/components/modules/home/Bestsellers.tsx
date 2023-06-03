@@ -23,7 +23,7 @@ export const Bestsellers = async () => {
         </Heading>
       </div>
       <div className="flex flex-col mt-12 lg:grid lg:gap-16 lg:grid-cols-3">
-        <Suspense fallback={<Skeleton className="w-[341px] h-[364px] rounded-md" />}>
+        <Suspense fallback={<Skeleton className="w-[341px] h-[364px] rounded-md bg-slate-200" />}>
           {bestsellers &&
             bestsellers.map((product) => (
               <ProductItem
