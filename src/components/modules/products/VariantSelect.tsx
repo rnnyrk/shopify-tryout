@@ -29,6 +29,6 @@ export const VariantSelect = ({ onChange, variants, selectedVariantId }: Variant
 
 type VariantSelectProps = {
   onChange: (variantId: string) => void;
-  variants: i.ClientVariant[];
+  variants: i.Variant[];
   selectedVariantId: string;
 };

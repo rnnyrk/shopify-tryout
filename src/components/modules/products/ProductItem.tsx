@@ -21,9 +21,10 @@ export const ProductItem = ({ product }: ProductItemProps) => {
       className={clsx(
         'w-full flex flex-col mb-16 shadow-md rounded-md overflow-hidden transition-transform hover:-translate-y-2 lg:mb-0',
         {
-          hidden: queryParams.productType
-            ? !queryParams.productType.includes(product.productType)
-            : false,
+          hidden:
+            queryParams.productType && 'productType' in product
+              ? !queryParams.productType.includes(product.productType)
+              : false,
         },
       )}
     >
@@ -49,5 +50,5 @@ export const ProductItem = ({ product }: ProductItemProps) => {
 };
 
 type ProductItemProps = {
-  product: Required<i.ClientProduct>;
+  product: i.ProductOverviewItem | i.Bestseller;
 };

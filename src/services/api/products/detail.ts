@@ -7,7 +7,7 @@ import { graphQLQuery } from '../';
 export const getProduct = async ({
   locale,
   slug,
-}: GetProductProps): Promise<i.ClientProduct | null> => {
+}: GetProductProps): Promise<i.ProductDetail | null> => {
   const language = locale.toUpperCase();
 
   return graphQLQuery(GetProductDetailQuery, {

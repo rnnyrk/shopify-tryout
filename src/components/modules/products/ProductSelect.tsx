@@ -55,5 +55,5 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
 };
 
 type ProductSelectProps = {
-  product: i.ClientProduct;
+  product: i.ProductDetail;
 };

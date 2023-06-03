@@ -7,14 +7,14 @@ import { graphQLQuery } from '../';
 export const getProducts = async (
   locale: i.Locale,
   query?: string,
-): Promise<i.ClientProduct[] | null> => {
+): Promise<i.ProductOverviewItem[] | null> => {
   const language = locale.toUpperCase();
 
   return graphQLQuery(GetProductsQuery, { language, query })
     .then((data: { products: ProductConnection }) => {
-      const products: i.ClientProduct[] = data.products.edges.map((item) => ({
+      const products: i.ProductOverviewItem[] = data.products.edges.map((item) => ({
         ...item.node,
-        productType: item.node.productType as i.ClientProduct['productType'],
+        productType: item.node.productType as i.ProductTypes,
         variants: item.node.variants.edges.map((variant) => variant.node),
       }));
 
@@ -44,17 +44,15 @@ export const getProductTypes = async (locale: i.Locale): Promise<i.ProductTypes[
     });
 };
 
-export const getBestsellers = async (locale: i.Locale): Promise<i.ClientProduct[] | null> => {
+export const getBestsellers = async (locale: i.Locale): Promise<i.Bestseller[] | null> => {
   const language = locale.toUpperCase();
 
   return graphQLQuery(GetBestsellersQuery, { language })
     .then((data: { collection: Collection }) => {
-      const products: Omit<i.ClientProduct, 'productType'>[] = data.collection.products.edges.map(
-        (item) => ({
-          ...item.node,
-          variants: item.node.variants.edges.map((variant) => variant.node),
-        }),
-      );
+      const products: i.Bestseller[] = data.collection.products.edges.map((item) => ({
+        ...item.node,
+        variants: item.node.variants.edges.map((variant) => variant.node),
+      }));
 
       return products;
     })

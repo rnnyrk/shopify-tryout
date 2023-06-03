@@ -4,24 +4,33 @@ import type { Product } from '@shopify/hydrogen-react/storefront-api-types';
 
 export type ProductTypes = 'handpomp' | 'creme' | 'zonnebrand' | 'lippenbalsem';
 
-export type ProductMetaFields = {
-  productIngredients: string;
-  productType: i.ProductTypes;
-};
-
 export type ProductOverviewQueryParams = {
   productType: i.ProductTypes;
 };
 
-export type ClientProduct = Pick<
+export type ProductBase = Pick<
   Product,
   'id' | 'title' | 'description' | 'handle' | 'priceRange' | 'featuredImage'
-> &
-  Partial<i.ProductMetaFields> & {
-    variants: i.ClientVariant[];
+>;
+
+export type ProductDetail = i.ProductBase & i.ProductMetaFields & i.ProductVariants;
+
+export type ProductOverviewItem = i.ProductBase &
+  i.ProductVariants & {
+    productType: i.ProductTypes;
   };
 
-export type ClientVariant = {
+export type Bestseller = Omit<i.ProductOverviewItem, 'productType'>;
+
+export type ProductMetaFields = {
+  productIngredients: string;
+};
+
+export type ProductVariants = {
+  variants: i.Variant[];
+};
+
+export type Variant = {
   id: string;
   title: string;
 };
