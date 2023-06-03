@@ -50,7 +50,7 @@ export const metadata = {
   },
 };
 
-const Layout = async ({ children, params }: LayoutProps) => {
+const RootLayout = async ({ children, params }: RootLayoutProps) => {
   const locale = useLocale();
 
   if (params.locale !== locale) {
@@ -82,7 +82,7 @@ const Layout = async ({ children, params }: LayoutProps) => {
   );
 };
 
-type LayoutProps = {
+type RootLayoutProps = {
   children: React.ReactNode;
   modal: React.ReactNode;
   params: {
@@ -90,4 +90,4 @@ type LayoutProps = {
   };
 };
 
-export default Layout;
+export default RootLayout;
