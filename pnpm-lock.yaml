@@ -6,11 +6,11 @@ specifiers:
   '@babel/plugin-transform-react-jsx': 7.22.3
   '@ianvs/prettier-plugin-sort-imports': 4.0.2
   '@next/eslint-plugin-next': 13.4.4
-  '@radix-ui/react-accordion': ^1.1.2
+  '@radix-ui/react-accordion': 1.1.2
   '@radix-ui/react-dialog': 1.0.4
   '@radix-ui/react-dropdown-menu': 2.0.5
   '@radix-ui/react-select': 1.2.2
-  '@radix-ui/react-toast': ^1.1.4
+  '@radix-ui/react-toast': 1.1.4
   '@shopify/hydrogen-react': 2023.4.3
   '@svgr/webpack': 8.0.1
   '@types/node': 20.2.5
