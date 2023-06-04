@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/app/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      borderWidth: {
+        1: '1px',
+      },
       fontFamily: {
         serif: ['var(--font-nunito-sans)'],
       },

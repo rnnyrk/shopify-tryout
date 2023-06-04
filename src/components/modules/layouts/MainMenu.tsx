@@ -18,7 +18,7 @@ const MenuItem = ({ href, children }) => {
   return (
     <li
       className={cn(
-        'py-8 border-b-2 border-slate-300 last:border-b-0 font-bold text-xl lg:text-lg lg:mx-4 lg:py-0 lg:border-b-0 transition-colors hover:text-primary-600',
+        'py-8 lg:py-0 px-4 border-b-1 border-slate-300 lg:border-b-0 last:border-b-0 font-bold text-xl lg:text-lg lg:mx-4 transition-colors hover:text-primary-600',
         {
           'text-primary-400': isActive,
           'text-black': !isActive,

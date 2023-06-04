@@ -18,15 +18,12 @@ export const ProductItem = ({ product }: ProductItemProps) => {
     <Link
       key={product.id}
       href={`/products/${product.handle}`}
-      className={cn(
-        'w-full flex flex-col mb-16 transition-transform hover:-translate-y-2 lg:mb-0',
-        {
-          hidden:
-            queryParams.productType && 'productType' in product
-              ? !queryParams.productType.includes(product.productType)
-              : false,
-        },
-      )}
+      className={cn('w-full flex flex-col mb-4 lg:mb-0 transition-transform hover:-translate-y-2', {
+        hidden:
+          queryParams.productType && 'productType' in product
+            ? !queryParams.productType.includes(product.productType)
+            : false,
+      })}
     >
       <ProductImage
         src={product?.featuredImage?.url}

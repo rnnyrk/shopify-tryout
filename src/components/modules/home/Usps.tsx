@@ -42,13 +42,13 @@ export const Usps = () => {
           title="Home.usps.title"
           description="Home.usps.description"
         />
-        <div className="flex flex-col flex-wrap mt-20 lg:flex-row">
+        <div className="flex flex-col flex-wrap mt-12 lg:mt-20 lg:flex-row">
           {items.map((item) => {
             const isOdd = item.id % 2 === 0;
 
             return (
               <div
-                className={cn('w-full flex flex-col mb-8 lg:mb-16 lg:flex-row lg:items-center', {
+                className={cn('w-full flex flex-col mb-12 lg:mb-16 lg:flex-row lg:items-center', {
                   'lg:flex-row-reverse': isOdd,
                 })}
                 key={item.id}
