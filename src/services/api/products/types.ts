@@ -1,6 +1,6 @@
 import * as i from 'types';
 
-import type { Product, Metafield } from '@shopify/hydrogen-react/storefront-api-types';
+import type { Product, Metafield, MoneyV2 } from '@shopify/hydrogen-react/storefront-api-types';
 
 export type ProductTypes = 'handpomp' | 'creme' | 'zonnebrand' | 'lippenbalsem';
 
@@ -8,12 +8,14 @@ export type ProductOverviewQueryParams = {
   productType: i.ProductTypes;
 };
 
-export type ProductBase = Pick<
-  Product,
-  'id' | 'title' | 'description' | 'handle' | 'priceRange' | 'featuredImage'
->;
+export type ProductBase = Pick<Product, 'id' | 'title' | 'handle' | 'featuredImage'> & {
+  price: string;
+};
 
-export type ProductDetail = i.ProductBase & i.ProductMetaFields & i.ProductVariants;
+export type ProductDetail = i.ProductBase &
+  i.ProductMetaFields &
+  i.ProductVariants &
+  Pick<Product, 'description'>;
 
 export type ProductOverviewItem = i.ProductBase &
   i.ProductVariants & {
@@ -33,4 +35,5 @@ export type ProductVariants = {
 export type Variant = {
   id: string;
   title: string;
+  price: MoneyV2;
 };

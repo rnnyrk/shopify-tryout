@@ -42,8 +42,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
           {product.title}
         </Heading>
         <p className="mt-2 mb-0 text-lg">
-          <span>{t('from')}</span>{' '}
-          <strong>{formatPrice({ value: product.priceRange.minVariantPrice.amount })}</strong>
+          <span>{t('from')}</span> <strong>{formatPrice({ value: product.price })}</strong>
         </p>
       </div>
     </Link>

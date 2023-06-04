@@ -5,12 +5,6 @@ const PRODUCT_FRAGMENT = gql`
     id
     title
     handle
-    priceRange {
-      minVariantPrice {
-        amount
-        currencyCode
-      }
-    }
     featuredImage {
       altText
       url
@@ -20,6 +14,9 @@ const PRODUCT_FRAGMENT = gql`
         node {
           id
           title
+          price {
+            amount
+          }
         }
       }
     }

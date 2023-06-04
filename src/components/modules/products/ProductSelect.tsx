@@ -8,6 +8,7 @@ import { useStoreContext } from 'services/storeContext';
 import { InputCounter } from 'common/form/InputCounter';
 
 import { VariantSelect } from './VariantSelect';
+import { formatPrice } from 'services';
 
 export const ProductSelect = ({ product }: ProductSelectProps) => {
   const t = useTranslations('Cart');
@@ -15,6 +16,8 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
 
   const [quantity, setQuantity] = useState(1);
   const [selectedVariantId, setSelectedVariantId] = useState(product.variants[0].id);
+
+  const activeVariant = product.variants.find((variant) => variant.id === selectedVariantId)!;
 
   const onAddToCart = async () => {
     await addVariantToCart([
@@ -33,6 +36,12 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
         variants={product.variants}
         selectedVariantId={selectedVariantId}
       />
+
+      <div className="w-full mt-8">
+        <strong className="text-3xl">
+          {formatPrice({ value: activeVariant?.price.amount || product.price })}
+        </strong>
+      </div>
 
       <div className="mt-8 lg:flex flex-col items-center">
         <InputCounter
