@@ -1,7 +1,7 @@
 'use client';
 import { useTranslations } from 'next-intl';
 
-import { useStoreContext } from 'services';
+import { useStoreContext } from 'services/storeContext';
 import { Heading } from 'common/typography/Heading';
 import { Button } from 'common/interaction/Button';
 

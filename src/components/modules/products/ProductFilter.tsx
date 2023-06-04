@@ -1,9 +1,9 @@
 'use client';
 import * as i from 'types';
-import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 
 import useQueryParams from 'hooks/useQueryParams';
+import { cn } from 'services';
 
 export const ProductFilter = ({ productTypes }: ProductFilterProps) => {
   const t = useTranslations('Products');
@@ -17,7 +17,7 @@ export const ProductFilter = ({ productTypes }: ProductFilterProps) => {
         return (
           <button
             key={`productType_${productType}`}
-            className={clsx('w-full py-2 px-4 lg:w-auto lg:mr-2 font-semibold rounded-md', {
+            className={cn('w-full py-2 px-4 lg:w-auto lg:mr-2 font-semibold rounded-md', {
               'text-white bg-primary-400': isActive,
               'bg-slate-200': !isActive,
             })}

@@ -1,6 +1,6 @@
-import clsx from 'clsx';
 import Link from 'next/link';
 
+import { cn } from 'services';
 import LoadingSvg from 'vectors/loading.svg';
 
 export const Button = ({
@@ -11,7 +11,7 @@ export const Button = ({
   size = 'default',
   ...otherProps
 }: ButtonProps | ButtonLinkProps) => {
-  const classes = clsx(
+  const classes = cn(
     `flex items-center justify-center font-bold transition-colors duration-700`,
     className,
     {

@@ -22,7 +22,7 @@ const Product = async ({ params }: ProductParams) => {
         <div className="flex flex-col w-full lg:max-w-[34em]">
           <Heading className="font-bold text-4xl my-2 lg:my-0">{product?.title}</Heading>
           <div
-            className="my-8 [&>p]:my-4 [&>p]:leading-7"
+            className="my-8 [&>p]:my-4 [&>p]:leading-6"
             dangerouslySetInnerHTML={{ __html: product?.description || '' }}
           />
 

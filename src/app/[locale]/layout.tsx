@@ -1,10 +1,10 @@
 import './global.css';
 import * as i from 'types';
-import clsx from 'clsx';
 import { AbstractIntlMessages, useLocale, NextIntlClientProvider } from 'next-intl';
 import { Nunito_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 
+import { cn } from 'services';
 import { RootContent } from 'modules/layouts/RootContent';
 
 const nunito = Nunito_Sans({ subsets: ['latin'] });
@@ -69,7 +69,7 @@ const RootLayout = async ({ children, params }: RootLayoutProps) => {
   return (
     <html
       lang={locale}
-      className={clsx('text-black bg-background-main', nunito.className)}
+      className={cn('text-black bg-background-main', nunito.className)}
     >
       <head />
       <NextIntlClientProvider

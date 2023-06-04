@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { useLocale } from 'next-intl';
 
 import { getBestsellers } from 'services/api/products';
-import { SectionHeader } from 'modules/layouts/PageHeader';
+import { SectionHeader } from 'modules/layouts/SectionHeader';
 import { ProductsLoader } from 'modules/products/ProductsLoader';
 import { ProductItem } from 'modules/products/ProductItem';
 import { ProductsGrid } from 'modules/products/ProductsGrid';

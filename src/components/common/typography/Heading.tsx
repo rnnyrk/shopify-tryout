@@ -1,5 +1,6 @@
-import clsx from 'clsx';
 import { IBM_Plex_Serif } from 'next/font/google';
+
+import { cn } from 'services';
 
 const plexSerif = IBM_Plex_Serif({ weight: ['400', '500', '600'], subsets: ['latin'] });
 
@@ -7,7 +8,7 @@ export const Heading = ({ as, className, color, children, size = '2xl' }: Headin
   if (as === 'h2') {
     return (
       <h2
-        className={clsx(`text-${size}`, plexSerif.className, className, {
+        className={cn(`text-${size}`, plexSerif.className, className, {
           [`text-${color}`]: Boolean(color),
         })}
       >
@@ -18,7 +19,7 @@ export const Heading = ({ as, className, color, children, size = '2xl' }: Headin
 
   return (
     <h1
-      className={clsx(`text-${size}`, plexSerif.className, className, {
+      className={cn(`text-${size}`, plexSerif.className, className, {
         [`text-${color}`]: Boolean(color),
       })}
     >

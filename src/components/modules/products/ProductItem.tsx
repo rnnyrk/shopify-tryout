@@ -1,10 +1,9 @@
 'use client';
 import * as i from 'types';
-import clsx from 'clsx';
 import Link from 'next-intl/link';
 import { useLocale, useTranslations } from 'next-intl';
 
-import { formatPrice } from 'services';
+import { cn, formatPrice } from 'services';
 import { Heading } from 'common/typography/Heading';
 import useQueryParams from 'hooks/useQueryParams';
 
@@ -19,15 +18,12 @@ export const ProductItem = ({ product }: ProductItemProps) => {
     <Link
       key={product.id}
       href={`/products/${product.handle}`}
-      className={clsx(
-        'w-full flex flex-col mb-16 transition-transform hover:-translate-y-2 lg:mb-0',
-        {
-          hidden:
-            queryParams.productType && 'productType' in product
-              ? !queryParams.productType.includes(product.productType)
-              : false,
-        },
-      )}
+      className={cn('w-full flex flex-col mb-4 lg:mb-0 transition-transform hover:-translate-y-2', {
+        hidden:
+          queryParams.productType && 'productType' in product
+            ? !queryParams.productType.includes(product.productType)
+            : false,
+      })}
     >
       <ProductImage
         src={product?.featuredImage?.url}

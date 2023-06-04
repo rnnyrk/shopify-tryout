@@ -1,10 +1,11 @@
-import clsx from 'clsx';
 import Image from 'next/image';
+
+import { cn } from 'services';
 
 export const ProductImage = ({ alt, className, src, size }: ProductImageProps) => {
   return (
     <figure
-      className={clsx('relative w-full h-60', className, {
+      className={cn('relative w-full h-60', className, {
         'lg:h-full': size === 'large',
       })}
     >
