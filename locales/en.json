@@ -11,7 +11,22 @@
     "button_alt": "Why tallow"
   },
   "Home": {
-    "bestsellers": "Bestsellers"
+    "bestsellers": {
+      "title": "Bestsellers",
+      "description": "Our bestsellers are made with love and care"
+    },
+    "usps": {
+      "title": "Why Mellow Tallow",
+      "description": "How we became what we are and what we strive for"
+    }
+  },
+  "About": {
+    "title": "About",
+    "description": "Who are we and how to we craft our products"
+  },
+  "FAQ": {
+    "title": "FAQ",
+    "description": "For all your questions about our products, shipping, returns and checkout"
   },
   "Products": {
     "disclaimer": "Disclaimer",

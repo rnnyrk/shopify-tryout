@@ -1,5 +1,5 @@
 import { Container } from 'common/layout/Container';
-import { Heading } from 'common/typography/Heading';
+import { SectionHeader } from 'modules/layouts/PageHeader';
 
 export const metadata = {
   title: {
@@ -11,7 +11,10 @@ export const metadata = {
 const FAQ = () => {
   return (
     <Container isCentered>
-      <Heading>FAQ</Heading>
+      <SectionHeader
+        title="FAQ.title"
+        description="FAQ.description"
+      />
     </Container>
   );
 };

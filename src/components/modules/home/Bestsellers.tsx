@@ -16,8 +16,8 @@ export const Bestsellers = async () => {
   return (
     <Container isCentered>
       <SectionHeader
-        title="Bestsellers"
-        description="Our best products according to sold quantities and your reviews."
+        title="Home.bestsellers.title"
+        description="Home.bestsellers.description"
       />
       <ProductsGrid>
         <Suspense fallback={<ProductsLoader isBestsellers />}>

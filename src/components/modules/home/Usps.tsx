@@ -47,8 +47,8 @@ export const Usps = () => {
       <div className="flex flex-wrap justify-center max-w-6xl mx-auto">
         <SectionHeader
           align="items-center"
-          title="Why Mellow Tallow"
-          description="Our best products according to sold quantities and your reviews."
+          title="Home.usps.title"
+          description="Home.usps.description"
         />
         <div className="flex flex-col mt-20 lg:grid lg:gap-16 lg:grid-cols-3">
           {items.map((item) => {
