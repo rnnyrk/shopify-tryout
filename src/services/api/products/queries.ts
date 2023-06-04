@@ -14,6 +14,7 @@ const PRODUCT_FRAGMENT = gql`
         node {
           id
           title
+          inventoryQuantity
           price {
             amount
           }

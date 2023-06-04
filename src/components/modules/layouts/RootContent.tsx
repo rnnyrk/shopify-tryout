@@ -1,6 +1,6 @@
 import { Footer } from './Footer';
-import { Navigation } from './Navigation';
 import { LanguageSelect } from './LanguageSelect';
+import { Navigation } from './Navigation';
 import { StoreWrapper } from './StoreWrapper';
 
 export const RootContent = ({ children }: RootContentProps) => {

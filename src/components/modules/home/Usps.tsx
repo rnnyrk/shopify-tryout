@@ -4,9 +4,9 @@ import { useTranslations } from 'next-intl';
 import PackageIcon from 'vectors/packaging.svg';
 import FatIcon from 'vectors/fat.svg';
 import TruckIcon from 'vectors/truck.svg';
+import { SectionHeader } from 'modules/layouts/PageHeader';
 import { Container } from 'common/layout/Container';
 import { Heading } from 'common/typography/Heading';
-import { SectionHeader } from 'modules/layouts/general/PageHeader';
 
 const items = [
   {
