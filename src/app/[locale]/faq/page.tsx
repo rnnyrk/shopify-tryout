@@ -1,5 +1,5 @@
 import { Container } from 'common/layout/Container';
-import { SectionHeader } from 'modules/layouts/PageHeader';
+import { SectionHeader } from 'modules/layouts/SectionHeader';
 
 export const metadata = {
   title: {

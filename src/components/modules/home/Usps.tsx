@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import PackageIcon from 'vectors/packaging.svg';
 import FatIcon from 'vectors/fat.svg';
 import TruckIcon from 'vectors/truck.svg';
-import { SectionHeader } from 'modules/layouts/PageHeader';
+import { SectionHeader } from 'modules/layouts/SectionHeader';
 import { Container } from 'common/layout/Container';
 import { Heading } from 'common/typography/Heading';
 

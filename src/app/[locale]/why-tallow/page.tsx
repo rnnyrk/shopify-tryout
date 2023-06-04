@@ -1,19 +1,22 @@
+import { SectionHeader } from 'modules/layouts/SectionHeader';
 import { Container } from 'common/layout/Container';
-import { Heading } from 'common/typography/Heading';
 
 export const metadata = {
   title: {
-    default: 'WhyTallow',
-    template: '%s | WhyTallow',
+    default: 'FAQ',
+    template: '%s | FAQ',
   },
 };
 
-const WhyTallow = () => {
+const FAQ = () => {
   return (
     <Container isCentered>
-      <Heading>WhyTallow</Heading>
+      <SectionHeader
+        title="WhyTallow.title"
+        description="WhyTallow.description"
+      />
     </Container>
   );
 };
 
-export default WhyTallow;
+export default FAQ;
