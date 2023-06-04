@@ -55,7 +55,7 @@ export const GetProductDetailQuery = gql`
   query getProduct($handle: String!, $language: LanguageCode!) @inContext(language: $language) {
     product(handle: $handle) {
       ...productFields
-      description
+      descriptionHtml
       productIngredients: metafield(namespace: "custom", key: "product_ingredients") {
         value
         key

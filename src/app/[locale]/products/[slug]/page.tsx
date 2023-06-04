@@ -18,12 +18,20 @@ const Product = async ({ params }: ProductParams) => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="flex flex-col p-4 lg:w-2/4 lg:p-24">
-        <Heading className="font-bold text-4xl my-2 lg:my-0">{product?.title}</Heading>
-        <p className="my-8 max-w-[30em] leading-6">{product?.description}</p>
+      <div className="p-4 lg:p-24 lg:w-2/4">
+        <div className="flex flex-col w-full lg:max-w-[34em]">
+          <Heading className="font-bold text-4xl my-2 lg:my-0">{product?.title}</Heading>
+          <div
+            className="my-8 [&>p]:my-4 [&>p]:leading-7"
+            dangerouslySetInnerHTML={{ __html: product?.description || '' }}
+          />
 
-        <ProductSelect product={product!} />
-        <ProductMetaFields productIngredients={product?.productIngredients} />
+          <ProductSelect product={product!} />
+          <ProductMetaFields
+            productIngredients={product?.productIngredients}
+            productUsage={product?.productUsage}
+          />
+        </div>
       </div>
 
       <div className="w-full min-h-[75vh] lg:w-2/4">

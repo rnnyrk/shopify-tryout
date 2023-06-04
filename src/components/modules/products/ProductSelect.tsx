@@ -1,7 +1,7 @@
 'use client';
 import * as i from 'types';
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { useToast } from 'hooks/useToast';
 import { formatPrice, useStoreContext } from 'services';
@@ -11,6 +11,7 @@ import { InputCounter } from 'common/form/InputCounter';
 import { VariantSelect } from './VariantSelect';
 
 export const ProductSelect = ({ product }: ProductSelectProps) => {
+  const locale = useLocale() as i.Locale;
   const t = useTranslations();
   const { toast } = useToast();
   const { addVariantToCart, isLoading } = useStoreContext();
@@ -50,7 +51,7 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
 
       <div className="w-full mt-8">
         <strong className="text-3xl">
-          {formatPrice({ value: activeVariant?.price.amount || product.price })}
+          {formatPrice({ value: activeVariant?.price.amount || product.price, locale })}
         </strong>
       </div>
 

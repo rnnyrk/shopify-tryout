@@ -48,7 +48,7 @@ export const formatProductDetail = ({ product }: FormatProductProps): i.ProductD
     price: getPriceFromVariants(variants),
     variants,
     // Detail specific
-    description: product.description,
+    description: product.descriptionHtml,
     productIngredients: product.productIngredients,
     productUsage: product.productUsage,
   };

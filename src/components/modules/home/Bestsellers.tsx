@@ -20,7 +20,7 @@ export const Bestsellers = async () => {
         description="Our best products according to sold quantities and your reviews."
       />
       <ProductsGrid>
-        <Suspense fallback={<ProductsLoader />}>
+        <Suspense fallback={<ProductsLoader isBestsellers />}>
           {bestsellers &&
             bestsellers.map((product) => (
               <ProductItem
