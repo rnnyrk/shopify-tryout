@@ -5,12 +5,6 @@ const PRODUCT_FRAGMENT = gql`
     id
     title
     handle
-    priceRange {
-      minVariantPrice {
-        amount
-        currencyCode
-      }
-    }
     featuredImage {
       altText
       url
@@ -20,6 +14,10 @@ const PRODUCT_FRAGMENT = gql`
         node {
           id
           title
+          price {
+            amount
+          }
+          quantityAvailable
         }
       }
     }
@@ -57,8 +55,12 @@ export const GetProductDetailQuery = gql`
   query getProduct($handle: String!, $language: LanguageCode!) @inContext(language: $language) {
     product(handle: $handle) {
       ...productFields
-      description
+      descriptionHtml
       productIngredients: metafield(namespace: "custom", key: "product_ingredients") {
+        value
+        key
+      }
+      productUsage: metafield(namespace: "custom", key: "how_to_use") {
         value
         key
       }

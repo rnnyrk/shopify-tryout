@@ -2,6 +2,7 @@ import * as i from 'types';
 import type { ProductConnection, Collection } from '@shopify/hydrogen-react/storefront-api-types';
 
 import { GetBestsellersQuery, GetProductsQuery, GetProductTypesQuery } from './queries';
+import { formatProductOverview } from './selectors';
 import { graphQLQuery } from '../';
 
 export const getProducts = async (
@@ -12,12 +13,7 @@ export const getProducts = async (
 
   return graphQLQuery(GetProductsQuery, { language, query })
     .then((data: { products: ProductConnection }) => {
-      const products: i.ProductOverviewItem[] = data.products.edges.map((item) => ({
-        ...item.node,
-        productType: item.node.productType as i.ProductTypes,
-        variants: item.node.variants.edges.map((variant) => variant.node),
-      }));
-
+      const products = formatProductOverview({ products: data.products.edges });
       return products;
     })
     .catch((error) => {
@@ -31,11 +27,11 @@ export const getProductTypes = async (locale: i.Locale): Promise<i.ProductTypes[
 
   return graphQLQuery(GetProductTypesQuery, { language })
     .then((data: { products: ProductConnection }) => {
-      const productsTypes = data.products.edges.map(
-        (item) => item.node.productType as i.ProductTypes,
-      );
-      const uniqueProductsTypes = [...new Set(productsTypes)];
+      const productsTypes = data.products.edges.map((item) => {
+        return item.node.productType as i.ProductTypes;
+      });
 
+      const uniqueProductsTypes = [...new Set(productsTypes)];
       return uniqueProductsTypes;
     })
     .catch((error) => {
@@ -49,11 +45,7 @@ export const getBestsellers = async (locale: i.Locale): Promise<i.Bestseller[] |
 
   return graphQLQuery(GetBestsellersQuery, { language })
     .then((data: { collection: Collection }) => {
-      const products: i.Bestseller[] = data.collection.products.edges.map((item) => ({
-        ...item.node,
-        variants: item.node.variants.edges.map((variant) => variant.node),
-      }));
-
+      const products = formatProductOverview({ products: data.collection.products.edges });
       return products;
     })
     .catch((error) => {

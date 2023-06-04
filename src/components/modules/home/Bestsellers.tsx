@@ -3,10 +3,11 @@ import { Suspense } from 'react';
 import { useLocale } from 'next-intl';
 
 import { getBestsellers } from 'services/api/products';
-import { Container } from 'common/layout/Container';
+import { SectionHeader } from 'modules/layouts/PageHeader';
+import { ProductsLoader } from 'modules/products/ProductsLoader';
 import { ProductItem } from 'modules/products/ProductItem';
-import { ProductOverviewLoader } from 'modules/products/ProductOverviewLoader';
-import { SectionHeader } from 'modules/layouts/general/PageHeader';
+import { ProductsGrid } from 'modules/products/ProductsGrid';
+import { Container } from 'common/layout/Container';
 
 export const Bestsellers = async () => {
   const locale = useLocale() as i.Locale;
@@ -15,11 +16,11 @@ export const Bestsellers = async () => {
   return (
     <Container isCentered>
       <SectionHeader
-        title="Bestsellers"
-        description="Our best products according to sold quantities and your reviews."
+        title="Home.bestsellers.title"
+        description="Home.bestsellers.description"
       />
-      <div className="flex flex-col mt-16 lg:grid lg:gap-16 lg:grid-cols-3">
-        <Suspense fallback={<ProductOverviewLoader />}>
+      <ProductsGrid>
+        <Suspense fallback={<ProductsLoader isBestsellers />}>
           {bestsellers &&
             bestsellers.map((product) => (
               <ProductItem
@@ -28,7 +29,7 @@ export const Bestsellers = async () => {
               />
             ))}
         </Suspense>
-      </div>
+      </ProductsGrid>
     </Container>
   );
 };

@@ -6,9 +6,11 @@ const InputCounterButton = ({ children, disabled, onClick, isLast }: InputCounte
     <button
       onClick={onClick}
       disabled={disabled}
-      className={clsx('text-gray-600 hover:bg-slate-200 h-full w-20 cursor-pointer outline-none', {
+      className={clsx('text-gray-600 hover:bg-slate-200 h-full w-20 outline-none', {
         'rounded-r': isLast,
         'rounded-l': !isLast,
+        'cursor-not-allowed': disabled,
+        'cursor-pointer': !disabled,
       })}
     >
       <span className="m-auto text-2xl font-thin">{children}</span>
@@ -20,6 +22,8 @@ export const InputCounter = ({
   className,
   disabled,
   defaultValue,
+  maxAmount,
+  onMaxAmountError,
   onChange,
   label,
 }: InputCounterProps) => {
@@ -29,6 +33,11 @@ export const InputCounter = ({
     let newValue = value;
 
     if (type === 'increase') {
+      if (maxAmount && newValue + 1 > maxAmount && onMaxAmountError) {
+        onMaxAmountError();
+        return;
+      }
+
       newValue = newValue + 1;
     } else if (type === 'decrease') {
       newValue = newValue > 2 ? newValue - 1 : 1;
@@ -52,7 +61,7 @@ export const InputCounter = ({
       <div className="relative flex h-12 w-full rounded-lg border-2 border-slate-300">
         <InputCounterButton
           onClick={() => onChangeValue('decrease')}
-          disabled={disabled}
+          disabled={disabled || value === 1}
         >
           -
         </InputCounterButton>
@@ -79,6 +88,8 @@ type InputCounterProps = {
   className?: string;
   disabled?: boolean;
   defaultValue: number;
+  maxAmount?: number;
+  onMaxAmountError?: () => void;
   onChange: (quantity: number) => void;
   label?: string;
 };

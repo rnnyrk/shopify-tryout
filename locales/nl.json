@@ -11,9 +11,22 @@
     "button_alt": "Waarom talg"
   },
   "Home": {
-    "title": "Thuis",
-    "description": "Welkom op mijn Shopify pagina",
-    "bestsellers": "Bestsellers"
+    "bestsellers": {
+      "title": "Bestsellers",
+      "description": "Onze best verkopende producten zijn met liefde en aandacht gemaakt"
+    },
+    "usps": {
+      "title": "Waarom Mellow Tallow",
+      "description": "Hoe we zijn geworden wat we zijn en wat we nastreven"
+    }
+  },
+  "About": {
+    "title": "Over ons",
+    "description": "Wie zijn wij en wat hoe maken wij onze talg producten"
+  },
+  "FAQ": {
+    "title": "FAQ",
+    "description": "Voor al je vragen over talg, onze producten, verzendingen, etc."
   },
   "Products": {
     "disclaimer": "Disclaimer",
@@ -25,16 +38,32 @@
       "lippenbalsem": "Lippenbalsem",
       "zonnebrand": "Zonnebrand"
     },
-    "ingredients": "Ingrediënten"
+    "notifications": {
+      "max_amount": {
+        "title": "Maximale hoeveelheid bereikt",
+        "text": "Er kunnen niet meer dan {AMOUNT} \"{TITLE}\" producten besteld worden."
+      }
+    },
+    "variants": "We stellen onze geuren en varianten met veel aandacht samen.",
+    "ingredients": "Ingrediënten",
+    "usage": "Gebruiksadvies"
   },
   "Cart": {
+    "notifications": {
+      "added": {
+        "title": "Toegevoegd aan je winkelmand"
+      },
+      "deleted": {
+        "title": "Verwijdert uit je winkelmand"
+      }
+    },
+    "add_to_cart": "Toevoegen",
+    "checkout": "Afrekenen",
+    "delete_from_cart": "Verwijderen",
     "title": "Winkelmand",
     "total": "Totaal",
     "subtotal": "Subtotaal",
     "shipping": "Verzendkosten",
-    "shipping_checkout": "Verzendkosten en belastingen worden berekend bij het afrekenen",
-    "checkout": "Afrekenen",
-    "add_to_cart": "Toevoegen",
-    "delete_from_cart": "Verwijderen"
+    "shipping_checkout": "Verzendkosten en belastingen worden berekend bij het afrekenen"
   }
 }

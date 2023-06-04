@@ -2,6 +2,7 @@ import * as i from 'types';
 import type { Product } from '@shopify/hydrogen-react/storefront-api-types';
 
 import { GetProductDetailQuery } from './queries';
+import { formatProductDetail } from './selectors';
 import { graphQLQuery } from '../';
 
 export const getProduct = async ({
@@ -15,19 +16,8 @@ export const getProduct = async ({
     language,
   })
     .then((data: { product: Product & i.ProductMetaFields }) => {
-      return {
-        id: data.product.id,
-        title: data.product.title,
-        handle: data.product.handle,
-        description: data.product.description,
-        priceRange: data.product.priceRange,
-        featuredImage: data.product.featuredImage,
-        variants: data.product.variants.edges.map((edge) => ({
-          id: edge.node.id,
-          title: edge.node.title,
-        })),
-        productIngredients: data.product.productIngredients,
-      };
+      const product = formatProductDetail({ product: data.product });
+      return product;
     })
     .catch((error) => {
       console.error(error);

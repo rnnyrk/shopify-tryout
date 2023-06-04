@@ -1,7 +1,7 @@
 'use client';
 import * as i from 'types';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { formatPrice, useStoreContext } from 'services';
 import { Button } from 'common/interaction/Button';
@@ -9,6 +9,7 @@ import { InputCounter } from 'common/form/InputCounter';
 
 export const CartItem = ({ item }: CartItemProps) => {
   const t = useTranslations('Cart');
+  const locale = useLocale() as i.Locale;
   const { removeLineItems, updateLineItem, isLoading } = useStoreContext();
 
   const onRemoveItem = async () => {
@@ -44,7 +45,7 @@ export const CartItem = ({ item }: CartItemProps) => {
           defaultValue={item.quantity}
           className="mr-4"
         />
-        <p className="text-sm font-medium">{formatPrice({ value: item.price })}</p>
+        <p className="text-sm font-medium">{formatPrice({ value: item.price, locale })}</p>
       </div>
 
       <div className="flex items-center">

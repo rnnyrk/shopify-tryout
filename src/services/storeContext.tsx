@@ -1,5 +1,6 @@
 import * as i from 'types';
 import * as React from 'react';
+import { useTranslations } from 'next-intl';
 import type { Attribute, CartLineInput } from '@shopify/hydrogen-react/storefront-api-types';
 
 import { isBrowser } from 'services/isBrowser';
@@ -12,6 +13,7 @@ import {
   updateLines,
   addDiscountCode,
 } from 'services/api/cart';
+import { useToast } from 'hooks/useToast';
 
 export const StoreContext = React.createContext<StoreContextProps | null>(null);
 
@@ -30,6 +32,8 @@ export const useStoreContext = () => {
 const localStorageKey = 'shopify_cart_id';
 
 export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
+  const { toast } = useToast();
+  const t = useTranslations('Cart');
   const [isLoading, setLoading] = React.useState(true);
 
   const [cart, setCart] = React.useState<i.ClientCart>({
@@ -114,6 +118,7 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
       setLoading(false);
 
       if (cart) {
+        toast({ title: t('notifications.added.title') });
         return onCartResponse(cart);
       }
 
@@ -128,6 +133,7 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
       setLoading(false);
 
       if (cart) {
+        toast({ title: t('notifications.deleted.title') });
         return onCartResponse(cart);
       }
 

@@ -9,7 +9,7 @@ import {
   AccordionTrigger,
 } from 'common/interaction/Accordion';
 
-export const ProductMetaFields = ({ productIngredients }: ProductMetaFieldsProps) => {
+export const ProductMetaFields = ({ productIngredients, productUsage }: ProductMetaFieldsProps) => {
   const t = useTranslations('Products');
 
   return (
@@ -23,6 +23,12 @@ export const ProductMetaFields = ({ productIngredients }: ProductMetaFieldsProps
           <AccordionContent>{productIngredients?.value}</AccordionContent>
         </AccordionItem>
       )}
+      {productUsage && (
+        <AccordionItem value={productUsage.key}>
+          <AccordionTrigger>{t('usage')}</AccordionTrigger>
+          <AccordionContent>{productUsage?.value}</AccordionContent>
+        </AccordionItem>
+      )}
       <AccordionItem value="disclaimer">
         <AccordionTrigger>{t('disclaimer')}</AccordionTrigger>
         <AccordionContent>{t('disclaimer_text')}</AccordionContent>
@@ -33,4 +39,5 @@ export const ProductMetaFields = ({ productIngredients }: ProductMetaFieldsProps
 
 type ProductMetaFieldsProps = {
   productIngredients?: i.ProductDetail['productIngredients'];
+  productUsage?: i.ProductDetail['productUsage'];
 };

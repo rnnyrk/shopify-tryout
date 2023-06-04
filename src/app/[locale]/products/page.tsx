@@ -23,10 +23,10 @@ const Products = async () => {
 
   return (
     <Container isCentered>
-      <Suspense>{productTypes && <ProductFilter productTypes={productTypes} />}</Suspense>
+      <Suspense fallback={<Loading />}>
+        {productTypes && <ProductFilter productTypes={productTypes} />}
 
-      <div className="flex flex-col mt-8 lg:grid lg:gap-16 lg:grid-cols-3">
-        <Suspense fallback={<Loading />}>
+        <div className="flex flex-col mt-8 lg:grid lg:gap-16 lg:grid-cols-3">
           {products &&
             products.map((product) => (
               <ProductItem
@@ -34,8 +34,8 @@ const Products = async () => {
                 product={product}
               />
             ))}
-        </Suspense>
-      </div>
+        </div>
+      </Suspense>
     </Container>
   );
 };

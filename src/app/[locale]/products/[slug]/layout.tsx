@@ -1,10 +1,8 @@
 import * as i from 'types';
-import { Suspense } from 'react';
 import { Metadata, ResolvingMetadata } from 'next';
 
 import { Container } from 'common/layout/Container';
 
-import Loading from './loading';
 import { getProduct } from 'services/api/products/detail';
 
 type Props = {
@@ -32,7 +30,7 @@ export async function generateMetadata(
   const previousImages = (await parent)!.openGraph?.images || [];
 
   return {
-    title: product!.title,
+    title: product?.title || '',
     openGraph: {
       images: ['/some-specific-page-image.jpg', ...previousImages],
     },
@@ -84,7 +82,7 @@ const Layout = async ({ children }: LayoutProps) => {
   return (
     <Container noPadding>
       <article className="w-full min-h-[75vh] flex flex-wrap rounded-lg overflow-hidden bg-background-main lg:justify-between">
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+        {children}
       </article>
     </Container>
   );
