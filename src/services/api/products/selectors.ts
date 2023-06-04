@@ -50,6 +50,7 @@ export const formatProductDetail = ({ product }: FormatProductProps): i.ProductD
     // Detail specific
     description: product.description,
     productIngredients: product.productIngredients,
+    productUsage: product.productUsage,
   };
 };
 

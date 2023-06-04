@@ -3,6 +3,7 @@ import * as i from 'types';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
+import { useToast } from 'hooks/useToast';
 import { formatPrice, useStoreContext } from 'services';
 import { Button } from 'common/interaction/Button';
 import { InputCounter } from 'common/form/InputCounter';
@@ -10,7 +11,8 @@ import { InputCounter } from 'common/form/InputCounter';
 import { VariantSelect } from './VariantSelect';
 
 export const ProductSelect = ({ product }: ProductSelectProps) => {
-  const t = useTranslations('Cart');
+  const t = useTranslations();
+  const { toast } = useToast();
   const { addVariantToCart, isLoading } = useStoreContext();
 
   const [quantity, setQuantity] = useState(1);
@@ -26,9 +28,20 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
     ]);
   };
 
+  const onMaxQuantityError = () => {
+    if (!activeVariant) return;
+    toast({
+      title: t('Products.notifications.max_amount.title'),
+      description: t('Products.notifications.max_amount.text', {
+        AMOUNT: String(activeVariant?.quantityAvailable || 0),
+        TITLE: activeVariant?.title || '',
+      }),
+    });
+  };
+
   return (
     <div className="w-full flex flex-wrap items-center mt-2 mb-8">
-      <strong>We stellen onze geuren en varianten met veel aandacht samen.</strong>
+      <strong>{t('Products.variants')}</strong>
       <VariantSelect
         onChange={(variantId) => setSelectedVariantId(variantId)}
         variants={product.variants}
@@ -46,6 +59,8 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
           onChange={(quantity) => setQuantity(quantity)}
           disabled={isLoading}
           defaultValue={quantity}
+          maxAmount={activeVariant?.quantityAvailable ?? undefined}
+          onMaxAmountError={onMaxQuantityError}
           className="w-full mt-2"
         />
 
@@ -55,7 +70,7 @@ export const ProductSelect = ({ product }: ProductSelectProps) => {
           className="w-full mt-2"
           disabled={isLoading}
         >
-          {t('add_to_cart')}
+          {t('Cart.add_to_cart')}
         </Button>
       </div>
     </div>

@@ -1,3 +1,5 @@
+import { Toaster } from 'common/interaction/Toaster';
+
 import { Footer } from './Footer';
 import { LanguageSelect } from './LanguageSelect';
 import { Navigation } from './Navigation';
@@ -12,6 +14,7 @@ export const RootContent = ({ children }: RootContentProps) => {
         </Navigation>
         <main>{children}</main>
         <Footer />
+        <Toaster />
       </body>
     </StoreWrapper>
   );

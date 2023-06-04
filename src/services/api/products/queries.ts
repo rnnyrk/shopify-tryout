@@ -14,10 +14,10 @@ const PRODUCT_FRAGMENT = gql`
         node {
           id
           title
-          inventoryQuantity
           price {
             amount
           }
+          quantityAvailable
         }
       }
     }
@@ -57,6 +57,10 @@ export const GetProductDetailQuery = gql`
       ...productFields
       description
       productIngredients: metafield(namespace: "custom", key: "product_ingredients") {
+        value
+        key
+      }
+      productUsage: metafield(namespace: "custom", key: "how_to_use") {
         value
         key
       }

@@ -23,16 +23,32 @@
       "lippenbalsem": "Lip balm",
       "zonnebrand": "Sunscreen cream"
     },
-    "ingredients": "Ingredients"
+    "notifications": {
+      "max_amount": {
+        "title": "Maximum amount reached",
+        "text": "It's not possible to order over {AMOUNT} product for the \"{TITLE}\" variant."
+      }
+    },
+    "variants": "We put together our fragrances and variants with great care.",
+    "ingredients": "Ingredients",
+    "usage": "How to use"
   },
   "Cart": {
+    "notifications": {
+      "added": {
+        "title": "Added to your cart"
+      },
+      "deleted": {
+        "title": "Removed from your cart"
+      }
+    },
+    "checkout": "Checkout",
+    "delete_from_cart": "Remove",
+    "add_to_cart": "Add to cart",
     "title": "Cart",
     "total": "Total",
     "subtotal": "Subtotal",
     "shipping": "Shipping",
-    "shipping_checkout": "Shipping & taxes calculated at checkout",
-    "checkout": "Checkout",
-    "add_to_cart": "Add to cart",
-    "delete_from_cart": "Remove"
+    "shipping_checkout": "Shipping & taxes calculated at checkout"
   }
 }

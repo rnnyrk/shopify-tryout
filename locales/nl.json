@@ -25,16 +25,32 @@
       "lippenbalsem": "Lippenbalsem",
       "zonnebrand": "Zonnebrand"
     },
-    "ingredients": "Ingrediënten"
+    "notifications": {
+      "max_amount": {
+        "title": "Maximale hoeveelheid bereikt",
+        "text": "Er kunnen niet meer dan {AMOUNT} \"{TITLE}\" producten besteld worden."
+      }
+    },
+    "variants": "We stellen onze geuren en varianten met veel aandacht samen.",
+    "ingredients": "Ingrediënten",
+    "usage": "Gebruiksadvies"
   },
   "Cart": {
+    "notifications": {
+      "added": {
+        "title": "Toegevoegd aan je winkelmand"
+      },
+      "deleted": {
+        "title": "Verwijdert uit je winkelmand"
+      }
+    },
+    "add_to_cart": "Toevoegen",
+    "checkout": "Afrekenen",
+    "delete_from_cart": "Verwijderen",
     "title": "Winkelmand",
     "total": "Totaal",
     "subtotal": "Subtotaal",
     "shipping": "Verzendkosten",
-    "shipping_checkout": "Verzendkosten en belastingen worden berekend bij het afrekenen",
-    "checkout": "Afrekenen",
-    "add_to_cart": "Toevoegen",
-    "delete_from_cart": "Verwijderen"
+    "shipping_checkout": "Verzendkosten en belastingen worden berekend bij het afrekenen"
   }
 }
