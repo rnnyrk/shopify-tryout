@@ -34,6 +34,7 @@ specifiers:
   eslint-plugin-react-hooks: 4.6.0
   graphql: 16.6.0
   graphql-request: 6.1.0
+  just-debounce: 1.1.0
   next: 13.4.4
   next-intl: 2.15.0-beta.5
   postcss: 8.4.24
@@ -59,6 +60,7 @@ dependencies:
   currency.js: 2.0.4
   graphql: 16.6.0
   graphql-request: 6.1.0_graphql@16.6.0
+  just-debounce: 1.1.0
   next: 13.4.4_gxeylg6mfvtzvytsvwl7cjkzse
   next-intl: 2.15.0-beta.5_next@13.4.4+react@18.2.0
   react: 18.2.0
@@ -5132,6 +5134,10 @@ packages:
       array-includes: 3.1.6
       object.assign: 4.1.4
     dev: true
+
+  /just-debounce/1.1.0:
+    resolution: {integrity: sha512-qpcRocdkUmf+UTNBYx5w6dexX5J31AKK1OmPwH630a83DdVVUIngk55RSAiIGpQyoH0dlr872VHfPjnQnK1qDQ==}
+    dev: false
 
   /language-subtag-registry/0.3.22:
     resolution: {integrity: sha512-tN0MCzyWnoz/4nHS6uxdlFWoUZT7ABptwKPQ52Ea7URk6vll88bWBVhodtnlfEuCcKWNGoc+uGbw1cwa9IKh/w==}

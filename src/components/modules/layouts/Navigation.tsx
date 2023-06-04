@@ -3,12 +3,15 @@ import { useEffect, useState } from 'react';
 
 import MenuIcon from 'vectors/menu.svg';
 import { cn } from 'services';
+import { useDevice } from 'hooks/useDevice';
 import { CartSheet } from 'modules/cart/CartSheet';
 
 import { MainMenu } from './MainMenu';
 
 export const Navigation = ({ children }: NavigationProps) => {
+  const { isDesktop } = useDevice();
   const [isOpen, setOpen] = useState(false);
+
   // @TODO lock position on scroll
 
   useEffect(() => {
@@ -18,6 +21,12 @@ export const Navigation = ({ children }: NavigationProps) => {
       document.body.classList.remove('overflow-hidden');
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    if (isDesktop) {
+      setOpen(false);
+    }
+  }, [isDesktop]);
 
   return (
     <nav className="relative w-full h-20 px-4 flex flex-col justify-center bg-white lg:flex-row lg:px-8 lg:items-center lg:justify-between">
