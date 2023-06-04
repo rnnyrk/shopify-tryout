@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl';
 
 import CartIcon from 'vectors/cart.svg';
-import { useStoreContext } from 'services';
+import { useStoreContext } from 'services/storeContext';
 import { CartOverview } from 'modules/cart/CartOverview';
 import {
   Sheet,

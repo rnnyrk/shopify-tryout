@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 
 import { useToast } from 'hooks/useToast';
-import { formatPrice, useStoreContext } from 'services';
+import { formatPrice } from 'services';
+import { useStoreContext } from 'services/storeContext';
 import { Button } from 'common/interaction/Button';
 import { InputCounter } from 'common/form/InputCounter';
 

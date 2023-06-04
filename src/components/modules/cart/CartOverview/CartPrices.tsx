@@ -1,9 +1,8 @@
 'use client';
 import * as i from 'types';
-import clsx from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
 
-import { formatPrice } from 'services';
+import { cn, formatPrice } from 'services';
 import { useStoreContext } from 'services/storeContext';
 
 const CartPriceItem = ({ title, price, variant }: CartPriceItemProps) => {
@@ -11,7 +10,7 @@ const CartPriceItem = ({ title, price, variant }: CartPriceItemProps) => {
     <div className="w-full flex justify-between items-center mb-4">
       <p className="text-sm font-medium">{title}</p>
       <p
-        className={clsx('text-sm', {
+        className={cn('text-sm', {
           'text-slate-800 italic': variant === 'secondary',
           'font-medium': variant !== 'secondary',
         })}

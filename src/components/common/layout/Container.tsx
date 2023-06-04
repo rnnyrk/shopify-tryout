@@ -1,9 +1,9 @@
-import clsx from 'clsx';
+import { cn } from 'services';
 
 export const Container = ({ className, children, isCentered, noPadding }: ContainerProps) => {
   return (
     <section
-      className={clsx(className, {
+      className={cn(className, {
         'max-w-6xl mx-auto': isCentered,
         'py-16 px-6 lg:py-32 lg:px-0': !noPadding,
         'px-2 lg:px-0': noPadding,

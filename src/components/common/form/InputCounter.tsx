@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import clsx from 'clsx';
+
+import { cn } from 'services';
 
 const InputCounterButton = ({ children, disabled, onClick, isLast }: InputCounterButtonProps) => {
   return (
     <button
       onClick={onClick}
       disabled={disabled}
-      className={clsx('text-gray-600 hover:bg-slate-200 h-full w-20 outline-none', {
+      className={cn('text-gray-600 hover:bg-slate-200 h-full w-20 outline-none', {
         'rounded-r': isLast,
         'rounded-l': !isLast,
         'cursor-not-allowed': disabled,
@@ -48,7 +49,7 @@ export const InputCounter = ({
   };
 
   return (
-    <div className={clsx('h-12 w-32', className)}>
+    <div className={cn('h-12 w-32', className)}>
       {label && (
         <label
           htmlFor="custom-input-number"

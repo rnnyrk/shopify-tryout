@@ -1,5 +1,5 @@
 'use client';
-import { StoreProvider } from 'services';
+import { StoreProvider } from 'services/storeContext';
 
 export const StoreWrapper = ({ children }: StoreWrapperProps) => {
   return <StoreProvider>{children}</StoreProvider>;

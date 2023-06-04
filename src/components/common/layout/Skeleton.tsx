@@ -1,9 +1,9 @@
-import clsx from 'clsx';
+import { cn } from 'services';
 
 function Skeleton({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={clsx('animate-pulse bg-slate-200', className)}
+      className={cn('animate-pulse bg-slate-200', className)}
       {...props}
     />
   );

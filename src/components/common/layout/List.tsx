@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cn } from 'services';
 
 type ListType = {
   className?: string;
@@ -6,13 +6,11 @@ type ListType = {
 };
 
 const ListContainer = ({ className, children }: ListType) => (
-  <ul className={clsx(`flex flex-wrap list-none p-0`, className)}>{children}</ul>
+  <ul className={cn(`flex flex-wrap list-none p-0`, className)}>{children}</ul>
 );
 
 const ListItem = ({ className, children }: ListType) => (
-  <li
-    className={clsx(`py-2 px-4 m-2 rounded-md border-2 border-slate-300 bg-slate-100`, className)}
-  >
+  <li className={cn(`py-2 px-4 m-2 rounded-md border-2 border-slate-300 bg-slate-100`, className)}>
     {children}
   </li>
 );

@@ -1,8 +1,9 @@
 'use client';
-import clsx from 'clsx';
-import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next-intl/link';
+import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
+
+import { cn } from 'services';
 
 const MenuItem = ({ href, children }) => {
   const pathname = usePathname();
@@ -16,7 +17,7 @@ const MenuItem = ({ href, children }) => {
   }
   return (
     <li
-      className={clsx(
+      className={cn(
         'py-8 border-b-2 border-slate-300 last:border-b-0 font-bold text-xl lg:text-lg lg:mx-4 lg:py-0 lg:border-b-0 transition-colors hover:text-primary-600',
         {
           'text-primary-400': isActive,

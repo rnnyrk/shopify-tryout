@@ -3,7 +3,8 @@ import * as i from 'types';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 
-import { formatPrice, useStoreContext } from 'services';
+import { formatPrice } from 'services';
+import { useStoreContext } from 'services/storeContext';
 import { Button } from 'common/interaction/Button';
 import { InputCounter } from 'common/form/InputCounter';
 

@@ -1,8 +1,8 @@
 'use client';
-import clsx from 'clsx';
 import { useState } from 'react';
 
 import MenuIcon from 'vectors/menu.svg';
+import { cn } from 'services';
 import { CartSheet } from 'modules/cart/CartSheet';
 
 import { MainMenu } from './MainMenu';
@@ -30,7 +30,7 @@ export const Navigation = ({ children }: NavigationProps) => {
       </div>
 
       <div
-        className={clsx(
+        className={cn(
           'fixed top-20 left-0 right-0 h-[calc(100vh-80px)] z-20 flex-col px-4 pb-8 bg-white lg:static lg:h-auto lg:pb-0 lg:flex lg:flex-row lg:items-center lg:pt-0 lg:px-0 lg:flex-[2]',
           {
             flex: isOpen,

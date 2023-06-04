@@ -1,6 +1,6 @@
-import clsx from 'clsx';
 import { useLocale } from 'next-intl';
 
+import { cn } from 'services';
 import { getLocales } from 'services/api/locales';
 import { DropdownMenu, DropdownMenuTrigger } from 'common/interaction/DropdownMenu';
 
@@ -29,7 +29,7 @@ export const LanguageSelect = async ({ className }: LanguageSelectProps) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        className={clsx(
+        className={cn(
           'flex items-center py-2 px-4 w-full min-w-full lg:min-w-[140px] lg:w-[140px] rounded-lg transition-colors bg-background-main hover:bg-background-hover',
           className,
         )}

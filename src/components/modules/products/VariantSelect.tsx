@@ -1,5 +1,6 @@
 import * as i from 'types';
-import clsx from 'clsx';
+
+import { cn } from 'services';
 
 export const VariantSelect = ({ onChange, variants, selectedVariantId }: VariantSelectProps) => {
   return (
@@ -10,7 +11,7 @@ export const VariantSelect = ({ onChange, variants, selectedVariantId }: Variant
         return (
           <button
             key={variant.id}
-            className={clsx(
+            className={cn(
               'w-full py-2 px-4 mb-2 lg:w-auto lg:mr-2 lg:my-2 font-semibold rounded-md',
               {
                 'text-white bg-primary-400': isActive,

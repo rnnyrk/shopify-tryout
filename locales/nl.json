@@ -17,7 +17,21 @@
     },
     "usps": {
       "title": "Waarom Mellow Tallow",
-      "description": "Hoe we zijn geworden wat we zijn en wat we nastreven"
+      "description": "Hoe we zijn geworden wat we zijn en wat we nastreven",
+      "items": {
+        "natural": {
+          "title": "100% natuurlijk",
+          "description": "Onze talkcrèmes zijn gemaakt van 100% natuurlijke ingrediënten, zorgvuldig geselecteerd om de hoogste kwaliteit en zuiverheid te garanderen. We begrijpen het belang van het gebruik van veilige en zachte producten op uw huid, daarom bevatten onze talkcrèmes geen kunstmatige toevoegingen, geurstoffen of schadelijke chemicaliën. Met onze 100% natuurlijke samenstelling kunt u genieten van de voordelen van talk terwijl u zorgt voor de gezondheid van uw huid."
+        },
+        "shipping": {
+          "title": "Gratis verzending en retouneren",
+          "description": "We geloven in het bieden van uitstekende klantenservice, daarom bieden we gratis verzending en moeiteloos retourneren op al onze talkcrèmes. We willen uw winkelervaring zo gemakkelijk mogelijk maken en ervoor zorgen dat uw bestelling u bereikt zonder extra kosten. Als u niet helemaal tevreden bent met uw aankoop, bieden we ook eenvoudige retournering, waardoor u zonder risico onze talkcrèmes kunt uitproberen en de geweldige voordelen kunt ontdekken."
+        },
+        "quality": {
+          "title": "Uitmuntende kwaliteit",
+          "description": "Onze talkcrèmes worden met de grootste zorg en aandacht voor detail vervaardigd, met alleen de beste ingrediënten. We stellen kwaliteit voorop in elke stap van het productieproces, zodat u een product ontvangt dat voldoet aan de hoogste normen. Onze talkcrèmes hebben een luxueuze textuur, worden snel door de huid opgenomen en bieden langdurige frisheid en comfort. Ervaar het verschil van onze talkcrèmes van superieure kwaliteit en geniet de hele dag door van een gladde, gevoede huid."
+        }
+      }
     }
   },
   "About": {
