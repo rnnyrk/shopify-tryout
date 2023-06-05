@@ -2,9 +2,9 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import NaturalImg from 'images/natural.jpeg';
-import ShippingImg from 'images/shipping.jpeg';
-import QualityImg from 'images/quality.jpeg';
+import AdventureImg from 'images/adventure.png';
+import GearImg from 'images/gear.png';
+import NatureImg from 'images/nature.png';
 import { cn } from 'services';
 import { SectionHeader } from 'modules/layouts/SectionHeader';
 import { Container } from 'common/layout/Container';
@@ -15,19 +15,19 @@ const items = [
     id: 1,
     name: 'usps.items.natural.title',
     description: 'usps.items.natural.description',
-    image: NaturalImg,
+    image: AdventureImg,
   },
   {
     id: 2,
     name: 'usps.items.shipping.title',
     description: 'usps.items.shipping.description',
-    image: ShippingImg,
+    image: GearImg,
   },
   {
     id: 3,
     name: 'usps.items.quality.title',
     description: 'usps.items.quality.description',
-    image: QualityImg,
+    image: NatureImg,
   },
 ];
 

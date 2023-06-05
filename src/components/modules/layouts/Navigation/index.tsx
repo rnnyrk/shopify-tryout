@@ -7,9 +7,8 @@ import { useDevice } from 'hooks/useDevice';
 import { CartSheet } from 'modules/cart/CartSheet';
 
 import { MainMenu } from './MainMenu';
-import { MyStore } from '../MyStore';
 
-export const Navigation = ({ children }: NavigationProps) => {
+export const Navigation = ({ children, logoComponent }: NavigationProps) => {
   const { isDesktop } = useDevice();
   const [isOpen, setOpen] = useState(false);
 
@@ -37,8 +36,7 @@ export const Navigation = ({ children }: NavigationProps) => {
             isOpen,
         })}
       >
-        <MyStore />
-
+        {logoComponent}
         <button
           className="appearance-none lg:hidden"
           onClick={() => setOpen(!isOpen)}
@@ -69,4 +67,5 @@ export const Navigation = ({ children }: NavigationProps) => {
 
 type NavigationProps = {
   children: React.ReactNode;
+  logoComponent: React.ReactNode;
 };
