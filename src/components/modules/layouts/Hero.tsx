@@ -2,8 +2,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import CowImg from 'images/cow.jpg';
-import YakImg from 'images/yak.jpg';
+import HeroImg from 'images/store_hero.jpg';
 import { Button } from 'common/interaction/Button';
 import { Heading } from 'common/typography/Heading';
 
@@ -25,7 +24,7 @@ export const Hero = () => {
           </Button>
           <Button
             type="link"
-            href="/why-tallow"
+            href="/faq"
             variant="secondary"
           >
             {t('button_alt')}
@@ -34,7 +33,7 @@ export const Hero = () => {
       </div>
       <figure className="absolute inset-0 z-0 w-full h-full m-0 p-0">
         <Image
-          src={CowImg}
+          src={HeroImg}
           alt="Hero image"
           fill
           priority

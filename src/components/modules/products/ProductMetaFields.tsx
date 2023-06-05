@@ -22,7 +22,7 @@ const ProductMetaItem = ({ value, children }: ProductMetaItemProps) => {
 
 const ProductMetaItemTrigger = ({ children }: Omit<ProductMetaItemProps, 'value'>) => {
   return (
-    <AccordionTrigger className="border-b-0 bg-background-hover px-4 rounded-t-md">
+    <AccordionTrigger className="border-b-0 bg-background-secondary px-4 rounded-t-md">
       {children}
     </AccordionTrigger>
   );
@@ -30,7 +30,7 @@ const ProductMetaItemTrigger = ({ children }: Omit<ProductMetaItemProps, 'value'
 
 const ProductMetaItemContent = ({ children }: Omit<ProductMetaItemProps, 'value'>) => {
   return (
-    <AccordionContent className="border-b-0 bg-background-hover px-4 rounded-b-md">
+    <AccordionContent className="border-b-0 bg-background-secondary px-4 rounded-b-md">
       {children}
     </AccordionContent>
   );

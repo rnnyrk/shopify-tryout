@@ -17,8 +17,10 @@ export const LanguageDropdown = ({ locales, flags }: LanguageDropdownProps) => {
     if (localeIndex !== -1) {
       urlParts.splice(localeIndex, 1, newLocale);
       const newUrl = urlParts.join('/');
-      if (newUrl.includes('/nl')) {
-        return newUrl.replace('nl', '');
+
+      // @TODO replace (see README @TODO about replaceLocaleInUrl)
+      if (newUrl.includes('/en')) {
+        return newUrl.replace('en', '');
       }
 
       return urlParts.join('/');
@@ -36,7 +38,7 @@ export const LanguageDropdown = ({ locales, flags }: LanguageDropdownProps) => {
         return (
           <DropdownMenuItem key={locale.isoCode}>
             <Link
-              href={replaceLocaleInUrl(locale.isoCode.toLowerCase())}
+              href={pathname}
               locale={isoCode}
               className="flex items-center"
             >

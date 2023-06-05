@@ -73,7 +73,7 @@ export async function generateMetadata(
 const Layout = async ({ children }: LayoutProps) => {
   return (
     <Container noPadding>
-      <article className="w-full min-h-[75vh] flex flex-wrap rounded-lg overflow-hidden bg-background-main lg:justify-between">
+      <article className="w-full min-h-[75vh] flex flex-wrap rounded-lg overflow-hidden bg-background-primary lg:justify-between">
         {children}
       </article>
     </Container>

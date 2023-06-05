@@ -1,50 +1,41 @@
 {
   "MainMenu": {
     "home": "Thuis",
-    "products": "Producten",
-    "about": "Over ons"
+    "products": "Producten"
   },
   "Hero": {
-    "title": "Welkom op de boerderij",
-    "subtitle": "Wij hebben de beste koeien en yaks in de wereld",
+    "title": "Snowy Mountains",
+    "subtitle": "Ontdek de bergen, geniet van de frisse lucht en voel de sneeuw op je huid",
     "button": "Onze producten",
-    "button_alt": "Waarom talg"
+    "button_alt": "Ontdek"
   },
   "Home": {
     "bestsellers": {
       "title": "Bestsellers",
-      "description": "Onze best verkopende producten zijn met liefde en aandacht gemaakt"
+      "description": "Onze klanten zijn dol op deze producten"
     },
     "usps": {
-      "title": "Waarom Mellow Tallow",
+      "title": "Wat doen we bij Snowy Mountains",
       "description": "Hoe we zijn geworden wat we zijn en wat we nastreven",
       "items": {
         "natural": {
           "title": "100% natuurlijk",
-          "description": "Onze talkcrèmes zijn gemaakt van 100% natuurlijke ingrediënten, zorgvuldig geselecteerd om de hoogste kwaliteit en zuiverheid te garanderen. We begrijpen het belang van het gebruik van veilige en zachte producten op uw huid, daarom bevatten onze talkcrèmes geen kunstmatige toevoegingen, geurstoffen of schadelijke chemicaliën. Met onze 100% natuurlijke samenstelling kunt u genieten van de voordelen van talk terwijl u zorgt voor de gezondheid van uw huid."
+          "description": ""
         },
         "shipping": {
           "title": "Gratis verzending en retouneren",
-          "description": "We geloven in het bieden van uitstekende klantenservice, daarom bieden we gratis verzending en moeiteloos retourneren op al onze talkcrèmes. We willen uw winkelervaring zo gemakkelijk mogelijk maken en ervoor zorgen dat uw bestelling u bereikt zonder extra kosten. Als u niet helemaal tevreden bent met uw aankoop, bieden we ook eenvoudige retournering, waardoor u zonder risico onze talkcrèmes kunt uitproberen en de geweldige voordelen kunt ontdekken."
+          "description": ""
         },
         "quality": {
           "title": "Uitmuntende kwaliteit",
-          "description": "Onze talkcrèmes worden met de grootste zorg en aandacht voor detail vervaardigd, met alleen de beste ingrediënten. We stellen kwaliteit voorop in elke stap van het productieproces, zodat u een product ontvangt dat voldoet aan de hoogste normen. Onze talkcrèmes hebben een luxueuze textuur, worden snel door de huid opgenomen en bieden langdurige frisheid en comfort. Ervaar het verschil van onze talkcrèmes van superieure kwaliteit en geniet de hele dag door van een gladde, gevoede huid."
+          "description": ""
         }
       }
     }
   },
-  "About": {
-    "title": "Over ons",
-    "description": "Wie zijn wij en wat hoe maken wij onze talg producten"
-  },
   "FAQ": {
     "title": "FAQ",
     "description": "Voor al je vragen over talg, onze producten, verzendingen, etc."
-  },
-  "WhyTallow": {
-    "title": "Waarom Talg?",
-    "description": "Voor al je vragen over talg"
   },
   "Products": {
     "title": "Producten",
@@ -53,10 +44,8 @@
     "disclaimer_text": "De FDA zegt dat ALLEEN een medicijn een ziekte kan behandelen, voorkomen of genezen. We maken GEEN MEDISCHE CLAIMS of CURE CLAIMS voor het product.",
     "from": "vanaf",
     "filter": {
-      "creme": "Creme",
-      "handpomp": "Handpomp",
-      "lippenbalsem": "Lippenbalsem",
-      "zonnebrand": "Zonnebrand"
+      "snowboard": "Snowboard",
+      "other": "Overige"
     },
     "notifications": {
       "max_amount": {
@@ -64,9 +53,7 @@
         "text": "Er kunnen niet meer dan {AMOUNT} \"{TITLE}\" producten besteld worden."
       }
     },
-    "variants": "We stellen onze geuren en varianten met veel aandacht samen.",
-    "ingredients": "Ingrediënten",
-    "usage": "Gebruiksadvies"
+    "variants": "We stellen onze varianten met veel aandacht samen."
   },
   "Cart": {
     "notifications": {

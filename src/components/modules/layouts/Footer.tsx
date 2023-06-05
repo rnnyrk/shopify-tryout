@@ -2,7 +2,7 @@ import { Container } from 'common/layout/Container';
 
 export const Footer = () => {
   return (
-    <div className="w-full bg-background-hover py-2">
+    <div className="w-full bg-background-secondary py-2">
       <Container
         isCentered
         noPadding
