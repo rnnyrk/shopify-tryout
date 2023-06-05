@@ -69,7 +69,7 @@ const RootLayout = async ({ children, params }: RootLayoutProps) => {
   return (
     <html
       lang={locale}
-      className={cn('text-black bg-background-main', nunito.className)}
+      className={cn('text-black bg-background-white', nunito.className)}
     >
       <head />
       <NextIntlClientProvider

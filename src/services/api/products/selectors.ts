@@ -49,8 +49,8 @@ export const formatProductDetail = ({ product }: FormatProductProps): i.ProductD
     variants,
     // Detail specific
     description: product.descriptionHtml,
-    productIngredients: product.productIngredients,
-    productUsage: product.productUsage,
+    // productIngredients: product.productIngredients,
+    // productUsage: product.productUsage,
   };
 };
 

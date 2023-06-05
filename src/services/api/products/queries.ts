@@ -56,14 +56,14 @@ export const GetProductDetailQuery = gql`
     product(handle: $handle) {
       ...productFields
       descriptionHtml
-      productIngredients: metafield(namespace: "custom", key: "product_ingredients") {
-        value
-        key
-      }
-      productUsage: metafield(namespace: "custom", key: "how_to_use") {
-        value
-        key
-      }
+      # productIngredients: metafield(namespace: "custom", key: "product_ingredients") {
+      #   value
+      #   key
+      # }
+      # productUsage: metafield(namespace: "custom", key: "how_to_use") {
+      #   value
+      #   key
+      # }
     }
   }
 `;
@@ -71,7 +71,7 @@ export const GetProductDetailQuery = gql`
 export const GetBestsellersQuery = gql`
   ${PRODUCT_FRAGMENT}
   query getBestsellers($language: LanguageCode!) @inContext(language: $language) {
-    collection(id: "gid://shopify/Collection/448009404701") {
+    collection(id: "gid://shopify/Collection/445891412256") {
       products(first: 10) {
         edges {
           node {

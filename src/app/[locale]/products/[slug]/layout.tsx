@@ -5,16 +5,8 @@ import { Container } from 'common/layout/Container';
 
 import { getProduct } from 'services/api/products/detail';
 
-type Props = {
-  params: {
-    slug: string;
-    locale: i.Locale;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
 export async function generateMetadata(
-  { params, searchParams }: Props,
+  { params, searchParams }: LayoutMetaProps,
   parent?: ResolvingMetadata,
 ): Promise<Metadata> {
   // read route params
@@ -81,7 +73,7 @@ export async function generateMetadata(
 const Layout = async ({ children }: LayoutProps) => {
   return (
     <Container noPadding>
-      <article className="w-full min-h-[75vh] flex flex-wrap rounded-lg overflow-hidden bg-background-main lg:justify-between">
+      <article className="w-full min-h-[75vh] flex flex-wrap rounded-lg overflow-hidden bg-background-primary lg:justify-between">
         {children}
       </article>
     </Container>
@@ -90,6 +82,14 @@ const Layout = async ({ children }: LayoutProps) => {
 
 type LayoutProps = {
   children: React.ReactNode;
+};
+
+type LayoutMetaProps = {
+  params: {
+    slug: string;
+    locale: i.Locale;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export default Layout;
