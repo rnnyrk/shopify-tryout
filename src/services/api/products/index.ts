@@ -27,9 +27,11 @@ export const getProductTypes = async (locale: i.Locale): Promise<i.ProductTypes[
 
   return graphQLQuery(GetProductTypesQuery, { language })
     .then((data: { products: ProductConnection }) => {
-      const productsTypes = data.products.edges.map((item) => {
-        return item.node.productType as i.ProductTypes;
-      });
+      const productsTypes = data.products.edges
+        .map((item) => {
+          return item.node.productType;
+        })
+        .filter((item) => item !== null && item !== '') as i.ProductTypes[];
 
       const uniqueProductsTypes = [...new Set(productsTypes)];
       return uniqueProductsTypes;

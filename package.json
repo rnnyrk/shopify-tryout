@@ -37,7 +37,7 @@
     "@babel/core": "7.22.1",
     "@babel/plugin-syntax-flow": "7.21.4",
     "@babel/plugin-transform-react-jsx": "7.22.3",
-    "@ianvs/prettier-plugin-sort-imports": "4.0.2",
+    "@ianvs/prettier-plugin-sort-imports": "3.7.2",
     "@next/eslint-plugin-next": "13.4.4",
     "@svgr/webpack": "8.0.1",
     "@types/node": "20.2.5",
