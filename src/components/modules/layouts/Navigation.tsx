@@ -32,7 +32,8 @@ export const Navigation = ({ children }: NavigationProps) => {
     <nav className="relative w-full h-20 px-4 flex flex-col justify-center bg-white lg:flex-row lg:px-8 lg:items-center lg:justify-between">
       <div
         className={cn('relative z-30 flex justify-between w-full lg:w-auto', {
-          'fixed top-0 left-0 right-0 h-20 items-center px-4 lg:static lg:px-0': isOpen,
+          'fixed top-0 left-0 right-0 h-20 items-center px-4 lg:static lg:px-0 bg-white: lg:bg-none':
+            isOpen,
         })}
       >
         <a
