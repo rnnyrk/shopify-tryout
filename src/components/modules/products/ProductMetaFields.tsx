@@ -36,7 +36,10 @@ const ProductMetaItemContent = ({ children }: Omit<ProductMetaItemProps, 'value'
   );
 };
 
-export const ProductMetaFields = ({ productIngredients, productUsage }: ProductMetaFieldsProps) => {
+export const ProductMetaFields = ({
+  productMetafieldOne,
+  productMetafieldTwo,
+}: ProductMetaFieldsProps) => {
   const t = useTranslations('Products');
 
   return (
@@ -44,29 +47,25 @@ export const ProductMetaFields = ({ productIngredients, productUsage }: ProductM
       type="multiple"
       className="mt-12"
     >
-      {productIngredients && (
-        <ProductMetaItem value={productIngredients.key}>
-          <ProductMetaItemTrigger>{t('ingredients')}</ProductMetaItemTrigger>
-          <ProductMetaItemContent>{productIngredients?.value}</ProductMetaItemContent>
+      {productMetafieldOne && (
+        <ProductMetaItem value={productMetafieldOne.key}>
+          <ProductMetaItemTrigger>{t('meta.one')}</ProductMetaItemTrigger>
+          <ProductMetaItemContent>{productMetafieldOne?.value}</ProductMetaItemContent>
         </ProductMetaItem>
       )}
-      {productUsage && (
-        <ProductMetaItem value={productUsage.key}>
-          <ProductMetaItemTrigger>{t('usage')}</ProductMetaItemTrigger>
-          <ProductMetaItemContent>{productUsage?.value}</ProductMetaItemContent>
+      {productMetafieldTwo && (
+        <ProductMetaItem value={productMetafieldTwo.key}>
+          <ProductMetaItemTrigger>{t('meta.two')}</ProductMetaItemTrigger>
+          <ProductMetaItemContent>{productMetafieldTwo?.value}</ProductMetaItemContent>
         </ProductMetaItem>
       )}
-      <ProductMetaItem value="disclaimer">
-        <ProductMetaItemTrigger>{t('disclaimer')}</ProductMetaItemTrigger>
-        <ProductMetaItemContent>{t('disclaimer_text')}</ProductMetaItemContent>
-      </ProductMetaItem>
     </Accordion>
   );
 };
 
 type ProductMetaFieldsProps = {
-  productIngredients?: i.ProductDetail['productIngredients'];
-  productUsage?: i.ProductDetail['productUsage'];
+  productMetafieldOne?: i.ProductDetail['productMetafieldOne'];
+  productMetafieldTwo?: i.ProductDetail['productMetafieldTwo'];
 };
 
 type ProductMetaItemProps = {

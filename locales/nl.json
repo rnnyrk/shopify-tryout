@@ -40,12 +40,14 @@
   "Products": {
     "title": "Producten",
     "description": "Vind hier onze producten, we bieden vier verschillende soorten producten aan",
-    "disclaimer": "Disclaimer",
-    "disclaimer_text": "De FDA zegt dat ALLEEN een medicijn een ziekte kan behandelen, voorkomen of genezen. We maken GEEN MEDISCHE CLAIMS of CURE CLAIMS voor het product.",
     "from": "vanaf",
     "filter": {
       "snowboard": "Snowboard",
       "other": "Overige"
+    },
+    "meta": {
+      "one": "Snowboard lengte",
+      "two": "Binding opzet"
     },
     "notifications": {
       "max_amount": {

@@ -29,8 +29,8 @@ export type ProductOverviewItem = i.ProductBase &
 export type Bestseller = Omit<i.ProductOverviewItem, 'productType'>;
 
 export type ProductMetaFields = {
-  productIngredients?: Metafield;
-  productUsage?: Metafield;
+  productMetafieldOne?: Metafield;
+  productMetafieldTwo?: Metafield;
 };
 
 export type ProductVariants = {

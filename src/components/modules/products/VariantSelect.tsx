@@ -3,6 +3,8 @@ import * as i from 'types';
 import { cn } from 'services';
 
 export const VariantSelect = ({ onChange, variants, selectedVariantId }: VariantSelectProps) => {
+  if (variants.length === 1) return;
+
   return (
     <div className="w-full flex flex-wrap">
       {variants.map((variant) => {

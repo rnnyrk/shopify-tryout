@@ -18,7 +18,7 @@ const Product = async ({ params }: ProductParams) => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="p-4 lg:p-24 lg:w-2/4">
+      <div className="p-4 lg:p-24 lg:w-2/4 bg-white">
         <div className="flex flex-col w-full lg:max-w-[34em]">
           <Heading className="font-bold text-4xl my-2 lg:my-0">{product?.title}</Heading>
           <div
@@ -28,8 +28,8 @@ const Product = async ({ params }: ProductParams) => {
 
           <ProductSelect product={product!} />
           <ProductMetaFields
-            productIngredients={product?.productIngredients}
-            productUsage={product?.productUsage}
+            productMetafieldOne={product?.productMetafieldOne}
+            productMetafieldTwo={product?.productMetafieldTwo}
           />
         </div>
       </div>

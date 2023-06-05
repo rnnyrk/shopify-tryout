@@ -40,12 +40,14 @@
   "Products": {
     "title": "Products",
     "description": "You find all our products here. We offer four different variants of tallow products.",
-    "disclaimer": "Disclaimer",
-    "disclaimer_text": "The FDA says ONLY a drug can treat, prevent or cure a disease. We make NO MEDICAL CLAIMS or CURE CLAIMS for the product.",
     "from": "from",
     "filter": {
       "snowboard": "Snowboard",
       "other": "Other"
+    },
+    "meta": {
+      "one": "Snowboard length",
+      "two": "Binding mount"
     },
     "notifications": {
       "max_amount": {
