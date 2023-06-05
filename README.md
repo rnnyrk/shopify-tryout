@@ -6,6 +6,7 @@ Boilerplate for setting up a headless Shopify with NextJS.
 - Next.js 13 app directory
 - Framer Motion for animations
 - Tailwind CSS with `clsx` and `tailwind-merge` for dynamic classes
+- Components from [shadcn](https://ui.shadcn.com)
 - TypeScript (no-brainer)
 - PNPM package manager
 - ESLint and Prettier
