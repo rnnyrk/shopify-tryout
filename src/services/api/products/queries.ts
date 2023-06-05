@@ -56,14 +56,14 @@ export const GetProductDetailQuery = gql`
     product(handle: $handle) {
       ...productFields
       descriptionHtml
-      # productIngredients: metafield(namespace: "custom", key: "product_ingredients") {
-      #   value
-      #   key
-      # }
-      # productUsage: metafield(namespace: "custom", key: "how_to_use") {
-      #   value
-      #   key
-      # }
+      productMetafieldOne: metafield(namespace: "test_data", key: "snowboard_length") {
+        value
+        key
+      }
+      productMetafieldTwo: metafield(namespace: "test_data", key: "binding_mount") {
+        value
+        key
+      }
     }
   }
 `;
