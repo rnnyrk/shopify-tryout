@@ -19,16 +19,16 @@
       "description": "How we became what we are and what we strive for",
       "items": {
         "natural": {
-          "title": "Live The Dream",
-          "description": ""
+          "title": "Live the Dream",
+          "description": "Our products make your dreams come true."
         },
         "shipping": {
           "title": "Free Shipping and Returns",
-          "description": ""
+          "description": "Nothing beats a good customer service. As you wish."
         },
         "quality": {
-          "title": "Experience unbelievable quality",
-          "description": ""
+          "title": "Experience Unbelievable Quality",
+          "description": "Become what you always wanted to be."
         }
       }
     }

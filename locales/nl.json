@@ -19,16 +19,16 @@
       "description": "Hoe we zijn geworden wat we zijn en wat we nastreven",
       "items": {
         "natural": {
-          "title": "Leef de droom",
-          "description": ""
+          "title": "Leef de Droom",
+          "description": "Onze producten maken jou droom waar."
         },
         "shipping": {
-          "title": "Gratis verzending en retouneren",
-          "description": ""
+          "title": "Gratis Verzending en Retouneren",
+          "description": "Een klantenservice waar je atlijd op kunt rekenen."
         },
         "quality": {
-          "title": "Beleef ongeloofelijke kwaliteit",
-          "description": ""
+          "title": "Beleef Ongeloofelijke Kwaliteit",
+          "description": "Wordt wat je altijd al hebt willen zijn."
         }
       }
     }

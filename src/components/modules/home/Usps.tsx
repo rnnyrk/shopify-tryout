@@ -49,7 +49,7 @@ export const Usps = () => {
             return (
               <div
                 className={cn('w-full flex flex-col mb-12 lg:mb-16 lg:flex-row lg:items-center', {
-                  'lg:flex-row-reverse': isOdd,
+                  'lg:flex-row-reverse text-right': isOdd,
                 })}
                 key={item.id}
               >
