@@ -7,6 +7,7 @@ import { useDevice } from 'hooks/useDevice';
 import { CartSheet } from 'modules/cart/CartSheet';
 
 import { MainMenu } from './MainMenu';
+import { MyStore } from '../MyStore';
 
 export const Navigation = ({ children }: NavigationProps) => {
   const { isDesktop } = useDevice();
@@ -36,12 +37,7 @@ export const Navigation = ({ children }: NavigationProps) => {
             isOpen,
         })}
       >
-        <a
-          href="/"
-          className="uppercase text-xl font-bold tracking-widest"
-        >
-          Mellow Tallow
-        </a>
+        <MyStore />
 
         <button
           className="appearance-none lg:hidden"

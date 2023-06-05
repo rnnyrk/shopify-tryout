@@ -1,5 +1,7 @@
 import { Container } from 'common/layout/Container';
 
+import { MyStore } from './MyStore';
+
 export const Footer = () => {
   return (
     <div className="w-full bg-background-secondary py-2">
@@ -8,7 +10,7 @@ export const Footer = () => {
         noPadding
         className="py-4"
       >
-        <strong className="uppercase tracking-widest">Mellow Tallow</strong>
+        <MyStore size="small" />
       </Container>
     </div>
   );
